@@ -29,8 +29,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.exoplatform.ecm</groupId>
-      <artifactId>exo.ecm.component.cms</artifactId>
+      <groupId>org.exoplatform.ecm.dms</groupId>
+      <artifactId>exo.ecm.dms.component.cms</artifactId>
       <version>${org.exoplatform.ecm.dms.version}</version>
       <scope>provided</scope>
     </dependency>
@@ -50,8 +50,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.exoplatform.ecm</groupId>
-      <artifactId>exo.ecm.webui.ecm</artifactId>
+      <groupId>org.exoplatform.ecm.dms</groupId>
+      <artifactId>exo.ecm.dms.webui.ecm</artifactId>
       <version>${org.exoplatform.ecm.dms.version}</version>
       <scope>provided</scope>
     </dependency>  
