@@ -1,13 +1,13 @@
 <project>
   <parent>
-    <groupId>org.exoplatform.ecm</groupId>
+    <groupId>org.exoplatform.ecm.workflow</groupId>
     <artifactId>config</artifactId>
     <version>2.3-SNAPSHOT</version>
   </parent> 
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>exo.ecm.component.workflow.impl.jbpm.facade</artifactId>
-  <version>${org.exoplatform.ecm.version}</version>
+  <artifactId>exo.ecm.workflow.component.workflow.impl.jbpm.facade</artifactId>
+  <version>${org.exoplatform.ecm.workflow.version}</version>
   <packaging>jar</packaging>
   <name>eXo Workflow Service Impl for jBPM</name>
   <url>http://www.exoplatform.org</url>
@@ -48,9 +48,9 @@
     </dependency-->
   
     <dependency>
-      <groupId>org.exoplatform.ecm</groupId>
-      <artifactId>exo.ecm.component.workflow.api</artifactId>
-      <version>${org.exoplatform.ecm.version}</version>
+      <groupId>org.exoplatform.ecm.workflow</groupId>
+      <artifactId>exo.ecm.workflow.component.workflow.api</artifactId>
+      <version>${org.exoplatform.ecm.workflow.version}</version>
     </dependency>
 
     <dependency>
@@ -66,8 +66,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.exoplatform.ecm</groupId>
-      <artifactId>exo.ecm.component.workflow.impl.jbpm.engine</artifactId>
+      <groupId>org.exoplatform.ecm.workflow</groupId>
+      <artifactId>exo.ecm.workflow.component.workflow.impl.jbpm.engine</artifactId>
       <version>3.0</version>
     </dependency>
     
