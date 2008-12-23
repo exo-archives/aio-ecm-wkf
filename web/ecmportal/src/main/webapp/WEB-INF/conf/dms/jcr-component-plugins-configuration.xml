@@ -27,8 +27,8 @@
 	      <values-param>
 	        <name>autoCreatedInNewRepository</name>
 	        <description>Node types configuration file</description>
-	        <value>war:/conf/dms/nodetypes-ecm.xml</value>
 	        <!--
+	        <value>war:/conf/workflow/nodetypes-ecm.xml</value>	        
 	        <value>war:/conf/dms/business-process-nodetypes.xml</value>
 	        -->
 	      </values-param>
