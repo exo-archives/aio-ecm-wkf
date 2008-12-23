@@ -7,7 +7,7 @@
 
   <modelVersion>4.0.0</modelVersion>
   <artifactId>exo.ecm.workflow.bp.bonita.content.backup</artifactId>
-  <version>${org.exoplatform.ecm..workflow.version}</version>
+  <version>${org.exoplatform.ecm.workflow.version}</version>
   <packaging>jar</packaging>
   <name>eXo content backup BP for Bonita</name>
   <url>http://www.exoplatform.org</url>

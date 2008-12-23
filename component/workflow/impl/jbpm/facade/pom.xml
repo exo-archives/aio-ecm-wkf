@@ -68,7 +68,7 @@
     <dependency>
       <groupId>org.exoplatform.ecm.workflow</groupId>
       <artifactId>exo.ecm.workflow.component.workflow.impl.jbpm.engine</artifactId>
-      <version>3.0</version>
+      <version>${org.exoplatform.ecm.workflow.version}</version>
     </dependency>
     
     <dependency>

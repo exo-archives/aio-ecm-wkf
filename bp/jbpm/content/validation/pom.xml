@@ -6,7 +6,7 @@
   </parent> 
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>exo.ecm.workflow.bp.jbpm.content.validation</artifactId>
+  <artifactId>exo.ecm.workflow.bp.jbpm.content.validation</artifactId>  
   <version>${org.exoplatform.ecm.workflow.version}</version>
   <packaging>jar</packaging>
   <name>eXo content validation BP for jBPM</name>
