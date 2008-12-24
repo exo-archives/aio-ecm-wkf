@@ -19,7 +19,9 @@
     <module>component/workflow/impl/jbpm/engine</module>
     <module>component/workflow/impl/jbpm/facade</module>
     <module>bp</module>
+    <module>web/eXoECMResources</module>
     <module>portlet/workflow</module>
+    <module>web/ecmportal</module>
   </modules>
 
   <build>
