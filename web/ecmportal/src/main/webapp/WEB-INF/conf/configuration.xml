@@ -9,7 +9,6 @@
   <import>war:/conf/organization/hibernate-configuration.xml</import>    
         
   <import>war:/conf/organization/jdbc-configuration.xml</import>
-  
        
   <import>war:/conf/common/resource-bundle-configuration.xml</import>        
   <import>war:/conf/common/security-configuration.xml</import>
