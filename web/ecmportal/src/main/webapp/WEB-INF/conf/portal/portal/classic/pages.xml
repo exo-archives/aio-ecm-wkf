@@ -15,7 +15,8 @@
       <show-info-bar>false</show-info-bar>      
     </application>
   </page>       
-    
+  
+  <!--  
   <page>
   	<page-id>portal::classic::welcome</page-id>
     <owner-type>portal</owner-type>
@@ -30,5 +31,6 @@
       <show-info-bar>false</show-info-bar>      
     </application>  
   </page>
+  -->
                 
 </page-set>
