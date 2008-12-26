@@ -29,13 +29,6 @@
     </dependency>
 
     <dependency>
-      <groupId>org.exoplatform.ecm.dms</groupId>
-      <artifactId>exo.ecm.dms.component.cms</artifactId>
-      <version>${org.exoplatform.ecm.dms.version}</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
       <groupId>org.exoplatform.ecm.workflow</groupId>
       <artifactId>exo.ecm.workflow.component.workflow.impl.jbpm.engine</artifactId>
       <version>3.0</version>
