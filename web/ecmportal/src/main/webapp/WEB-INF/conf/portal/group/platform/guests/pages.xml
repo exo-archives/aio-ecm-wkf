@@ -35,7 +35,7 @@
       <show-application-state>true</show-application-state>
       <show-application-mode>true</show-application-mode>
     </application>        
-        
+     <!--   
     <application>
       <instance-id>group#platform/guests:/ecm/ContentBrowserPortlet/webosNews</instance-id>
       <title>News</title>
@@ -59,7 +59,7 @@
       <show-application-state>true</show-application-state>
       <show-application-mode>true</show-application-mode>
     </application>
-    
+    -->
     <application>
       <instance-id>group#platform/guests:/web/SiteMapPortlet/SitemapPortlet/webosSiteMap</instance-id>    
       <title>Site Map</title>

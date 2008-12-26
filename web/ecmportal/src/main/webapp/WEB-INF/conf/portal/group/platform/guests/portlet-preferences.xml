@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <portlet-preferences-set>
 	<!-- Portlet preference for classic portal application instances -->
+	<!--
 	<portlet-preferences>
     <owner-type>group</owner-type>
     <owner-id>platform/guests</owner-id>
@@ -26,7 +27,8 @@
         <read-only>false</read-only>
       </preference>
    </portlet-preferences>
-   
+   -->
+   <!--
    <portlet-preferences>
    	<owner-type>group</owner-type>
     <owner-id>platform/guests</owner-id>
@@ -129,15 +131,14 @@
       <preference>      
         <name>usecase</name>
         <value>path</value>
-        <!--
         <value>Document</value>
         <value>Using a JCR query</value>
         <value>Using a script</value>
-         -->
         <read-only>false</read-only>
       </preference>            
     </portlet-preferences>
-    
+    -->
+    <!--
     <portlet-preferences>
    	<owner-type>group</owner-type>
     <owner-id>platform/guests</owner-id>
@@ -240,11 +241,9 @@
       <preference>      
         <name>usecase</name>
         <value>path</value>
-        <!--
         <value>Document</value>
         <value>Using a JCR query</value>
         <value>Using a script</value>
-         -->
         <read-only>false</read-only>
       </preference>            
     </portlet-preferences>
@@ -351,11 +350,9 @@
       <preference>      
         <name>usecase</name>
         <value>path</value>
-        <!--
         <value>Document</value>
         <value>Using a JCR query</value>
         <value>Using a script</value>
-         -->
         <read-only>false</read-only>
       </preference>            
     </portlet-preferences>
@@ -462,16 +459,14 @@
       <preference>      
         <name>usecase</name>
         <value>path</value>
-        <!--
         <value>Document</value>
         <value>Using a JCR query</value>
         <value>Using a script</value>
-         -->
         <read-only>false</read-only>
       </preference>            
     </portlet-preferences>
-    
-    <!-- Portlet preference for webos portal application instances -->       
+    -->
+    <!-- Portlet preference for webos portal application instances -->  
     <portlet-preferences>
     <owner-type>group</owner-type>
     <owner-id>platform/guests</owner-id>
