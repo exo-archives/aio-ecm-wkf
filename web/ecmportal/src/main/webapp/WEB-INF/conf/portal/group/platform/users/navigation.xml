@@ -38,14 +38,12 @@
 		  </node>		  		  	   
 	  </node>
 	  
-	  <!--
 	  <node>
 	    <uri>sitemap</uri>
 	    <name>sitemap</name>
 	    <label>#{platform.users.sitemap}</label>
 	    <page-reference>group::platform/users::sitemap</page-reference>	    
-		</node>
-		-->
+		</node>		
   </page-nodes>
   
 </node-navigation>
