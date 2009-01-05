@@ -76,6 +76,7 @@ public class MoveNodeActionHandler implements ActionHandler {
     	  actionableNode = (Node) session.getItem(nodePath);
     } 
     Node actionNode = actionServiceContainer.getAction(actionableNode, actionName);
+    if (actionNode == null) actionNode = (Node)session.getItem(nodePath);
     String destWorkspace = actionNode.getProperty("exo:destWorkspace").getString();
     String destPath = actionNode.getProperty("exo:destPath").getString();
     Node srcNode = (Node) session.getItem(nodePath);
@@ -95,8 +96,10 @@ public class MoveNodeActionHandler implements ActionHandler {
     if(!relPath.startsWith("/")) relPath = "/" + relPath;
     relPath = relPath.replaceAll("\\[\\d*\\]", "");
     String realDestPath = destPath + relPath;
-    if(destPath.equals("/")) realDestPath = relPath;   
-    cmsService.moveNode(nodePath, srcWorkspace, destWorkspace, realDestPath, repository);
+    if (destPath.equals("/")) realDestPath = relPath;   
+    if (!realDestPath.equals(nodePath)) {
+      cmsService.moveNode(nodePath, srcWorkspace, destWorkspace, realDestPath, repository);
+    }
     session.logout();
   }
 
