@@ -19,6 +19,5 @@
   
   <import>war:/conf/workflow/jcr-component-plugins-configuration.xml</import>
   <import>war:/conf/workflow/workflow-system-configuration.xml</import>
-  <import>war:/conf/workflow/jbpm-configuration.xml</import>  						
-	<import>war:/conf/workflow/organization-component-plugins-configuration.xml</import>		
+  <import>war:/conf/ecm/${workflow}-configuration.xml</import>
 </configuration>
