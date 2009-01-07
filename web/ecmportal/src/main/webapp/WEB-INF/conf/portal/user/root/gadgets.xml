@@ -2,4 +2,7 @@
 <gadgets>
 	<owner-type>user</owner-type>
 	<owner-id>root</owner-id>
+	
+	<container id="Sample">
+  </container>
 </gadgets>
