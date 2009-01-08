@@ -32,7 +32,7 @@ import java.util.ResourceBundle;
 import javax.jcr.Node;
 import javax.jcr.Session;
 
-import org.exoplatform.ecm.webui.popup.UIPopupContainer;
+import org.exoplatform.webui.core.UIPopupContainer;
 import org.exoplatform.ecm.webui.selector.UISelectable;
 import org.exoplatform.ecm.webui.utils.LockUtil;
 import org.exoplatform.ecm.webui.utils.Utils;
