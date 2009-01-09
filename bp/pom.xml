@@ -9,20 +9,15 @@
   <groupId>org.exoplatform.ecm.workflow.bp</groupId>
   <artifactId>config</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>ECM business processes configuration</name>
+  <name>Workflow business processes configuration</name>
   <packaging>pom</packaging>
 
   <modules>
-    <module>bonita/content/backup</module>
-    <module>bonita/content/validation</module>
     <module>bonita/holiday</module>
     <module>bonita/payraise</module>
 
-    <module>jbpm/content/backup</module>
-    <module>jbpm/content/validation</module>
     <module>jbpm/holiday</module>
     <module>jbpm/payraise</module>
-    <module>jbpm/content-publishing</module>
   </modules>
 
   <developers>
@@ -54,4 +49,17 @@
       </resource>
     </resources>
   </build>
+  
+  <profiles>
+    <profile>
+      <id>default</id>
+      <activation>
+        <property><name>default</name></property>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <org.exoplatform.ecm.workflow.version>1.0-SNAPSHOT</org.exoplatform.ecm.workflow.version>
+      </properties>
+    </profile>
+  </profiles>
 </project>
