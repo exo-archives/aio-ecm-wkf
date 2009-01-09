@@ -765,6 +765,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer,
 
     try {
       // Retrieve the already deployed Processes. No need to be logged in yet.
+      
       BnProjectLocalHome projectHome = BnProjectUtil.getLocalHome();
       Collection<BnProjectLocal> projects = projectHome.findAll();
 
@@ -889,17 +890,12 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer,
       
       // Delegate the call
       this.startProcess(remoteUser, processId, variables);
+      
+      // Free up the Thread Local
+      WorkflowServiceContainerImpl.InitialVariables.remove();
     }
     catch(Exception e) {
       e.printStackTrace();
-    }
-    finally {
-      try {
-        // Free up the Thread Local
-        WorkflowServiceContainerImpl.InitialVariables.remove();
-      } 
-      catch(Exception ignore) {
-      }
     }
   }
 

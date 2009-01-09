@@ -78,7 +78,9 @@ public class WorkflowServiceContainerImpl implements
   
   public WorkflowServiceContainerImpl(OrganizationService orgService,WorkflowFileDefinitionService fileDefinitionService,
       ConfigurationManager conf, InitParams params) throws Exception {
+    System.out.println("\n\n WorkflowServiceContainerImpl init here \n\n");
     hibernateServiceName_ = params.getValueParam("hibernate.service").getValue();
+    System.out.println("\n\n hibernateServiceName_ " + hibernateServiceName_);
     configs_ =  new ArrayList<ProcessesConfig>();
     this.configurationManager_ = conf;
     threadLocal_ = new ThreadLocal();

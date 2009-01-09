@@ -45,8 +45,6 @@
               <collection type="java.util.HashSet">
                 <value><string>/exo.ecm.workflow.bp.jbpm.payraise-1.0-SNAPSHOT.jar</string></value>
                 <value><string>/exo.ecm.workflow.bp.jbpm.holiday-1.0-SNAPSHOT.jar</string></value>                
-                <value><string>/exo.ecm.workflow.bp.jbpm.content.validation-1.0-SNAPSHOT.jar</string></value>     
-                <value><string>/exo.ecm.workflow.bp.jbpm.content.backup-1.0-SNAPSHOT.jar</string></value>
               </collection>
             </field>
           </object>
