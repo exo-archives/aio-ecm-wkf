@@ -1,12 +1,12 @@
 <project>
   <parent>
-    <groupId>org.exoplatform.workflow.bp</groupId>
+    <groupId>org.exoplatform.ecm.workflow.bp</groupId>
     <artifactId>config</artifactId>
-    <version>trunk</version>
+    <version>1.0-SNAPSHOT</version>
   </parent> 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>exo.workflow.bp.bonita.holiday</artifactId>
-  <version>${org.exoplatform.workflow.version}</version>
+  <artifactId>exo.ecm.workflow.bp.bonita.holiday</artifactId>
+  <version>${org.exoplatform.ecm.workflow.version}</version>
   <packaging>jar</packaging>
   <name>eXo holidays BP for Bonita</name>
   <url>http://www.exoplatform.org</url>
@@ -14,11 +14,12 @@
  
    <dependencies>
     <dependency>
-      <groupId>org.exoplatform.workflow</groupId>
-      <artifactId>exo.workflow.component.workflow.impl.bonita</artifactId>
-      <version>${org.exoplatform.workflow.version}</version>
+      <groupId>org.exoplatform.ecm.workflow</groupId>
+      <artifactId>exo.ecm.workflow.component.workflow.impl.bonita</artifactId>
+      <version>${org.exoplatform.ecm.workflow.version}</version>
       <scope>provided</scope>
     </dependency>
+	
     <dependency>
       <groupId>org.ow2.bonita</groupId>
       <artifactId>bonita-api</artifactId>
