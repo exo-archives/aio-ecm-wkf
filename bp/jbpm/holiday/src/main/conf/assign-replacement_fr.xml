@@ -7,15 +7,15 @@
   #variable title and label
   -->
   <initiator>
-    <title>Qui demande les cong\u00e9s</title>
+    <title>Qui demande les congés</title>
     <label>Initiateur :</label>
   </initiator>
   <start>
-    <title>D\u00e9but des cong\u00e9s :</title>
-    <label>D\u00e9but (jj/mm/aaaa) :</label>
+    <title>Début des congés :</title>
+    <label>Début (jj/mm/aaaa) :</label>
   </start>
   <end>
-    <title>Fin de cong\u00e9s :</title>
+    <title>Fin de congés :</title>
     <label>Fin (jj/mm/aaaa) :</label>
   </end>
 </bundle>

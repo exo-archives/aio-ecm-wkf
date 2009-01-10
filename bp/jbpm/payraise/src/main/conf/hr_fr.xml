@@ -7,12 +7,12 @@
   #variable title and label
   -->
   <initiator>
-    <title>l'employ\u00e9 qui demande une augmentation de salaire</title>
-    <label>Employ\u00e9 :</label>
+    <title>l'employé qui demande une augmentation de salaire</title>
+    <label>Employé :</label>
   </initiator>
   <amount-granted>
-    <title>le montant accord\u00e9</title>
-    <label>Montant \u00e0 ajouter :</label>
+    <title>le montant accordé</title>
+    <label>Montant à ajouter :</label>
   </amount-granted>
 </bundle>
 

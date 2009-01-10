@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bundle>
-  <task-name>Evaluer les cong\u00e9s</task-name>
-  <title>Evaluer les cong\u00e9s</title>
+  <task-name>Evaluer les congés</task-name>
+  <title>Evaluer les congés</title>
   <approve>
     <submit>Approuver</submit>
-    <value>Approuver les cong\u00e9s</value>
+    <value>Approuver les congés</value>
   </approve>
   <disapprove>
-    <submit>D\u00e9sapprouver</submit>
-    <value>D\u00e9sapprouver les cong\u00e9s</value>
+    <submit>Désapprouver</submit>
+    <value>Désapprouver les congés</value>
   </disapprove>
   <refuse>
     <submit>Refuser</submit>
-    <value>Refuser les cong\u00e9s</value>
+    <value>Refuser les congés</value>
   </refuse>
   <!--
   #variable title and label
   -->
   <initiator>
-    <title>Qui demande des cong\u00e9s</title>
+    <title>Qui demande des congés</title>
     <label>Initiateur :</label>
   </initiator>
   <start>
-    <title>D\u00e9but des cong\u00e9s :</title>
-    <label>D\u00e9but (jj/mm/aaaa) :</label>
+    <title>Début des congés :</title>
+    <label>Début (jj/mm/aaaa) :</label>
   </start>
   <end>
-    <title>Fin des cong\u00e9s :</title>
+    <title>Fin des congés :</title>
     <label>Fin (jj/mm/aaaa) :</label>
   </end>
 </bundle>

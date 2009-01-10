@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bundle>
-  <task-name>Accus\u00e9 de r\u00e9ception RH</task-name>
-  <title>Accus\u00e9 de r\u00e9ception RH</title>
+  <task-name>Accusé de réception RH</task-name>
+  <title>Accusé de réception RH</title>
   <submit>Lire</submit>
   <!--
   #variable title and label
   -->
   <initiator>
-    <title>Qui demande les cong\u00e9s</title>
+    <title>Qui demande les congés</title>
     <label>Initiateur :</label>
   </initiator>
   <start>
-    <title>D\u00e9but des cong\u00e9s :</title>
-    <label>D\u00e9but (jj/mm/aaaa) :</label>
+    <title>Début des congés :</title>
+    <label>Début (jj/mm/aaaa) :</label>
   </start>
   <end>
-    <title>Fin des cong\u00e9s :</title>
+    <title>Fin des congés :</title>
     <label>Fin (jj/mm/aaaa) :</label>
   </end>
 </bundle>
