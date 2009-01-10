@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle>
+  <task-name>Assigner un remplacement</task-name>
+  <title>Assigner un remplacement</title>
+  <submit>Assigner</submit>
+  <!--
+  #variable title and label
+  -->
+  <initiator>
+    <title>Qui demande les cong\u00e9s</title>
+    <label>Initiateur :</label>
+  </initiator>
+  <start>
+    <title>D\u00e9but des cong\u00e9s :</title>
+    <label>D\u00e9but (jj/mm/aaaa) :</label>
+  </start>
+  <end>
+    <title>Fin de cong\u00e9s :</title>
+    <label>Fin (jj/mm/aaaa) :</label>
+  </end>
+</bundle>
+

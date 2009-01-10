@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle>
+  <task-name>Modifier les cong\u00e9s</task-name>
+  <title>Modifier les cong\u00e9s</title>
+  <submit>
+    <submit>Modifier</submit>
+    <value>Modifier les cong\u00e9s</value>
+  </submit>
+  <cancel>
+    <submit>Refuser</submit>
+    <value>Refuser</value>
+  </cancel>
+  <!--
+  #variable title and label
+  -->
+  <start>
+    <title>D\u00e9but des cong\u00e9s :</title>
+    <label>D\u00e9but (jj/mm/aaaa) :</label>
+  </start>
+  <end>
+    <title>Fin des cong\u00e9s :</title>
+    <label>Fin (jj/mm/aaaa) :</label>
+  </end>
+</bundle>
+
