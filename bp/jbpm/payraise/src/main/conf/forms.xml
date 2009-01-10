@@ -2,7 +2,7 @@
 
   <form>
   	  <resource-bundle>start</resource-bundle>
-  	  <state-name>start</state-name>
+  	  <activity>start</activity>
     <variable name="amount-asked"
               mandatory="true"/>  	
     <variable name="priority" 
@@ -14,7 +14,7 @@
 
   <form>
   	  <resource-bundle>evaluation</resource-bundle>
-  	  <state-name>evaluation</state-name>
+  	  <activity>evaluation</activity>
     <variable name="initiator" 
               editable="false"/>
     <variable name="reason" 
@@ -35,7 +35,7 @@
 
   <form>
   	  <resource-bundle>hr</resource-bundle>
-  	  <state-name>hr update</state-name>
+  	  <activity>hr update</activity>
   	  <customized-view>hr.gtmpl</customized-view>
     <variable name="initiator" />
     <variable name="amount-granted"/>

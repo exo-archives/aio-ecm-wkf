@@ -56,7 +56,6 @@ public class WorkflowFormsServiceImpl implements WorkflowFormsService {
     Form formConfiguration = null;
     if (stateName == null)
       throw new NullPointerException("stateName is null in Form.getForm");
-
     Map stateNameToForms = (Map) allForms.get(new Long(definitionId));
     if (stateNameToForms == null) {
       addForms(definitionId, locale);
@@ -88,6 +87,7 @@ public class WorkflowFormsServiceImpl implements WorkflowFormsService {
         for (Iterator iter = list.iterator(); iter.hasNext();) {
           Element element = (Element) iter.next();
           Form formConfiguration = new FormImpl(fD, element, locale);
+          
           stateNameToForms.put(formConfiguration.getActivity(),
               formConfiguration);
         }
