@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle>
+  <task-name>Modification du salaire</task-name>
+  <title>Modifier le salaire</title>
+  <submit>Confirmation de la modification</submit>
+  <!--
+  #variable title and label
+  -->
+  <initiator>
+    <title>l'employ\u00e9 qui demande une augmentation de salaire</title>
+    <label>Employ\u00e9 :</label>
+  </initiator>
+  <amount-granted>
+    <title>le montant accord\u00e9</title>
+    <label>Montant \u00e0 ajouter :</label>
+  </amount-granted>
+</bundle>
+

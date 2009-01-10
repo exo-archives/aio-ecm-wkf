@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle>
+  <task-name>Demande d'augmentation</task-name>
+  <title>Demander une augmentation</title>
+  <submit>Valider</submit>
+  <!--
+  #variable title and label
+  -->
+  <reason>
+    <title>Raison justifiant l'augmentation</title>
+    <label>Raison :</label>
+  </reason>
+  <amount-asked>
+    <title>le montant de l'augmentation</title>
+    <label>Montant :</label>
+  </amount-asked>
+  <rewarded>
+    <title>l'initiateur a t'il \u00e9t\u00e9 augment\u00e9</title>
+    <label>Augment\u00e9 :</label>
+    <checkbox>Oui l'initiateur a \u00e9t\u00e9 augment\u00e9 !</checkbox>
+  </rewarded>
+  <priority>
+    <title>la priorit\u00e9 de la demande</title>
+    <label>Priorit\u00e9:</label>
+    <select-0>pas important</select-0>
+    <select-1>important</select-1>
+    <select-2>critique</select-2>
+  </priority>
+</bundle>
+
