@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle>
+  <!--
+  #############################################################################
+  #			org.exoplatform.workflow.webui.component.monitor											#
+  #############################################################################
+  -->
+  <UIWorkflowAdministrationPortlet>
+    <tab>
+      <label>Administration</label>
+      <text>Gestion du Workflow</text>
+    </tab>
+  </UIWorkflowAdministrationPortlet>
+  <UITabPane>
+    <title>
+      <UIMonitor>Contr\u00f4ler le Processus M\u00e9tier</UIMonitor>
+    </title>
+  </UITabPane>
+  <UIMonitor>
+    <header>
+      <id>Id Processus</id>
+      <name>Nom Processus</name>
+      <version>Version Processus</version>
+      <action>Action</action>
+    </header>
+    <msg>
+      <empty>Aucun processus m\u00e9tier \u00e0 contr\u00f4ler</empty>
+    </msg>
+  </UIMonitor>
+  <UIAdministrationManager>
+    <tab>
+      <label>
+        <UITimers>Temporisateurs</UITimers>
+        <UIMonitor>Contr\u00f4leur</UIMonitor>
+      </label>
+    </tab>
+    <msg>
+      <confirm-delete-process>Voulez-vous vraiment supprimer ce mod\u00e8le de pocessus m\u00e9tier ?</confirm-delete-process>
+    </msg>
+    <action>
+      <UploadProcess>Uploader processus</UploadProcess>
+      <title>
+        <View>Consulter</View>
+        <Delete>Supprimer</Delete>
+      </title>
+    </action>
+  </UIAdministrationManager>
+  <UITimers>
+    <header>
+      <id>Id</id>
+      <name>Nom</name>
+      <dueDate>\u00e9ch\u00e9ance</dueDate>
+    </header>
+    <msg>
+      <empty>Aucun temporisateur n'a \u00e9t\u00e9 s\u00e9lecionn\u00e9</empty>
+    </msg>
+  </UITimers>
+  <AdministrationPopup>
+    <title>
+      <UIProcessDetail>D\u00e9tails du processus</UIProcessDetail>
+    </title>
+  </AdministrationPopup>
+  <UploadProcessPopup>
+    <title>
+      <UIUploadProcess>Uploader le processus</UIUploadProcess>
+    </title>
+  </UploadProcessPopup>
+  <UIUploadProcess>
+    <label>
+      <name>Nom</name>
+      <upload>S\u00e9lectionner un fichier</upload>
+    </label>
+    <action>
+      <Save>#{word.save}</Save>
+      <Cancel>#{word.cancel}</Cancel>
+    </action>
+    <msg>
+      <fileName-error>Chemin de fichier introuvable</fileName-error>
+      <fileName-invalid>Il existe des caract\u00e8res interdits dans le nom de fichier. Veuillez saisir un autre nom ou uploader un autre fichier.</fileName-invalid>
+      <process-successful>L'upload s'est correctement d\u00e9roul\u00e9 !</process-successful>
+      <data-invalid>Une erreur est survenue avec vos donn\u00e9es: Impossible de trouver le fichier processdefinition.xml dans l'archive.</data-invalid>
+    </msg>
+  </UIUploadProcess>
+  <UIProcessDetailGrid>
+    <header>
+      <processInstanceId>Id de l'instance du processus</processInstanceId>
+      <processId>Id Processus</processId>
+      <processName>Nom Processus</processName>
+      <startDate>Date de d\u00e9but</startDate>
+      <endDate>Date de fin</endDate>
+      <action>Action</action>
+    </header>
+    <msg>
+      <empty>Aucun processus pour voir le d\u00e9tail</empty>
+    </msg>
+  </UIProcessDetailGrid>
+  <UIProcessDetail>
+    <msg>
+      <confirm-delete-process>Voulez-vous vraiment supprimer cet instance de processus m\u00e9tier ?</confirm-delete-process>
+    </msg>
+  </UIProcessDetail>
+  <UITasksGrid>
+    <header>
+      <id>Id</id>
+      <taskName>Nom de T\u00e2che</taskName>
+      <actorId>Id Acteur</actorId>
+      <end>Fin</end>
+    </header>
+  </UITasksGrid>
+</bundle>
+

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle>
+  <!--
+  #############################################################################
+  #			org.exoplatform.workflow.webui.component.monitor											#
+  #############################################################################
+  -->
+  <UIWorkflowAdministrationPortlet>
+    <tab>
+      <label>Administratie</label>
+      <text>Workflow Beheer</text>
+    </tab>
+  </UIWorkflowAdministrationPortlet>
+  <UITabPane>
+    <title>
+      <UIMonitor>Proces Monitor</UIMonitor>
+    </title>
+  </UITabPane>
+  <UIMonitor>
+    <header>
+      <id>Proces Id</id>
+      <name>Proces Naam</name>
+      <version>Proces Versie</version>
+      <action>Actie</action>
+    </header>
+    <msg>
+      <empty>Geen business proces t monitoren</empty>
+    </msg>
+  </UIMonitor>
+  <UIAdministrationManager>
+    <tab>
+      <label>
+        <UITimers>Timers</UITimers>
+        <UIMonitor>Monitor</UIMonitor>
+      </label>
+    </tab>
+    <msg>
+      <confirm-delete-process>Wilt u deze proces model verwijderen?</confirm-delete-process>
+    </msg>
+    <action>
+      <UploadProcess>Upload proces</UploadProcess>
+      <title>
+        <View>Consulteer</View>
+        <Delete>Verwijder</Delete>
+      </title>
+    </action>
+  </UIAdministrationManager>
+  <UITimers>
+    <header>
+      <id>Id</id>
+      <name>Naam</name>
+      <dueDate>Datum</dueDate>
+    </header>
+    <msg>
+      <empty>Geen timer gedefinieerd</empty>
+    </msg>
+  </UITimers>
+  <AdministrationPopup>
+    <title>
+      <UIProcessDetail>Proces Detail</UIProcessDetail>
+    </title>
+  </AdministrationPopup>
+  <UploadProcessPopup>
+    <title>
+      <UIUploadProcess>Upload proces</UIUploadProcess>
+    </title>
+  </UploadProcessPopup>
+  <UIUploadProcess>
+    <label>
+      <name>Naam</name>
+      <upload>Selecteer een bestand</upload>
+    </label>
+    <action>
+      <Save>#{word.save}</Save>
+      <Cancel>#{word.cancel}</Cancel>
+    </action>
+    <msg>
+      <fileName-error>Bestandpad niet gevonden</fileName-error>
+      <fileName-invalid>Ongeldige karakters in bestandsnaam. Gelieve bestandsnaam te geven of een andere bestand uploaden.</fileName-invalid>
+      <process-successful>Upload successvol!</process-successful>
+      <data-invalid>Dataproblemen. Kan processdefinition.xml in proces archief niet terugvinden.</data-invalid>
+    </msg>
+  </UIUploadProcess>
+  <UIProcessDetailGrid>
+    <header>
+      <processInstanceId>Proces Instantie Id</processInstanceId>
+      <processId>Proces Id</processId>
+      <processName>Proces Naam</processName>
+      <startDate>Start Datum</startDate>
+      <endDate>Eind Datum</endDate>
+      <action>Actie</action>
+    </header>
+    <msg>
+      <empty>Geen process om details te bezien</empty>
+    </msg>
+  </UIProcessDetailGrid>
+  <UIProcessDetail>
+    <msg>
+      <confirm-delete-process>Wilt u deze proces instantie verwijderen?</confirm-delete-process>
+    </msg>
+  </UIProcessDetail>
+  <UITasksGrid>
+    <header>
+      <id>Id</id>
+      <taskName>Taak Naam</taskName>
+      <actorId>Acteur Id</actorId>
+      <end>Eind</end>
+    </header>
+  </UITasksGrid>
+</bundle>
+

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle>
+  <!--
+  #############################################################################
+  #			org.exoplatform.workflow.webui.component.controller										#
+  #############################################################################
+  -->
+  <UIWorkflowControllerPortlet>
+    <tab>
+      <label>Contr\u00f4leur</label>
+      <text>Gestion du Workflow</text>
+    </tab>
+    <msg>
+      <refresh-session-success>La session a été rafraichie avec succès</refresh-session-success>
+    </msg>
+    <label>
+      <refesh>Rafraichir</refesh>
+    </label>
+  </UIWorkflowControllerPortlet>
+  <ControllerPopup>
+    <title>
+      <UITaskManager>Gestion des UITask</UITaskManager>
+    </title>
+  </ControllerPopup>
+  <UITabPane>
+    <title>
+      <UITaskList>Contr\u00f4leur des T\u00e2ches</UITaskList>
+      <UIBPDefinition>Definition du Processus M\u00e9tier</UIBPDefinition>
+      <UIDocumentContent>Visualiser le contenu</UIDocumentContent>
+      <UIDocumentForm>Editer le contenu</UIDocumentForm>
+      <UITask>T\u00e2che</UITask>
+    </title>
+  </UITabPane>
+  <UITaskList>
+    <header>
+      <id>ID T\u00e2che</id>
+      <processName>Nom Processus</processName>
+      <taskName>Nom T\u00e2che</taskName>
+      <actor>Acteur</actor>
+      <description>Description</description>
+      <actorId>Id Acteur</actorId>
+      <taskVariables>Variables de la T\u00e2che</taskVariables>
+      <processDateStart>Date de d\u00e9but du Processus</processDateStart>
+      <action>Action</action>
+    </header>
+    <label>
+      <managerState>G\u00e9rer</managerState>
+    </label>
+    <msg>
+      <task-not-found>La t\u00e2che ne peut pas \u00eatre g\u00e9r\u00e9e. La raison la plus probable est qu'un autre utilisateur a d\u00e9j\u00e0 g\u00e9r\u00e9 la t\u00e2che.</task-not-found>
+    </msg>
+  </UITaskList>
+  <UITaksList>
+    <msg>
+      <no-task>Aucune t\u00e2che assign\u00e9e</no-task>
+    </msg>
+  </UITaksList>
+  <UITask>
+    <label>
+      <hide-process-link>Cacher le lien vers le processus</hide-process-link>
+      <show-process-link>Montrer le lien vers le processus</show-process-link>
+    </label>
+    <msg>
+      <has-not-got-delegate>You must choose any user to deletgate</has-not-got-delegate>
+    </msg>
+    <title>
+      <Delegate>Select User</Delegate>
+    </title>
+  </UITask>
+  <UIBPDefinition>
+    <header>
+      <id>Id</id>
+      <name>Nom</name>
+      <version>Version</version>
+      <action>Action</action>
+    </header>
+    <msg>
+      <empty>Aucun Processus M\u00e9tier \u00e0 lancer</empty>
+    </msg>
+  </UIBPDefinition>
+  <UIControllerManager>
+    <action>
+      <title>
+        <ManageStart>Gestion du lancement</ManageStart>
+      </title>
+    </action>
+  </UIControllerManager>
+  <UIDocumentForm>
+    <msg>
+      <cannot-save>Certaines contraintes n'ont pas \u00e9t\u00e9 respect\u00e9es durant cette action.</cannot-save>
+      <in-versioning>Veuillez extraire le noeud courant avant d'ajouter un nouveau noeud</in-versioning>
+      <not-support>Impossible de charger le formulaire '{0}'.</not-support>
+      <value-invalid>'{0}' est une valeur requise</value-invalid>
+    </msg>
+  </UIDocumentForm>
+  <!--
+  #####################################################################
+  ## Need to be translated Since version ECM 2.3                      #
+  #####################################################################
+  -->
+  <PopupDelegatedSelectorId>
+    <title>
+      <UIUserSelectContainer>Select User</UIUserSelectContainer>
+    </title>
+  </PopupDelegatedSelectorId>
+</bundle>
+

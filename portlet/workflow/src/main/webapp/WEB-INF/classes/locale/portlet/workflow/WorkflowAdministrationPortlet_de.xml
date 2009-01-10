@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle>
+  <!--
+  #############################################################################
+  #			org.exoplatform.workflow.webui.component.monitor											#
+  #############################################################################
+  -->
+  <UIWorkflowAdministrationPortlet>
+    <tab>
+      <label>Administration</label>
+      <text>Admin Arbeitsfluss Management</text>
+    </tab>
+  </UIWorkflowAdministrationPortlet>
+  <UITabPane>
+    <title>
+      <UIMonitor>Prozess Monitor</UIMonitor>
+    </title>
+  </UITabPane>
+  <UIMonitor>
+    <header>
+      <id>Prozess Id</id>
+      <name>Prozessname</name>
+      <version>Prozessversion</version>
+      <action>Aktion</action>
+    </header>
+    <msg>
+      <empty>Kein Businessprozess zum anzeigen</empty>
+    </msg>
+  </UIMonitor>
+  <UIAdministrationManager>
+    <tab>
+      <label>
+        <UITimers>Timer</UITimers>
+        <UIMonitor>Monitor</UIMonitor>
+      </label>
+    </tab>
+    <msg>
+      <confirm-delete-process><![CDATA[Wollen Sie dieses Prozessmodell l&ouml;schen?]]></confirm-delete-process>
+    </msg>
+    <action>
+      <UploadProcess>Hochladeprozess</UploadProcess>
+      <title>
+        <View>Ansehen</View>
+        <Delete><![CDATA[L&ouml;schen]]></Delete>
+      </title>
+    </action>
+  </UIAdministrationManager>
+  <UITimers>
+    <header>
+      <id>Id</id>
+      <name>Name</name>
+      <dueDate>Bis-Datum</dueDate>
+    </header>
+    <msg>
+      <empty>Kein Timer wurde gesetzt</empty>
+    </msg>
+  </UITimers>
+  <AdministrationPopup>
+    <title>
+      <UIProcessDetail>Prozessdetails</UIProcessDetail>
+    </title>
+  </AdministrationPopup>
+  <UploadProcessPopup>
+    <title>
+      <UIUploadProcess>Hochladeprozess</UIUploadProcess>
+    </title>
+  </UploadProcessPopup>
+  <UIUploadProcess>
+    <label>
+      <name>Name</name>
+      <upload><![CDATA[Datei ausw&auml;hlen]]></upload>
+    </label>
+    <action>
+      <Save>#{word.save}</Save>
+      <Cancel>#{word.cancel}</Cancel>
+    </action>
+    <msg>
+      <fileName-error>Dateipfad nicht gefunden</fileName-error>
+      <fileName-invalid><![CDATA[Ung&uuml;ltige Karaktere in Namen der Datei. Tippen Sie den Namen der Datei oder laden Sie eine andere Datei hoch.]]></fileName-invalid>
+      <process-successful>Erfolgreich hochgeladen!</process-successful>
+      <data-invalid>Probleme mit Daten. processdefinition.xml kann innerhalb des Prozessarchives nicht gefunden werden.</data-invalid>
+    </msg>
+  </UIUploadProcess>
+  <UIProcessDetailGrid>
+    <header>
+      <processInstanceId>Prozess Instanz Id</processInstanceId>
+      <processId>Prozess Id</processId>
+      <processName>Prozessname</processName>
+      <startDate>Anfangsdatum</startDate>
+      <endDate>Enddatum</endDate>
+      <action>Aktion</action>
+    </header>
+    <msg>
+      <empty>Kein Prozess um Detail anzuschauen</empty>
+    </msg>
+  </UIProcessDetailGrid>
+  <UIProcessDetail>
+    <msg>
+      <confirm-delete-process><![CDATA[Wollen Sie diese Pozess Instanz l&ouml;schen?]]></confirm-delete-process>
+    </msg>
+  </UIProcessDetail>
+  <UITasksGrid>
+    <header>
+      <id>Id</id>
+      <taskName>Aufgabenname</taskName>
+      <actorId>Akteur Id</actorId>
+      <end>Ende</end>
+    </header>
+  </UITasksGrid>
+</bundle>
+
