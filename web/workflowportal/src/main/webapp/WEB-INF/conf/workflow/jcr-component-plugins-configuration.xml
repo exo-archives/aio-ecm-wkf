@@ -28,6 +28,7 @@
 	        <name>autoCreatedInNewRepository</name>
 	        <description>Node types configuration file</description>
 	        <value>war:/conf/workflow/business-process-nodetypes.xml</value>
+	        <value>war:/conf/workflow/workflow-nodetypes-configuration.xml</value>
 	      </values-param>
 	    </init-params>
 	  </component-plugin>
