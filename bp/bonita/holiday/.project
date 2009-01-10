@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>bp.holyday</name>
-	<comment></comment>
-	<projects>
-	</projects>
-	<buildSpec>
-		<buildCommand>
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
-	<natures>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-	</natures>
+  <name>exo.ecm.workflow.bp.bonita.holiday</name>
+  <comment>eXo holidays BP for Bonita</comment>
+  <projects>
+    <project>exo.ecm.workflow.component.workflow.impl.bonita</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+      <arguments/>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
 </projectDescription>
