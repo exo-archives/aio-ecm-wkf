@@ -18,5 +18,6 @@
   <import>war:/conf/portal/application-registry-configuration.xml</import>    
   
   <import>war:/conf/workflow/jcr-component-plugins-configuration.xml</import>
-  <import>war:/conf/workflow/${workflow}-configuration.xml</import>  						
+  <import>war:/conf/workflow/${workflow}-configuration.xml</import>
+  <import>war:/conf/workflow/workflow-system-configuration.xml</import>						
 </configuration>
