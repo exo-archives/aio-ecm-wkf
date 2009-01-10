@@ -7,7 +7,7 @@
   -->
   <UIWorkflowControllerPortlet>
     <tab>
-      <label>Contr\u00f4leur</label>
+      <label>Contrôleur</label>
       <text>Gestion du Workflow</text>
     </tab>
     <msg>
@@ -24,35 +24,35 @@
   </ControllerPopup>
   <UITabPane>
     <title>
-      <UITaskList>Contr\u00f4leur des T\u00e2ches</UITaskList>
-      <UIBPDefinition>Definition du Processus M\u00e9tier</UIBPDefinition>
+      <UITaskList>Contrôleur des Tâches</UITaskList>
+      <UIBPDefinition>Definition du Processus Métier</UIBPDefinition>
       <UIDocumentContent>Visualiser le contenu</UIDocumentContent>
       <UIDocumentForm>Editer le contenu</UIDocumentForm>
-      <UITask>T\u00e2che</UITask>
+      <UITask>Tâche</UITask>
     </title>
   </UITabPane>
   <UITaskList>
     <header>
-      <id>ID T\u00e2che</id>
+      <id>ID Tâche</id>
       <processName>Nom Processus</processName>
-      <taskName>Nom T\u00e2che</taskName>
+      <taskName>Nom Tâche</taskName>
       <actor>Acteur</actor>
       <description>Description</description>
       <actorId>Id Acteur</actorId>
-      <taskVariables>Variables de la T\u00e2che</taskVariables>
-      <processDateStart>Date de d\u00e9but du Processus</processDateStart>
+      <taskVariables>Variables de la Tâche</taskVariables>
+      <processDateStart>Date de début du Processus</processDateStart>
       <action>Action</action>
     </header>
     <label>
-      <managerState>G\u00e9rer</managerState>
+      <managerState>Gérer</managerState>
     </label>
     <msg>
-      <task-not-found>La t\u00e2che ne peut pas \u00eatre g\u00e9r\u00e9e. La raison la plus probable est qu'un autre utilisateur a d\u00e9j\u00e0 g\u00e9r\u00e9 la t\u00e2che.</task-not-found>
+      <task-not-found>La tâche ne peut pas être gérée. La raison la plus probable est qu'un autre utilisateur a déjà géré la tâche.</task-not-found>
     </msg>
   </UITaskList>
   <UITaksList>
     <msg>
-      <no-task>Aucune t\u00e2che assign\u00e9e</no-task>
+      <no-task>Aucune tâche assignée</no-task>
     </msg>
   </UITaksList>
   <UITask>
@@ -75,7 +75,7 @@
       <action>Action</action>
     </header>
     <msg>
-      <empty>Aucun Processus M\u00e9tier \u00e0 lancer</empty>
+      <empty>Aucun Processus Métier à lancer</empty>
     </msg>
   </UIBPDefinition>
   <UIControllerManager>
@@ -87,7 +87,7 @@
   </UIControllerManager>
   <UIDocumentForm>
     <msg>
-      <cannot-save>Certaines contraintes n'ont pas \u00e9t\u00e9 respect\u00e9es durant cette action.</cannot-save>
+      <cannot-save>Certaines contraintes n'ont pas été respectées durant cette action.</cannot-save>
       <in-versioning>Veuillez extraire le noeud courant avant d'ajouter un nouveau noeud</in-versioning>
       <not-support>Impossible de charger le formulaire '{0}'.</not-support>
       <value-invalid>'{0}' est une valeur requise</value-invalid>

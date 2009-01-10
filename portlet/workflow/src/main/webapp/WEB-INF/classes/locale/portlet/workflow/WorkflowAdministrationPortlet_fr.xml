@@ -13,7 +13,7 @@
   </UIWorkflowAdministrationPortlet>
   <UITabPane>
     <title>
-      <UIMonitor>Contr\u00f4ler le Processus M\u00e9tier</UIMonitor>
+      <UIMonitor>Contrôler le Processus Métier</UIMonitor>
     </title>
   </UITabPane>
   <UIMonitor>
@@ -24,18 +24,18 @@
       <action>Action</action>
     </header>
     <msg>
-      <empty>Aucun processus m\u00e9tier \u00e0 contr\u00f4ler</empty>
+      <empty>Aucun processus métier à contrôler</empty>
     </msg>
   </UIMonitor>
   <UIAdministrationManager>
     <tab>
       <label>
         <UITimers>Temporisateurs</UITimers>
-        <UIMonitor>Contr\u00f4leur</UIMonitor>
+        <UIMonitor>Contrôleur</UIMonitor>
       </label>
     </tab>
     <msg>
-      <confirm-delete-process>Voulez-vous vraiment supprimer ce mod\u00e8le de pocessus m\u00e9tier ?</confirm-delete-process>
+      <confirm-delete-process>Voulez-vous vraiment supprimer ce modèle de pocessus métier ?</confirm-delete-process>
     </msg>
     <action>
       <UploadProcess>Uploader processus</UploadProcess>
@@ -49,15 +49,15 @@
     <header>
       <id>Id</id>
       <name>Nom</name>
-      <dueDate>\u00e9ch\u00e9ance</dueDate>
+      <dueDate>échéance</dueDate>
     </header>
     <msg>
-      <empty>Aucun temporisateur n'a \u00e9t\u00e9 s\u00e9lecionn\u00e9</empty>
+      <empty>Aucun temporisateur n'a été sélecionné</empty>
     </msg>
   </UITimers>
   <AdministrationPopup>
     <title>
-      <UIProcessDetail>D\u00e9tails du processus</UIProcessDetail>
+      <UIProcessDetail>Détails du processus</UIProcessDetail>
     </title>
   </AdministrationPopup>
   <UploadProcessPopup>
@@ -68,7 +68,7 @@
   <UIUploadProcess>
     <label>
       <name>Nom</name>
-      <upload>S\u00e9lectionner un fichier</upload>
+      <upload>Sélectionner un fichier</upload>
     </label>
     <action>
       <Save>#{word.save}</Save>
@@ -76,9 +76,9 @@
     </action>
     <msg>
       <fileName-error>Chemin de fichier introuvable</fileName-error>
-      <fileName-invalid>Il existe des caract\u00e8res interdits dans le nom de fichier. Veuillez saisir un autre nom ou uploader un autre fichier.</fileName-invalid>
-      <process-successful>L'upload s'est correctement d\u00e9roul\u00e9 !</process-successful>
-      <data-invalid>Une erreur est survenue avec vos donn\u00e9es: Impossible de trouver le fichier processdefinition.xml dans l'archive.</data-invalid>
+      <fileName-invalid>Il existe des caractères interdits dans le nom de fichier. Veuillez saisir un autre nom ou uploader un autre fichier.</fileName-invalid>
+      <process-successful>L'upload s'est correctement déroulé !</process-successful>
+      <data-invalid>Une erreur est survenue avec vos données: Impossible de trouver le fichier processdefinition.xml dans l'archive.</data-invalid>
     </msg>
   </UIUploadProcess>
   <UIProcessDetailGrid>
@@ -86,23 +86,23 @@
       <processInstanceId>Id de l'instance du processus</processInstanceId>
       <processId>Id Processus</processId>
       <processName>Nom Processus</processName>
-      <startDate>Date de d\u00e9but</startDate>
+      <startDate>Date de début</startDate>
       <endDate>Date de fin</endDate>
       <action>Action</action>
     </header>
     <msg>
-      <empty>Aucun processus pour voir le d\u00e9tail</empty>
+      <empty>Aucun processus pour voir le détail</empty>
     </msg>
   </UIProcessDetailGrid>
   <UIProcessDetail>
     <msg>
-      <confirm-delete-process>Voulez-vous vraiment supprimer cet instance de processus m\u00e9tier ?</confirm-delete-process>
+      <confirm-delete-process>Voulez-vous vraiment supprimer cet instance de processus métier ?</confirm-delete-process>
     </msg>
   </UIProcessDetail>
   <UITasksGrid>
     <header>
       <id>Id</id>
-      <taskName>Nom de T\u00e2che</taskName>
+      <taskName>Nom de Tâche</taskName>
       <actorId>Id Acteur</actorId>
       <end>Fin</end>
     </header>
