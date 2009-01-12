@@ -21,7 +21,7 @@
     <module>bp</module>
     <module>web/eXoECMResources</module>
     <module>portlet/workflow</module>
-    <module>web/ecmportal</module>
+    <module>web/workflowportal</module>
   </modules>
 
   <build>
