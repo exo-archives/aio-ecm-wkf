@@ -87,7 +87,7 @@ public class FormImpl implements Form{
       log.debug("resource bundle not found");
     }
 
-    childElement = element.element("activity");
+    childElement = element.element("state-name");
     if(childElement != null)
       this.stateName = childElement.getText();
     
@@ -161,7 +161,7 @@ public class FormImpl implements Form{
     return submitButtons;
   }
 
-  public String getActivity() {
+  public String getStateName() {
     return stateName;
   }
 

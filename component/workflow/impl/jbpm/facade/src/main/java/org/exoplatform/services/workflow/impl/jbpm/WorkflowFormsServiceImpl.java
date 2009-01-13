@@ -42,12 +42,11 @@ public class WorkflowFormsServiceImpl implements WorkflowFormsService {
   /**
    * double nested map : definitionId's --> stateName's --> Form's
    */
-  private static Map allForms = new HashMap();
+  private static Map                   allForms = new HashMap();
 
   private WorkflowServiceContainerImpl container;
 
-  public WorkflowFormsServiceImpl(
-      WorkflowServiceContainer workflowServiceContainer) {
+  public WorkflowFormsServiceImpl(WorkflowServiceContainer workflowServiceContainer) {
     this.container = (WorkflowServiceContainerImpl) workflowServiceContainer;
   }
 
@@ -64,8 +63,8 @@ public class WorkflowFormsServiceImpl implements WorkflowFormsService {
 
     formConfiguration = (Form) stateNameToForms.get(stateName);
     if (stateNameToForms == null)
-      throw new IllegalArgumentException("no form was specified for state '"
-          + stateName + "' in definition '" + definitionId + "'");
+      throw new IllegalArgumentException("no form was specified for state '" + stateName
+          + "' in definition '" + definitionId + "'");
 
     return formConfiguration;
   }
@@ -74,22 +73,20 @@ public class WorkflowFormsServiceImpl implements WorkflowFormsService {
     if (!allForms.containsKey(new Long(definitionId))) {
       Map stateNameToForms = new HashMap();
       JbpmSession session = null;
-      try {        
+      try {
         session = container.openSession();
-        ProcessDefinition pD = session.getGraphSession().loadProcessDefinition(
-            definitionId);
+        ProcessDefinition pD = session.getGraphSession().loadProcessDefinition(definitionId);
         FileDefinition fD = pD.getFileDefinition();
         InputStream iS = fD.getInputStream("forms.xml");
         SAXReader reader = new SAXReader();
-        Document document = reader.read(iS);   
+        Document document = reader.read(iS);
         Element rootElement = document.getRootElement();
         List list = rootElement.elements("form");
         for (Iterator iter = list.iterator(); iter.hasNext();) {
           Element element = (Element) iter.next();
           Form formConfiguration = new FormImpl(fD, element, locale);
-          
-          stateNameToForms.put(formConfiguration.getActivity(),
-              formConfiguration);
+
+          stateNameToForms.put(formConfiguration.getStateName(), formConfiguration);
         }
         allForms.put(new Long(definitionId), stateNameToForms);
       } catch (DocumentException e) {

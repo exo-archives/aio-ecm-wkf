@@ -2,14 +2,14 @@
 
   <form>
     <resource-bundle>request</resource-bundle>
-    <activity>request</activity>
+    <state-name>request</state-name>
     <variable name="start" component="date"/>
     <variable name="end" component="date"/>
   </form>
 
   <form>
     	<resource-bundle>evaluation</resource-bundle>
-  	  <activity>evaluation</activity>
+  	  <state-name>evaluation</state-name>
     <variable name="initiator" />
     <variable name="start" component="date"/>
     <variable name="end" component="date"/>
@@ -20,7 +20,7 @@
 
   <form>
   	  <resource-bundle>change-request</resource-bundle>
-  	  <activity>change request</activity>
+  	  <state-name>change request</state-name>
     <variable name="start" component="date"/>
     <variable name="end" component="date"/>
     <submitbutton name="submit" transition-name="submit" />
@@ -37,7 +37,7 @@
 
   <form>
   	  <resource-bundle>assign-replacement</resource-bundle>
-    <activity>assign replacement</activity>
+    <state-name>assign replacement</state-name>
     <variable name="initiator" />
     <variable name="start" component="date" editable="false"/>
     <variable name="end" component="date" editable="false"/>

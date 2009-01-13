@@ -30,7 +30,8 @@ public interface Form {
 
   public List getSubmitButtons();
 
-  public String getActivity();
+  public String getStateName();
+  
 
   public ResourceBundle getResourceBundle();
   

@@ -166,7 +166,7 @@ public class AutomaticFormImpl implements Form {
   /* (non-Javadoc)
    * @see org.exoplatform.services.workflow.Form#getStateName()
    */
-  public String getActivity() {
+  public String getStateName() {
     return activity;
   }
 

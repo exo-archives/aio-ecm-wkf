@@ -2,7 +2,7 @@
 
   <form>
     <!-- The Start name is an empty String in the Bonita implementation -->
-    <activity></activity>
+    <state-name></state-name>
     <resource-bundle>start</resource-bundle>
     <variable name="amount-asked" mandatory="true"/>  	
     <variable name="priority" component="select" />
@@ -13,7 +13,7 @@
 
   <form>
     <resource-bundle>evaluation</resource-bundle>
-    <activity>evaluation</activity>
+    <state-name>evaluation</state-name>
     <variable name="initiator" editable="false"/>
     <variable name="reason" component="textarea" editable="false"/>    
     <variable name="priority" editable="false"/>
@@ -27,7 +27,7 @@
 
   <form>
     <resource-bundle>hr</resource-bundle>
-    <activity>hr</activity>
+    <state-name>hr</state-name>
     <customized-view>hr.gtmpl</customized-view>
     <variable name="initiator" />
     <variable name="amount-granted"/>

@@ -6,12 +6,12 @@
   </parent> 
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>exo.ecm.workflow.web.eXoECMResources</artifactId>
+  <artifactId>exo.ecm.workflow.web.eXoWorkflowResources</artifactId>
   <packaging>war</packaging> 
   <version>${org.exoplatform.ecm.workflow.version}</version>
-  <name>eXo ECM Resources</name>
+  <name>eXo Workflow Resources</name>
 
   <build>
-    <finalName>eXoECMResources</finalName>
+    <finalName>eXoWorkflowResources</finalName>
   </build>
 </project>

@@ -1,8 +1,8 @@
 <forms>
 
   <form>
-  	  <resource-bundle>start</resource-bundle>
-  	  <activity>start</activity>
+  	<resource-bundle>start</resource-bundle>
+  	<state-name>start</state-name>
     <variable name="amount-asked"
               mandatory="true"/>  	
     <variable name="priority" 
@@ -13,8 +13,8 @@
   </form>
 
   <form>
-  	  <resource-bundle>evaluation</resource-bundle>
-  	  <activity>evaluation</activity>
+  	<resource-bundle>evaluation</resource-bundle>
+  	<state-name>evaluation</state-name>
     <variable name="initiator" 
               editable="false"/>
     <variable name="reason" 
@@ -34,9 +34,9 @@
   </form>
 
   <form>
-  	  <resource-bundle>hr</resource-bundle>
-  	  <activity>hr update</activity>
-  	  <customized-view>hr.gtmpl</customized-view>
+  	<resource-bundle>hr</resource-bundle>
+  	<state-name>hr update</state-name>
+  	<customized-view>hr.gtmpl</customized-view>
     <variable name="initiator" />
     <variable name="amount-granted"/>
   </form>

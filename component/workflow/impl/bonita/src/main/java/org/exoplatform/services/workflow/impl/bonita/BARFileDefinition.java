@@ -154,7 +154,7 @@ public class BARFileDefinition implements FileDefinition {
    */
   public String getCustomizedView(String stateName) {
     XPath xPath             = XPathFactory.newInstance().newXPath();
-    final String expression = "/forms/form[activity=\"" +
+    final String expression = "/forms/form[state-name=\"" +
                               stateName +
                               "\"]/customized-view/text()";
 
@@ -194,7 +194,7 @@ public class BARFileDefinition implements FileDefinition {
    */
   public Element getForm(String stateName) {
     XPath xPath             = XPathFactory.newInstance().newXPath();
-    final String expression = "/forms/form[activity=\"" +
+    final String expression = "/forms/form[state-name=\"" +
                               stateName +
                               "\"]";
 
@@ -255,7 +255,7 @@ public class BARFileDefinition implements FileDefinition {
    */
   public String getResourceBundleName(String stateName) {
     XPath xPath             = XPathFactory.newInstance().newXPath();
-    final String expression = "/forms/form[activity=\"" +
+    final String expression = "/forms/form[state-name=\"" +
                               stateName +
                               "\"]/resource-bundle/text()";
 
@@ -279,7 +279,7 @@ public class BARFileDefinition implements FileDefinition {
   public List<Map<String, Object>> getVariables(String stateName) {
     List<Map<String, Object>>  ret = new ArrayList<Map<String, Object>>(); 
     XPath xPath                    = XPathFactory.newInstance().newXPath();
-    final String expression        = "/forms/form[activity=\"" +
+    final String expression        = "/forms/form[state-name=\"" +
                                      stateName +
                                      "\"]/variable";
 
@@ -353,7 +353,7 @@ public class BARFileDefinition implements FileDefinition {
    */
   public boolean isDelegatedView(String stateName) {
     XPath xPath             = XPathFactory.newInstance().newXPath();
-    final String expression = "/forms/form[activity=\"" +
+    final String expression = "/forms/form[state-name=\"" +
                               stateName +
                               "\"]/delegated-view/text()";
 

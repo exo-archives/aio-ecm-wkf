@@ -2,7 +2,7 @@
   <form>
     <!-- The Start name is an empty String in the Bonita implementation -->
     <resource-bundle>request</resource-bundle>
-    <activity></activity>
+    <state-name></state-name>
     <variable name="start" component="date"/>
     <variable name="end" component="date"/>
     <!-- No need to specify Submit buttons in the Bonita implementation -->
@@ -10,7 +10,7 @@
 
   <form>
     <resource-bundle>evaluation</resource-bundle>
-    <activity>evaluation</activity>
+    <state-name>evaluation</state-name>
     <variable name="initiator" editable="false"/>
     <variable name="start" component="date"/>
     <variable name="end" component="date"/>
@@ -21,7 +21,7 @@
 
  <form>
     <resource-bundle>change-request</resource-bundle>
-    <activity>change_request</activity>
+    <state-name>change_request</state-name>
     <variable name="start" component="date"/>
     <variable name="end" component="date"/>
     <submitbutton name="ModifyRequest" variable="changedecision" />
@@ -30,7 +30,7 @@
 
   <form>
     <resource-bundle>hr-acknoledgement</resource-bundle>
-    <activity>hr_acknowledgement</activity>
+    <state-name>hr_acknowledgement</state-name>
     <variable name="initiator" editable="false"/>
     <variable name="start" component="date" editable="false"/>
     <variable name="end" component="date" editable="false"/>
@@ -39,7 +39,7 @@
 
   <form>
     <resource-bundle>assign-replacement</resource-bundle>
-    <activity>assign_replacement</activity>
+    <state-name>assign_replacement</state-name>
     <variable name="initiator" editable="false"/>
     <variable name="start" component="date" editable="false"/>
     <variable name="end" component="date" editable="false"/>
