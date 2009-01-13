@@ -41,6 +41,13 @@
       <version>${org.exoplatform.ecm.workflow.version}</version>
       <scope>provided</scope>
     </dependency>
+    
+    <dependency>
+      <groupId>org.exoplatform.ecm.workflow</groupId>
+      <artifactId>exo.ecm.workflow.webui.workflow</artifactId>
+      <version>${org.exoplatform.ecm.workflow.version}</version>
+      <scope>provided</scope>
+    </dependency>
 
    <dependency>
       <groupId>org.exoplatform.ecm.dms</groupId>
@@ -55,8 +62,6 @@
       <version>${org.exoplatform.ecm.dms.version}</version>
       <scope>provided</scope>
     </dependency>
-    
-   
      
   </dependencies>
 
