@@ -20,7 +20,7 @@
     <module>component/workflow/impl/jbpm/facade</module>
     <module>bp</module>
     <module>web/eXoWorkflowResources</module>
-    <module>portlet/workflow</module
+    <module>portlet/workflow</module>
     <module>webui/workflow</module>   
     <module>web/workflowportal</module>
 	<module>server/tomcat/patch</module>
