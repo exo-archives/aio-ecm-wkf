@@ -10,7 +10,10 @@
       <file-explorer>Файловый менеджер</file-explorer>
       <content-browser>Content Browser</content-browser>
       <content-creator>Быстрое создание контента</content-creator>
-      <workflow-controller>Управление бизнесс процессами</workflow-controller>
+      <<businessprocess>
+        <title>Business Process</title>
+        <controller>Business Process Controller</controller>
+      </businessprocess>
       <sitemap>Карта сайта</sitemap>
     </users>
   </platform>

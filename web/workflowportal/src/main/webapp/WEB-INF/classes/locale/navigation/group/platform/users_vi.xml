@@ -7,7 +7,10 @@
       <file-explorer>Quản lý tài liệu</file-explorer>
       <content-browser>Quản lý nội dung</content-browser>
       <content-creator>Tạo nhanh nội dung</content-creator>
-      <workflow-controller>Trung tâm quá trình nghiệp vụ</workflow-controller>
+      <businessprocess>
+        <title>Business Process</title>
+        <controller>Business Process Controller</controller>
+      </businessprocess>
       <sitemap>Bản đồ site</sitemap>
     </users>
   </platform>

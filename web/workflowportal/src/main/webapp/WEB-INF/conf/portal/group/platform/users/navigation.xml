@@ -36,7 +36,18 @@
 		    <page-reference>group::platform/users::WorkflowController</page-reference>	    
 		  </node>		  		  	   
 	  </node-->
-	  
+	  <node>
+			<uri>businessprocess</uri>
+			<name>businessprocess</name>
+			<label>#{platform.users.businessprocess.title}</label>
+			<node>
+				<uri>businessprocess/controller</uri>
+				<name>controller</name>
+				<label>#{platform.users.businessprocess.controller}</label>
+				<page-reference>group::platform/users::WorkflowController</page-reference>
+			</node>    	
+    </node>
+    
 	  <node>
 	    <uri>sitemap</uri>
 	    <name>sitemap</name>

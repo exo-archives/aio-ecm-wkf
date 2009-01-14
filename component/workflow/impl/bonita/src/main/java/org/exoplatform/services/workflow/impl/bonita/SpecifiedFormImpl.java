@@ -229,7 +229,7 @@ public class SpecifiedFormImpl implements Form {
     if(! "".equals(activity)) {
       List<Map<String, Object>>  ret = new ArrayList<Map<String, Object>>(); 
       XPath xPath                    = XPathFactory.newInstance().newXPath();
-      final String expression        = "/forms/form[activity=\"" +
+      final String expression        = "/forms/form[state-name=\"" +
                                        activity +
                                        "\"]/submitbutton";
 

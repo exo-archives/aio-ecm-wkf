@@ -32,7 +32,7 @@
     
     <dependency>
       <groupId>org.exoplatform.ecm.dms</groupId>
-      <artifactId>exo.ecm.dms.webui.ecm</artifactId>
+      <artifactId>exo.ecm.dms.webui.dms</artifactId>
       <version>${org.exoplatform.ecm.dms.version}</version>
       <scope>compile</scope>
     </dependency>
