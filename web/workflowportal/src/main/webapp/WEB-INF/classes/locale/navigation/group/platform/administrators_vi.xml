@@ -10,7 +10,6 @@
     <contentAdministration>Quản trị nội dung</contentAdministration>
   </administration>
   <contentAdministration>
-    <ECMAdmin>Quản trị ECM</ECMAdmin>
     <WorkflowAdministration>Quản trị quá trình nghiệp vụ</WorkflowAdministration>
   </contentAdministration>
 </bundle>

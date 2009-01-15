@@ -10,7 +10,6 @@
     <contentAdministration>Администрирование контента</contentAdministration>
   </administration>
   <contentAdministration>
-    <ECMAdmin>Администрирование ECM</ECMAdmin>
     <WorkflowAdministration>Администрирование бизнесс процессов</WorkflowAdministration>
   </contentAdministration>
 </bundle>

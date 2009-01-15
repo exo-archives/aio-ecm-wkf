@@ -15,7 +15,6 @@
     <contentAdministration>Administration du Contenu</contentAdministration>
   </administration>
   <contentAdministration>
-    <ECMAdmin>Administration de l'ECM</ECMAdmin>
     <WorkflowAdministration>Administration des Processus Métiers</WorkflowAdministration>
   </contentAdministration>
 </bundle>

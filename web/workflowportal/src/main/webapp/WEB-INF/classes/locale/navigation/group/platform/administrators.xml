@@ -10,7 +10,6 @@
     <contentAdministration>Content Administration</contentAdministration>
   </administration>
   <contentAdministration>
-    <ECMAdmin>ECM Administration</ECMAdmin>
     <WorkflowAdministration>Business Process Administration</WorkflowAdministration>
   </contentAdministration>
 </bundle>
