@@ -31,7 +31,7 @@
 	      <page-reference>group::organization/management/executive-board::ECMAdmin</page-reference>
     	</node>    	    	    	    	    	  
     </node>
-       
+     <!--  
     <node>
       <uri>businessprocess</uri>
       <name>businessprocess</name>
@@ -51,6 +51,6 @@
 	      <page-reference>group::organization/management/executive-board::WorkflowController</page-reference>
     	</node>    	
     </node>
-            
+      -->      
   </page-nodes>    
 </node-navigation>

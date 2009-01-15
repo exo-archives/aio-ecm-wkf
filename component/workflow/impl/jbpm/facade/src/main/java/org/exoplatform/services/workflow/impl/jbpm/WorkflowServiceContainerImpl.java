@@ -57,7 +57,6 @@ import org.jbpm.db.JbpmSessionFactory;
 import org.jbpm.graph.def.ProcessDefinition;
 import org.jbpm.jpdl.par.ProcessArchiveDeployer;
 import org.jbpm.taskmgmt.exe.TaskInstance;
-
 /**
  * Created by the eXo platform team
  * User: Benjamin Mestrallet
