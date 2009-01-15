@@ -35,10 +35,10 @@ import org.exoplatform.webui.event.EventListener;
 @ComponentConfigs({
   @ComponentConfig(
       type = UIGrid.class, id = "UIControllerGrid",
-      template = "classpath:resources/templates/controller/UIECMGrid.gtmpl"
+      template = "app:/groovy/webui/component/UIECMGrid.gtmpl"
   ),
   @ComponentConfig(
-      template = "classpath:resources/templates/controller/UITabPane.gtmpl",
+      template = "app:/groovy/webui/component/UITabPane.gtmpl",
       events = {@EventConfig(listeners = UIControllerManager.ManageStartActionListener.class)}
   )
 })

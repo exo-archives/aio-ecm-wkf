@@ -25,7 +25,7 @@ import org.exoplatform.webui.event.EventListener;
  */
 @ComponentConfig(
     lifecycle = UIApplicationLifecycle.class,
-    template =  "classpath:resources/templates/controller/UIWorkflowPortlet.gtmpl",
+    template =  "app:/groovy/webui/component/UIWorkflowPortlet.gtmpl",
     events = {
       @EventConfig(listeners = UIWorkflowControllerPortlet.RefreshSessionActionListener.class)
     }

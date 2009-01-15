@@ -43,7 +43,7 @@ import org.exoplatform.webui.event.EventListener;
  * Jan 13, 2009  
  */
 @ComponentConfig(
-    template =  "classpath:resources/templates/controller/UITaskList.gtmpl",
+    template =  "app:/groovy/webui/component/UITaskList.gtmpl",
     events = {@EventConfig(listeners = UITaskList.ManageStateActionListener.class)}
 )
 public class UITaskList extends UIContainer {

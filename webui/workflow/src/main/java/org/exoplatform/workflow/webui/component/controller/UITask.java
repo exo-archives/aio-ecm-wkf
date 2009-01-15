@@ -20,7 +20,6 @@ import java.util.ResourceBundle;
 import javax.jcr.Node;
 import javax.jcr.Session;
 
-import org.exoplatform.ecm.webui.utils.LockUtil;
 import org.exoplatform.portal.webui.util.SessionProviderFactory;
 import org.exoplatform.portal.webui.util.Util;
 import org.exoplatform.portal.webui.workspace.UIPortalApplication;
@@ -61,6 +60,7 @@ import org.exoplatform.workflow.webui.component.BJARResourceResolver;
 import org.exoplatform.workflow.webui.component.InputInfo;
 import org.exoplatform.workflow.webui.component.UISelectable;
 import org.exoplatform.workflow.webui.component.VariableMaps;
+import org.exoplatform.workflow.webui.utils.LockUtil;
 import org.exoplatform.workflow.webui.utils.Utils;
 /**
  * Created by The eXo Platform SARL
@@ -93,7 +93,6 @@ public class UITask extends UIForm implements UISelectable {
   private static final String UPLOAD = "upload";
   private static final String CHECK_BOX = "checkbox";
   private static final String RADIO_BOX = "radiobox";
-//  private static final String NODE_TYPE = "nodetype";
   private static final String NODE_VIEW = "nodeview";
   private static final String NODE_EDIT = "nodeedit";
   private static final String LABEL_ENCODING = ".label";
@@ -196,24 +195,24 @@ public class UITask extends UIForm implements UISelectable {
       Object value = variablesForService.get(name);
       
       if (NODE_EDIT.equals(component)) {
-        UIDocumentForm uiDocForm = createUIComponent(UIDocumentForm.class, null, null) ;
-        String nodePath = (String) variablesForService.get(NODE_PATH_VARIABLE);          
-        Node dialogNode = (Node) sessionProvider.getSession(workspaceName,mRepository).getItem(nodePath);
-        String nodetype = dialogNode.getPrimaryNodeType().getName();
-        uiDocForm.setNodePath(nodePath);
-        uiDocForm.setTemplateNode(nodetype) ;
-        uiDocForm.setRepositoryName(repository) ;
-        Task task = serviceContainer.getTask(identification_);
-        form = formsService.getForm(task.getProcessId(), task.getTaskName(), locale);
-        uiTaskManager.addChild(uiDocForm) ;
-        uiDocForm.setRendered(false) ;
+//        UIDocumentForm uiDocForm = createUIComponent(UIDocumentForm.class, null, null) ;
+//        String nodePath = (String) variablesForService.get(NODE_PATH_VARIABLE);          
+//        Node dialogNode = (Node) sessionProvider.getSession(workspaceName,mRepository).getItem(nodePath);
+//        String nodetype = dialogNode.getPrimaryNodeType().getName();
+//        uiDocForm.setNodePath(nodePath);
+//        uiDocForm.setTemplateNode(nodetype) ;
+//        uiDocForm.setRepositoryName(repository) ;
+//        Task task = serviceContainer.getTask(identification_);
+//        form = formsService.getForm(task.getProcessId(), task.getTaskName(), locale);
+//        uiTaskManager.addChild(uiDocForm) ;
+//        uiDocForm.setRendered(false) ;
       } else if (NODE_VIEW.equals(component)) {
         String nodePath = (String) variablesForService.get(NODE_PATH_VARIABLE);
         Node viewNode = (Node) sessionProvider.getSession(workspaceName,mRepository).getItem(nodePath);
-        UIDocumentContent uiDocContent = createUIComponent(UIDocumentContent.class, null, null) ;
-        uiDocContent.setNode(viewNode);
-        uiTaskManager.addChild(uiDocContent) ;
-        uiDocContent.setRendered(false) ;
+//        UIDocumentContent uiDocContent = createUIComponent(UIDocumentContent.class, null, null) ;
+//        uiDocContent.setNode(viewNode);
+//        uiTaskManager.addChild(uiDocContent) ;
+//        uiDocContent.setRendered(false) ;
       } else {
         if (component == null || TEXT.equals(component)) {
           input = new UIFormStringInput(name, (String) value);
@@ -354,8 +353,8 @@ public class UITask extends UIForm implements UISelectable {
 
   public void clean() { 
     UITaskManager uiTaskManager = getParent() ;
-    uiTaskManager.removeChild(UIDocumentContent.class) ;
-    uiTaskManager.removeChild(UIDocumentForm.class) ;
+//    uiTaskManager.removeChild(UIDocumentContent.class) ;
+//    uiTaskManager.removeChild(UIDocumentForm.class) ;
     inputInfo_.clear(); 
   }
 
