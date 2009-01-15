@@ -106,5 +106,24 @@
       <end>Kết thúc</end>
     </header>
   </UITasksGrid>
+  
+  <!--
+  #############################################################################
+  #			Since 2.3.x tobe translate											#
+  #############################################################################
+  -->
+  <UIProcessDetail>
+    <tab>
+      <label>
+        <UICompletedProcessGrid>Đã hoàn thành</UICompletedProcessGrid>
+        <UIRunningProcessGrid>Đang thực hiện</UIRunningProcessGrid>
+      </label>
+    </tab>    
+  </UIProcessDetail>
+  <TaskListOfProcessPopup>
+    <title>
+      <UITaskListOfProcess>Danh sách nhiệm vụ</UITaskListOfProcess>
+    </title>
+  </TaskListOfProcessPopup>
 </bundle>
 

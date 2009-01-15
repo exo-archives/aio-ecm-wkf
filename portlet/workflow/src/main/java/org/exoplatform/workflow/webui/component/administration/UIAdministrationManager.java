@@ -88,7 +88,7 @@ public class UIAdministrationManager extends UIContainer {
       UIWorkflowAdministrationPortlet uiAdministrationPortlet = event.getSource().getParent() ;
       String id = event.getRequestContext().getRequestParameter(OBJECTID) ;
       UIPopupWindow popup = uiAdministrationPortlet.getChild(UIPopupWindow.class);
-      ((UIProcessDetail)popup.getUIComponent()).updateProcessGrid(id) ;
+      ((UIProcessDetail)popup.getUIComponent()).updateProcessGrid(id);
       popup.setShow(true) ;
       popup.setWindowSize(700, 0) ;
     }

@@ -107,5 +107,24 @@
       <end>Ende</end>
     </header>
   </UITasksGrid>
+  
+  <!--
+  #############################################################################
+  #			Since 2.3.x tobe translate											#
+  #############################################################################
+  -->
+  <UIProcessDetail>
+    <tab>
+      <label>
+        <UICompletedProcessGrid>Completed</UICompletedProcessGrid>
+        <UIRunningProcessGrid>Processing</UIRunningProcessGrid>
+      </label>
+    </tab>    
+  </UIProcessDetail>
+  <TaskListOfProcessPopup>
+    <title>
+      <UITaskListOfProcess>List tasks of Instance</UITaskListOfProcess>
+    </title>
+  </TaskListOfProcessPopup>
 </bundle>
 
