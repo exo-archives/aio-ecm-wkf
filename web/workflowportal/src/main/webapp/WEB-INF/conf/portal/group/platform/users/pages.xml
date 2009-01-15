@@ -22,35 +22,6 @@
 	    <title>Calendar Widget</title>
 	  </application>
 	  
-	  <application>
-      <instance-id>group#platform/users:/web/BrowserPortlet/webosWebExplorer</instance-id>    
-      <title>Web Explorer</title>
-    </application>        
-    	  	  	  	
-    <application>
-      <instance-id>group#platform/users:/ecm/FileExplorerPortlet/fileexplorer</instance-id>
-      <title>File Explorer</title>
-      <show-info-bar>true</show-info-bar>
-      <show-application-state>true</show-application-state>
-      <show-application-mode>true</show-application-mode>
-    </application>
-    
-    <application>
-      <instance-id>group#platform/users:/ecm/FastContentCreatorPortlet/fastcontentcreator</instance-id>
-      <title>Fast Content Creator</title>
-      <show-info-bar>true</show-info-bar>
-      <show-application-state>true</show-application-state>
-      <show-application-mode>true</show-application-mode>
-    </application>
-    
-    <application>
-      <instance-id>group#platform/users:/ecm/ContentBrowserPortlet/contentbrowser</instance-id>
-      <title>Content Browser</title>
-      <show-info-bar>true</show-info-bar>
-      <show-application-state>true</show-application-state>
-      <show-application-mode>true</show-application-mode>
-    </application>
-    
     <application>
       <instance-id>group#platform/users:/workflow/WorkflowControllerPortlet/workflowcontroller</instance-id>    
       <title>Business Process</title>
@@ -98,54 +69,6 @@
       <show-info-bar>false</show-info-bar>      
     </application>
                                 
-  </page>
-  
-  <page>
-  	<page-id>group::platform/users::FileExplorer</page-id>
-  	<owner-type>group</owner-type>
-    <owner-id>platform/users</owner-id>
-    <name>FileExplorer</name>
-    <access-permissions>*:/platform/users</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
-    
-    <application>
-      <instance-id>group#platform/users:/ecm/FileExplorerPortlet/fileexplorer</instance-id>
-      <title>File Explorer</title>
-      <show-info-bar>true</show-info-bar>
-      <show-application-mode>true</show-application-mode>      
-    </application>  
-  </page>
-  
-  <page>
-  	<page-id>group::platform/users::FastContentCreator</page-id>
-  	<owner-type>group</owner-type>
-    <owner-id>platform/users</owner-id>
-    <name>FastContentCreator</name>
-    <access-permissions>*:/platform/users</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
-    
-    <application>
-      <instance-id>group#platform/users:/ecm/FastContentCreatorPortlet/fastcontentcreator</instance-id>
-      <title>Fast Content Creator</title>
-      <show-info-bar>true</show-info-bar>
-      <show-application-mode>true</show-application-mode>      
-    </application>  
-  </page>
-  
-  <page>
-  	<page-id>group::platform/users::ContentBrowser</page-id>
-  	<owner-type>group</owner-type>
-    <owner-id>platform/users</owner-id>
-    <name>ContentBrowser</name>
-    <access-permissions>*:/platform/users</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
-    
-    <application>
-      <instance-id>group#platform/users:/ecm/ContentBrowserPortlet/contentbrowser</instance-id>
-      <title>Content Browser</title>
-      <show-info-bar>true</show-info-bar>
-      <show-application-mode>true</show-application-mode>      
-    </application>  
   </page>
   
   <page>
