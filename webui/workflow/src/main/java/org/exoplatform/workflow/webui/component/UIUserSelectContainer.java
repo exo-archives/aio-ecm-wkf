@@ -12,8 +12,8 @@ import org.exoplatform.webui.core.lifecycle.UIContainerLifecycle;
 import org.exoplatform.webui.event.Event;
 import org.exoplatform.webui.event.EventListener;
 import org.exoplatform.webui.organization.account.UIUserSelector;
-//import org.exoplatform.workflow.webui.component.controller.UITask;
-//import org.exoplatform.workflow.webui.component.controller.UITaskManager;
+import org.exoplatform.workflow.webui.component.controller.UITask;
+import org.exoplatform.workflow.webui.component.controller.UITaskManager;
 
 /**
  * Created by The eXo Platform SARL
@@ -46,14 +46,14 @@ public class UIUserSelectContainer extends UIContainer{
     public void execute(Event<UIUserSelectContainer> event) throws Exception {
       UIUserSelectContainer uiUserContainer = event.getSource();
       UIUserSelector uiUserSelector = uiUserContainer.getChild(UIUserSelector.class);
-//      UITaskManager uiTaskManager = uiUserContainer.getAncestorOfType(UITaskManager.class);
-//      UITask uiTask = uiTaskManager.getChild(UITask.class);
-//      uiTask.doSelect(uiUserContainer.getFieldname(), uiUserSelector.getSelectedUsers());
-//      UIPopupWindow uiPopup = uiUserContainer.getParent();
-//      uiPopup.setShow(false);
-//      uiPopup.setRendered(false);
-//      event.getRequestContext().addUIComponentToUpdateByAjax(uiPopup);
-//      event.getRequestContext().addUIComponentToUpdateByAjax(uiTask);
+      UITaskManager uiTaskManager = uiUserContainer.getAncestorOfType(UITaskManager.class);
+      UITask uiTask = uiTaskManager.getChild(UITask.class);
+      uiTask.doSelect(uiUserContainer.getFieldname(), uiUserSelector.getSelectedUsers());
+      UIPopupWindow uiPopup = uiUserContainer.getParent();
+      uiPopup.setShow(false);
+      uiPopup.setRendered(false);
+      event.getRequestContext().addUIComponentToUpdateByAjax(uiPopup);
+      event.getRequestContext().addUIComponentToUpdateByAjax(uiTask);
     }  
   }
 
