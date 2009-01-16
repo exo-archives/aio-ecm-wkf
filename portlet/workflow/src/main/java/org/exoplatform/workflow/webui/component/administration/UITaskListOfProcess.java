@@ -38,7 +38,7 @@ import org.exoplatform.webui.core.UIGrid;
  */
 @ComponentConfigs({
   @ComponentConfig(
-    type = UIGrid.class, id = "UIProcessDetail",
+    type = UIGrid.class, id = "UITaskListOfProcess",
     template = "app:/groovy/webui/component/UIECMGrid.gtmpl"
   ),
   @ComponentConfig(    
@@ -51,7 +51,7 @@ public class UITaskListOfProcess extends UIContainer {
   private static String[] ACTIONS = {};
   
   public UITaskListOfProcess() throws Exception {    
-    UIGrid uiTasksGrid = addChild(UIGrid.class, "UIProcessDetail", "UITasksGrid");    
+    UIGrid uiTasksGrid = addChild(UIGrid.class, "UITaskListOfProcess", "UITasksGrid");    
     uiTasksGrid.setLabel("Tasks");
     uiTasksGrid.getUIPageIterator().setId("UITasksGrid") ;
     uiTasksGrid.configure("id", TASK_BEAN_FIELD, null) ;
