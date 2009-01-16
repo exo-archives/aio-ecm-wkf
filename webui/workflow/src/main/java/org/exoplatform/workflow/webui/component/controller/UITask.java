@@ -4,6 +4,7 @@
  **************************************************************************/
 package org.exoplatform.workflow.webui.component.controller;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
@@ -108,33 +109,37 @@ public class UITask extends UIForm implements UISelectable {
   private WorkflowFormsService formsService;
   private RepositoryService jcrService;
   private List<InputInfo> inputInfo_;
-
+  
+  private static final String METHOD_SET_NODEPATH = "setNodePath";
+  private static final String METHOD_SET_TEMPLATENODE = "setTemplateNode";
+  private static final String METHOD_SET_REPO = "setRepositoryName";
+  private static final String METHOD_SET_NODE = "setNode";
   
   public UITask() {
-    serviceContainer = getApplicationComponent(WorkflowServiceContainer.class) ;
-    formsService = getApplicationComponent(WorkflowFormsService.class) ;
-    jcrService = getApplicationComponent(RepositoryService.class) ;
+    serviceContainer = getApplicationComponent(WorkflowServiceContainer.class);
+    formsService = getApplicationComponent(WorkflowFormsService.class);
+    jcrService = getApplicationComponent(RepositoryService.class);
     inputInfo_ = new ArrayList<InputInfo>();
   }
   
   public String getTemplate() {
     if(isCustomizedView()) {
-      return getIdentification() + ":" + getCustomizedView() ;
+      return getIdentification() + ":" + getCustomizedView();
     }
-    return getComponentConfig().getTemplate() ;
+    return getComponentConfig().getTemplate();
   }
   
   @SuppressWarnings("unused")
   public ResourceResolver getTemplateResourceResolver(WebuiRequestContext context, String template) {
-    if(isCustomizedView()) return new BJARResourceResolver(serviceContainer) ;
-    return super.getTemplateResourceResolver(context, getComponentConfig().getTemplate()) ;
+    if(isCustomizedView()) return new BJARResourceResolver(serviceContainer);
+    return super.getTemplateResourceResolver(context, getComponentConfig().getTemplate());
   }
   
-  public String getManageTransition() { return MANAGE_TRANSITION ; }
+  public String getManageTransition() { return MANAGE_TRANSITION; }
 
   public String getStateImageURL() {
     try {
-      Locale locale = Util.getUIPortal().getAncestorOfType(UIPortalApplication.class).getLocale() ;
+      Locale locale = Util.getUIPortal().getAncestorOfType(UIPortalApplication.class).getLocale();
       if (isStart()) {
         Process process = serviceContainer.getProcess(identification_);
         form = formsService.getForm(identification_, process.getStartStateName(), locale);
@@ -150,9 +155,9 @@ public class UITask extends UIForm implements UISelectable {
 
   @SuppressWarnings("unchecked")
   public void updateUITree() throws Exception {
-    clean() ;
-    UITaskManager uiTaskManager = getParent() ;
-    Locale locale = Util.getUIPortal().getAncestorOfType(UIPortalApplication.class).getLocale() ;
+    clean();
+    UITaskManager uiTaskManager = getParent();
+    Locale locale = Util.getUIPortal().getAncestorOfType(UIPortalApplication.class).getLocale();
     Map variablesForService = new HashMap();
     if (isStart_) {
       Process process = serviceContainer.getProcess(identification_);
@@ -166,10 +171,10 @@ public class UITask extends UIForm implements UISelectable {
     String workspaceName = (String) variablesForService.get(WORKSPACE_VARIABLE);
     String repository = (String) variablesForService.get(REPOSITORY_VARIABLE);
     if(repository == null) {
-      repository = jcrService.getDefaultRepository().getConfiguration().getName() ;
+      repository = jcrService.getDefaultRepository().getConfiguration().getName();
     }
-    ManageableRepository mRepository = jcrService.getRepository(repository) ;
-    SessionProvider sessionProvider = SessionProviderFactory.createSessionProvider() ;
+    ManageableRepository mRepository = jcrService.getRepository(repository);
+    SessionProvider sessionProvider = SessionProviderFactory.createSessionProvider();
     List variables = form.getVariables();
     UIFormInput input = null;
     int i = 0;
@@ -178,7 +183,7 @@ public class UITask extends UIForm implements UISelectable {
       String name = (String) attributes.get("name");
       String component = (String) attributes.get("component");
       String editableString = (String) attributes.get("editable");
-      boolean editable = true ;
+      boolean editable = true;
       if (editableString != null && !"".equals(editableString)) {
         editable = new Boolean(editableString).booleanValue();
       }
@@ -195,24 +200,47 @@ public class UITask extends UIForm implements UISelectable {
       Object value = variablesForService.get(name);
       
       if (NODE_EDIT.equals(component)) {
-//        UIDocumentForm uiDocForm = createUIComponent(UIDocumentForm.class, null, null) ;
-//        String nodePath = (String) variablesForService.get(NODE_PATH_VARIABLE);          
-//        Node dialogNode = (Node) sessionProvider.getSession(workspaceName,mRepository).getItem(nodePath);
-//        String nodetype = dialogNode.getPrimaryNodeType().getName();
-//        uiDocForm.setNodePath(nodePath);
-//        uiDocForm.setTemplateNode(nodetype) ;
-//        uiDocForm.setRepositoryName(repository) ;
-//        Task task = serviceContainer.getTask(identification_);
-//        form = formsService.getForm(task.getProcessId(), task.getTaskName(), locale);
-//        uiTaskManager.addChild(uiDocForm) ;
-//        uiDocForm.setRendered(false) ;
+        String nodePath = (String)variablesForService.get(NODE_PATH_VARIABLE);          
+        Node dialogNode = (Node)sessionProvider.getSession(workspaceName,mRepository).getItem(nodePath);
+        String nodetype = dialogNode.getPrimaryNodeType().getName();
+        
+        try {
+          Class clazz = Class.forName("org.exoplatform.webui.UIDocumentForm");
+          UIComponent uiComponent = createUIComponent(clazz, null, null);
+          Method[] methods = clazz.getDeclaredMethods();
+          for (Method m : methods) {
+            if (m.getName().trim().equals(METHOD_SET_NODEPATH)) {
+              m.invoke(uiComponent, nodePath);
+            } else if (m.getName().trim().equals(METHOD_SET_TEMPLATENODE)) {
+              m.invoke(uiComponent, nodetype);
+            } else if (m.getName().trim().equals(METHOD_SET_REPO)) {
+              m.invoke(uiComponent, repository);
+            }
+          }
+          
+          Task task = serviceContainer.getTask(identification_);
+          form = formsService.getForm(task.getProcessId(), task.getTaskName(), locale);
+          uiTaskManager.addChild(uiComponent);
+          uiComponent.setRendered(false);
+        } catch (ClassNotFoundException e) {
+        }
+        
       } else if (NODE_VIEW.equals(component)) {
         String nodePath = (String) variablesForService.get(NODE_PATH_VARIABLE);
-        Node viewNode = (Node) sessionProvider.getSession(workspaceName,mRepository).getItem(nodePath);
-//        UIDocumentContent uiDocContent = createUIComponent(UIDocumentContent.class, null, null) ;
-//        uiDocContent.setNode(viewNode);
-//        uiTaskManager.addChild(uiDocContent) ;
-//        uiDocContent.setRendered(false) ;
+        Node viewNode = (Node) sessionProvider.getSession(workspaceName, mRepository).getItem(nodePath);
+        try {
+          Class clazz = Class.forName("org.exoplatform.webui.UIDocumentContent");
+          UIComponent uiComponent = createUIComponent(clazz, null, null);
+          Method[] methods = clazz.getDeclaredMethods();
+          for (Method m : methods) {
+            if (m.getName().trim().equals(METHOD_SET_NODE)) {
+              m.invoke(uiComponent, viewNode);
+            }
+          }
+          uiTaskManager.addChild(uiComponent);
+          uiComponent.setRendered(false);
+        } catch (ClassNotFoundException e) {
+        }
       } else {
         if (component == null || TEXT.equals(component)) {
           input = new UIFormStringInput(name, (String) value);
@@ -233,7 +261,7 @@ public class UITask extends UIForm implements UISelectable {
           input.addValidator(DateTimeValidator.class);
         } else if (SELECT.equals(component)) {
           String baseKey = name + ".select-";
-          List<SelectItemOption<String>> options = new ArrayList<SelectItemOption<String>>() ;
+          List<SelectItemOption<String>> options = new ArrayList<SelectItemOption<String>>();
           int j = 0;
           String select0 = (String) variablesForService.get(baseKey + j);
           if (select0 == null) {
@@ -265,7 +293,7 @@ public class UITask extends UIForm implements UISelectable {
           input = new UIFormUploadInput(name, name);
         } else if (RADIO_BOX.equals(component)) {
           String baseKey = name + ".radiobox-";
-          List<SelectItemOption<String>> options = new ArrayList<SelectItemOption<String>>() ;
+          List<SelectItemOption<String>> options = new ArrayList<SelectItemOption<String>>();
           int j = 0;
           String select0 = (String) variablesForService.get(baseKey + j);
           if (select0 == null) {
@@ -294,20 +322,20 @@ public class UITask extends UIForm implements UISelectable {
     }
   }
 
-  public void setIsStart(boolean b) { isStart_ = b ; }
-  public boolean isStart() { return isStart_ ; }
+  public void setIsStart(boolean b) { isStart_ = b; }
+  public boolean isStart() { return isStart_; }
 
-  public ResourceBundle getWorkflowBundle() { return form.getResourceBundle() ; }
+  public ResourceBundle getWorkflowBundle() { return form.getResourceBundle(); }
 
-  public List getInputInfo() { return inputInfo_ ; }
+  public List getInputInfo() { return inputInfo_; }
 
-  public List getSubmitButtons() { return form.getSubmitButtons() ; }
+  public List getSubmitButtons() { return form.getSubmitButtons(); }
 
-  public boolean isCustomizedView() { return form.isCustomizedView() ; }
-  public String getCustomizedView() { return form.getCustomizedView() ; }
+  public boolean isCustomizedView() { return form.isCustomizedView(); }
+  public String getCustomizedView() { return form.getCustomizedView(); }
 
-  public void setIdentification(String identification) { this.identification_ = identification ; }
-  public String getIdentification() { return identification_ ; }
+  public void setIdentification(String identification) { this.identification_ = identification; }
+  public String getIdentification() { return identification_; }
 
   public VariableMaps prepareVariables() throws Exception {
     VariableMaps maps = prepareWorkflowVariables(getChildren());
@@ -341,33 +369,38 @@ public class UITask extends UIForm implements UISelectable {
       } else if (input instanceof UIFormRadioBoxInput) {
         value = ((UIFormRadioBoxInput) input).getValue();
       } else if (input instanceof UIFormUploadInput) {
-        value = ((UIFormUploadInput) input).getUploadData() ;
+        value = ((UIFormUploadInput) input).getUploadData();
       }
       if (value == null) value = "";
       workflowVariables.put(name, value);
     }
-    String repository = jcrService.getDefaultRepository().getConfiguration().getName() ;
-    workflowVariables.put(Utils.REPOSITORY, repository) ;
+    String repository = jcrService.getDefaultRepository().getConfiguration().getName();
+    workflowVariables.put(Utils.REPOSITORY, repository);
     return new VariableMaps(workflowVariables, jcrVariables);
   }
 
   public void clean() { 
-    UITaskManager uiTaskManager = getParent() ;
-//    uiTaskManager.removeChild(UIDocumentContent.class) ;
-//    uiTaskManager.removeChild(UIDocumentForm.class) ;
+    UITaskManager uiTaskManager = getParent();
+    try {
+      Class clazz1 = Class.forName("org.exoplatform.webui.UIDocumentForm");
+      Class clazz2 = Class.forName("org.exoplatform.webui.UIDocumentContent");
+      uiTaskManager.removeChild(clazz2);
+      uiTaskManager.removeChild(clazz1);
+    } catch (ClassNotFoundException e) {
+    }
     inputInfo_.clear(); 
   }
 
   public static class StartProcessActionListener extends EventListener<UITask> {
     public void execute(Event<UITask> event) throws Exception {
-      UITask uiTask = event.getSource() ;
-      PortletRequestContext pcontext = (PortletRequestContext)WebuiRequestContext.getCurrentInstance() ;
+      UITask uiTask = event.getSource();
+      PortletRequestContext pcontext = (PortletRequestContext)WebuiRequestContext.getCurrentInstance();
       String remoteUser = pcontext.getRemoteUser();
       if (remoteUser == null) remoteUser = "anonymous";
       VariableMaps maps = uiTask.prepareVariables();
       Map variables = maps.getWorkflowVariables();
       uiTask.serviceContainer.startProcess(remoteUser, uiTask.identification_, variables);
-      uiTask.getAncestorOfType(UIPopupContainer.class).deActivate() ;
+      uiTask.getAncestorOfType(UIPopupContainer.class).deActivate();
     }
   }
 
@@ -381,7 +414,7 @@ public class UITask extends UIForm implements UISelectable {
       } catch (Exception ex) {
         ex.printStackTrace();
       }
-      uiTask.getAncestorOfType(UIPopupContainer.class).deActivate() ;
+      uiTask.getAncestorOfType(UIPopupContainer.class).deActivate();
     }
   }
   
@@ -394,17 +427,17 @@ public class UITask extends UIForm implements UISelectable {
   
   static  public class CancelActionListener extends EventListener<UITask> {
     public void execute(Event<UITask> event) throws Exception {
-      UIPopupContainer uiPopup = event.getSource().getAncestorOfType(UIPopupContainer.class) ;
-      uiPopup.deActivate() ;
+      UIPopupContainer uiPopup = event.getSource().getAncestorOfType(UIPopupContainer.class);
+      uiPopup.deActivate();
     }
   }
 
   public static class TransitionActionListener extends EventListener<UITask> {
     public void execute(Event<UITask> event) throws Exception {
-      UITask uiTask = event.getSource() ;
+      UITask uiTask = event.getSource();
       VariableMaps maps = uiTask.prepareVariables();
       List submitButtons = uiTask.form.getSubmitButtons();
-      String objectId = event.getRequestContext().getRequestParameter(OBJECTID) ;
+      String objectId = event.getRequestContext().getRequestParameter(OBJECTID);
       Task task = uiTask.serviceContainer.getTask(uiTask.identification_);
       String processInstanceId = task.getProcessInstanceId();
       Map variablesForService = uiTask.serviceContainer.getVariables(processInstanceId, uiTask.identification_);
@@ -447,7 +480,7 @@ public class UITask extends UIForm implements UISelectable {
             }
             Map variables = maps.getWorkflowVariables();
             uiTask.serviceContainer.endTask(uiTask.identification_, variables, transition);
-            uiTask.getAncestorOfType(UIPopupContainer.class).deActivate() ;
+            uiTask.getAncestorOfType(UIPopupContainer.class).deActivate();
             return;
           } catch (Exception e) {
             e.printStackTrace();

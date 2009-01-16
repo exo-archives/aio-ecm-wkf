@@ -15,12 +15,12 @@ public class Utils {
   final public static String REPOSITORY = "repository".intern();
   final public static String EXO_ACTIONS = "exo:actions".intern();
   
-  final static public String NT_FILE = "nt:file";
-  final static public String EXO_RELATION = "exo:relation";
-  final static public String EXO_IMAGE = "exo:image";
-  final static public String EXO_LANGUAGE = "exo:language";
-  final static public String LANGUAGES = "languages";
-  final static public String JCR_CONTENT = "jcr:content";
-  final static public String JCR_MIMETYPE = "jcr:mimeType";
-  final static public String JCR_DATA = "jcr:data";
+//  final static public String NT_FILE = "nt:file";
+//  final static public String EXO_RELATION = "exo:relation";
+//  final static public String EXO_IMAGE = "exo:image";
+//  final static public String EXO_LANGUAGE = "exo:language";
+//  final static public String LANGUAGES = "languages";
+//  final static public String JCR_CONTENT = "jcr:content";
+//  final static public String JCR_MIMETYPE = "jcr:mimeType";
+//  final static public String JCR_DATA = "jcr:data";
 }
