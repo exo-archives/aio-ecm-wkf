@@ -25,9 +25,11 @@ import org.exoplatform.commons.utils.ObjectPageList;
 import org.exoplatform.services.workflow.ProcessInstance;
 import org.exoplatform.services.workflow.Task;
 import org.exoplatform.services.workflow.WorkflowServiceContainer;
+import org.exoplatform.web.application.ApplicationMessage;
 import org.exoplatform.webui.config.annotation.ComponentConfig;
 import org.exoplatform.webui.config.annotation.ComponentConfigs;
 import org.exoplatform.webui.config.annotation.EventConfig;
+import org.exoplatform.webui.core.UIApplication;
 import org.exoplatform.webui.core.UIContainer;
 import org.exoplatform.webui.core.UIGrid;
 import org.exoplatform.webui.core.UIPopupWindow;
@@ -52,7 +54,7 @@ import org.exoplatform.webui.event.EventListener;
     events = {
       @EventConfig(listeners = UIProcessDetail.ViewActionListener.class),
       @EventConfig(listeners = UIProcessDetail.DeleteActionListener.class, confirm = "UIProcessDetail.msg.confirm-delete-process"),
-      @EventConfig(listeners = UIProcessDetail.FlushAllActionListener.class, confirm = "UIProcessDetail.msg.confirm-delete-process")      
+      @EventConfig(listeners = UIProcessDetail.FlushAllActionListener.class, confirm = "UIProcessDetail.msg.confirm-delete-completed-process")      
     }
   )
 })
@@ -162,6 +164,13 @@ public class UIProcessDetail extends UIContainer {
   static  public class FlushAllActionListener extends EventListener<UIProcessDetail> {
     public void execute(Event<UIProcessDetail> event) throws Exception {
       UIProcessDetail uicomp = event.getSource();      
+      UIApplication uiApp = uicomp.getAncestorOfType(UIApplication.class) ;      
+      if(uicomp.completedProcessInstanceList.size() == 0) {
+        uiApp.addMessage(new ApplicationMessage("UIProcessDetail.msg.result-delete-completed-process", null, 
+            ApplicationMessage.WARNING));
+        event.getRequestContext().addUIComponentToUpdateByAjax(uiApp.getUIPopupMessages()) ;
+        return;
+      }      
       WorkflowServiceContainer workflowServiceContainer = uicomp.getApplicationComponent(WorkflowServiceContainer.class);
       for (ProcessInstance processInstance : uicomp.completedProcessInstanceList){
         workflowServiceContainer.deleteProcessInstance(processInstance.getProcessInstanceId());

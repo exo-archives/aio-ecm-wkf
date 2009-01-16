@@ -29,7 +29,7 @@
 
   <form>
   	  <resource-bundle>hr-acknoledgement</resource-bundle>
-  	  <activity>hr acknowledgement</activity>
+  	  <state-name>hr acknowledgement</state-name>
     <variable name="initiator" />
     <variable name="start" component="date" editable="false"/>
     <variable name="end" component="date" editable="false"/>

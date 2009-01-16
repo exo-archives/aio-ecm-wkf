@@ -118,12 +118,50 @@
         <UICompletedProcessGrid>Completed</UICompletedProcessGrid>
         <UIRunningProcessGrid>Processing</UIRunningProcessGrid>
       </label>
-    </tab>    
+    </tab>
+    <msg>
+      <confirm-delete-completed-process>Do you want to delete these completed processes?</confirm-delete-completed-process>
+      <result-delete-completed-process>There isn't any completed process to delete</result-delete-completed-process>      
+    </msg>
+    <action>
+      <FlushAll>Flush All</FlushAll>
+    </action>    
   </UIProcessDetail>
   <TaskListOfProcessPopup>
     <title>
       <UITaskListOfProcess>List tasks of Instance</UITaskListOfProcess>
     </title>
+    <tab>
+      <label>
+        <UITasksGrid>Task</UITasksGrid>
+      </label>
+    </tab>    
   </TaskListOfProcessPopup>
+  <UIRunningProcessGrid>
+    <header>
+      <processInstanceId>Id de l'instance du processus</processInstanceId>
+      <processId>Id Processus</processId>
+      <processName>Nom Processus</processName>
+      <startDate>Date de début</startDate>
+      <endDate>Date de fin</endDate>
+      <action>Action</action>
+    </header>
+    <msg>
+      <empty>Aucun processus pour voir le détail</empty>
+    </msg>
+  </UIRunningProcessGrid>
+  <UICompletedProcessGrid>
+    <header>
+      <processInstanceId>Id de l'instance du processus</processInstanceId>
+      <processId>Id Processus</processId>
+      <processName>Nom Processus</processName>
+      <startDate>Date de début</startDate>
+      <endDate>Date de fin</endDate>
+      <action>Action</action>
+    </header>
+    <msg>
+      <empty>Aucun processus pour voir le détail</empty>
+    </msg>
+  </UICompletedProcessGrid>
 </bundle>
 

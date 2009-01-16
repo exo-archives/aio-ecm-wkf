@@ -96,7 +96,7 @@
   </UIProcessDetailGrid>
   <UIProcessDetail>
     <msg>
-      <confirm-delete-process>Do you want to delete this process instance?</confirm-delete-process>
+      <confirm-delete-process>Do you want to delete this process instance?</confirm-delete-process>      
     </msg>
   </UIProcessDetail>    
   <UITasksGrid>
@@ -113,12 +113,50 @@
         <UICompletedProcessGrid>Completed</UICompletedProcessGrid>
         <UIRunningProcessGrid>Processing</UIRunningProcessGrid>
       </label>
-    </tab>    
+    </tab>
+    <msg>
+      <confirm-delete-completed-process>Do you want to delete these completed processes?</confirm-delete-completed-process>
+      <result-delete-completed-process>There isn't any completed process to delete</result-delete-completed-process>
+    </msg>
+    <action>
+      <FlushAll>Flush All</FlushAll>
+    </action>  
   </UIProcessDetail>
   <TaskListOfProcessPopup>
     <title>
       <UITaskListOfProcess>List tasks of Instance</UITaskListOfProcess>
     </title>
+    <tab>
+      <label>
+        <UITasksGrid>Task</UITasksGrid>
+      </label>
+    </tab>    
   </TaskListOfProcessPopup>
+  <UIRunningProcessGrid>
+    <header>
+      <processInstanceId>Process Instance Id</processInstanceId>
+      <processId>Process Id</processId>
+      <processName>Process Name</processName>
+      <startDate>Start Date</startDate>
+      <endDate>End Date</endDate>
+      <action>Action</action>
+    </header>
+    <msg>
+      <empty>No process to view detail</empty>
+    </msg>
+  </UIRunningProcessGrid>
+  <UICompletedProcessGrid>
+    <header>
+      <processInstanceId>Process Instance Id</processInstanceId>
+      <processId>Process Id</processId>
+      <processName>Process Name</processName>
+      <startDate>Start Date</startDate>
+      <endDate>End Date</endDate>
+      <action>Action</action>
+    </header>
+    <msg>
+      <empty>No process to view detail</empty>
+    </msg>
+  </UICompletedProcessGrid>
 </bundle>
 

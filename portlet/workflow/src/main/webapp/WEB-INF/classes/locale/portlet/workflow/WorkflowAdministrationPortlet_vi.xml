@@ -95,7 +95,7 @@
   </UIProcessDetailGrid>
   <UIProcessDetail>
     <msg>
-      <confirm-delete-process>Bạn có muốn xóa thể hiện của quá trình này không?</confirm-delete-process>
+      <confirm-delete-process>Bạn có muốn xóa thể hiện của quá trình này không?</confirm-delete-process>      
     </msg>
   </UIProcessDetail>
   <UITasksGrid>
@@ -117,13 +117,58 @@
       <label>
         <UICompletedProcessGrid>Đã hoàn thành</UICompletedProcessGrid>
         <UIRunningProcessGrid>Đang thực hiện</UIRunningProcessGrid>
+        <UITasksGrid>Nhiệm vụ</UITasksGrid>
       </label>
-    </tab>    
+    </tab>
+    <msg>
+      <confirm-delete-completed-process>Bạn có muốn xóa những xử lý đã hoàn thành không?</confirm-delete-completed-process>
+      <result-delete-completed-process>Không có quá trình nào đã hoàn thành để xóa</result-delete-completed-process>
+    </msg>
+    <action>
+      <FlushAll>Xóa hết</FlushAll>
+    </action>
   </UIProcessDetail>
   <TaskListOfProcessPopup>
     <title>
-      <UITaskListOfProcess>Danh sách nhiệm vụ</UITaskListOfProcess>
+      <UITaskListOfProcess>Danh sách nhiệm vụ</UITaskListOfProcess>            
     </title>
+    <tab>
+      <label>
+        <UITasksGrid>Nhiệm vụ</UITasksGrid>
+      </label>
+    </tab>
+    <header>
+      <id>Id</id>
+      <taskName>Tên nhiệm vụ</taskName>
+      <actorId>Id của tác nhân</actorId>
+      <end>Kết thúc</end>    
+    </header>    
   </TaskListOfProcessPopup>
+  <UIRunningProcessGrid>
+    <header>
+      <processInstanceId>Id thể hiện của quá trình</processInstanceId>
+      <processId>Id của quá trình</processId>
+      <processName>Tên của quá trình</processName>
+      <startDate>Ngày bắt đầu</startDate>
+      <endDate>Ngày kết thúc</endDate>
+      <action>Hành động</action>
+    </header>
+    <msg>
+      <empty>Không có quá trình đang thực hiện để xem</empty>
+    </msg>
+  </UIRunningProcessGrid>
+  <UICompletedProcessGrid>
+    <header>
+      <processInstanceId>Id thể hiện của quá trình</processInstanceId>
+      <processId>Id của quá trình</processId>
+      <processName>Tên của quá trình</processName>
+      <startDate>Ngày bắt đầu</startDate>
+      <endDate>Ngày kết thúc</endDate>
+      <action>Hành động</action>
+    </header>
+    <msg>
+      <empty>Không có quá trình đã hoàn thành để xem</empty>
+    </msg>
+  </UICompletedProcessGrid>
 </bundle>
 
