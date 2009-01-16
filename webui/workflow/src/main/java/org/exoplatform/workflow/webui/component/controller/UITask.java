@@ -110,11 +110,6 @@ public class UITask extends UIForm implements UISelectable {
   private RepositoryService jcrService;
   private List<InputInfo> inputInfo_;
   
-  private static final String METHOD_SET_NODEPATH = "setNodePath";
-  private static final String METHOD_SET_TEMPLATENODE = "setTemplateNode";
-  private static final String METHOD_SET_REPO = "setRepositoryName";
-  private static final String METHOD_SET_NODE = "setNode";
-  
   public UITask() {
     serviceContainer = getApplicationComponent(WorkflowServiceContainer.class);
     formsService = getApplicationComponent(WorkflowFormsService.class);
@@ -205,15 +200,15 @@ public class UITask extends UIForm implements UISelectable {
         String nodetype = dialogNode.getPrimaryNodeType().getName();
         
         try {
-          Class clazz = Class.forName("org.exoplatform.webui.UIDocumentForm");
+          Class clazz = Class.forName("org.exoplatform.contentvalidation.webui.UIDocumentForm");
           UIComponent uiComponent = createUIComponent(clazz, null, null);
           Method[] methods = clazz.getDeclaredMethods();
           for (Method m : methods) {
-            if (m.getName().trim().equals(METHOD_SET_NODEPATH)) {
+            if (m.getName().trim().equals("setNodePath")) {
               m.invoke(uiComponent, nodePath);
-            } else if (m.getName().trim().equals(METHOD_SET_TEMPLATENODE)) {
+            } else if (m.getName().trim().equals("setTemplateNode")) {
               m.invoke(uiComponent, nodetype);
-            } else if (m.getName().trim().equals(METHOD_SET_REPO)) {
+            } else if (m.getName().trim().equals("setRepositoryName")) {
               m.invoke(uiComponent, repository);
             }
           }
@@ -229,11 +224,11 @@ public class UITask extends UIForm implements UISelectable {
         String nodePath = (String) variablesForService.get(NODE_PATH_VARIABLE);
         Node viewNode = (Node) sessionProvider.getSession(workspaceName, mRepository).getItem(nodePath);
         try {
-          Class clazz = Class.forName("org.exoplatform.webui.UIDocumentContent");
+          Class clazz = Class.forName("org.exoplatform.contentvalidation.webui.UIDocumentContent");
           UIComponent uiComponent = createUIComponent(clazz, null, null);
           Method[] methods = clazz.getDeclaredMethods();
           for (Method m : methods) {
-            if (m.getName().trim().equals(METHOD_SET_NODE)) {
+            if (m.getName().trim().equals("setNode")) {
               m.invoke(uiComponent, viewNode);
             }
           }
@@ -382,8 +377,8 @@ public class UITask extends UIForm implements UISelectable {
   public void clean() { 
     UITaskManager uiTaskManager = getParent();
     try {
-      Class clazz1 = Class.forName("org.exoplatform.webui.UIDocumentForm");
-      Class clazz2 = Class.forName("org.exoplatform.webui.UIDocumentContent");
+      Class clazz1 = Class.forName("org.exoplatform.contentvalidation.webui.UIDocumentForm");
+      Class clazz2 = Class.forName("org.exoplatform.contentvalidation.webui.UIDocumentContent");
       uiTaskManager.removeChild(clazz2);
       uiTaskManager.removeChild(clazz1);
     } catch (ClassNotFoundException e) {
