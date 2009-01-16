@@ -126,6 +126,7 @@
     </msg>
     <action>
       <FlushAll>Xóa hết</FlushAll>
+      <Cancel>Thoát</Cancel>
     </action>
   </UIProcessDetail>
   <TaskListOfProcessPopup>

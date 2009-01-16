@@ -120,6 +120,7 @@
     </msg>
     <action>
       <FlushAll>Flush All</FlushAll>
+      <Cancel>Cancel</Cancel>
     </action>  
   </UIProcessDetail>
   <TaskListOfProcessPopup>

@@ -54,7 +54,8 @@ import org.exoplatform.webui.event.EventListener;
     events = {
       @EventConfig(listeners = UIProcessDetail.ViewActionListener.class),
       @EventConfig(listeners = UIProcessDetail.DeleteActionListener.class, confirm = "UIProcessDetail.msg.confirm-delete-process"),
-      @EventConfig(listeners = UIProcessDetail.FlushAllActionListener.class, confirm = "UIProcessDetail.msg.confirm-delete-completed-process")      
+      @EventConfig(listeners = UIProcessDetail.FlushAllActionListener.class, confirm = "UIProcessDetail.msg.confirm-delete-completed-process"),
+      @EventConfig(listeners = UIProcessDetail.CancelActionListener.class)
     }
   )
 })
@@ -62,7 +63,7 @@ public class UIProcessDetail extends UIContainer {
   private static String[] PROCESS_BEAN_FIELD = {"processInstanceId", "processId", "processName", "startDate", "endDate"};
   
   private static String[] ACTION = {"View","Delete"};
-  private static String[] ACTIONS = {"FlushAll"};
+  private static String[] ACTIONS = {"FlushAll", "Cancel"};
   private String processInstanceId;
   private List<ProcessInstance> completedProcessInstanceList = new ArrayList<ProcessInstance>();
   private List<ProcessInstance> runningProcessInstanceList = new ArrayList<ProcessInstance>();
@@ -177,6 +178,17 @@ public class UIProcessDetail extends UIContainer {
       }      
       uicomp.updateProcessGrid(null);
       event.getRequestContext().addUIComponentToUpdateByAjax(uicomp);
+    }
+  }
+  
+  static public class CancelActionListener extends EventListener<UIProcessDetail> {
+    public void execute(Event<UIProcessDetail> event) throws Exception {
+      UIProcessDetail uicomp = event.getSource();
+      UIWorkflowAdministrationPortlet uiAdministrationPortlet = uicomp.getAncestorOfType(UIWorkflowAdministrationPortlet.class);
+      UIPopupWindow popup = uiAdministrationPortlet.getChildById("AdministrationPopup");
+      if(popup != null){
+        popup.setShow(false);
+      }
     }
   }  
 }
