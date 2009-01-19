@@ -8,8 +8,8 @@
       <content-browser>Quản lý nội dung</content-browser>
       <content-creator>Tạo nhanh nội dung</content-creator>
       <businessprocess>
-        <title>Business Process</title>
-        <controller>Business Process Controller</controller>
+        <title>Quá trình nghiệp vụ</title>
+        <controller>Quản lý quá trình nghiệp vụ</controller>
       </businessprocess>
       <sitemap>Bản đồ site</sitemap>
     </users>

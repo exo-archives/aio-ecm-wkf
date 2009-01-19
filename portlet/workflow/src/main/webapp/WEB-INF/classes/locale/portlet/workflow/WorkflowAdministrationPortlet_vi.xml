@@ -8,7 +8,11 @@
   <UIWorkflowAdministrationPortlet>
     <tab>
       <label>Quản trị</label>
+      <text>Quản trị nghiệp vụ</text>
     </tab>
+    <label>
+      <refesh>Làm mới</refesh>
+    </label>    
   </UIWorkflowAdministrationPortlet>
   <UITabPane>
     <title>

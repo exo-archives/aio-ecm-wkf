@@ -10,6 +10,9 @@
       <label>Administration</label>
       <text>Admin Workflow Management</text>
     </tab>
+    <label>
+      <refesh>Refesh</refesh>
+    </label>
   </UIWorkflowAdministrationPortlet>
   <UITabPane>
     <title>
