@@ -107,16 +107,11 @@
       <end>Fin</end>
     </header>
   </UITasksGrid>
-  <!--
-  #############################################################################
-  #			Since 2.3.x tobe translate											#
-  #############################################################################
-  -->
   <UIProcessDetail>
     <tab>
       <label>
-        <UICompletedProcessGrid>Completed</UICompletedProcessGrid>
-        <UIRunningProcessGrid>Processing</UIRunningProcessGrid>
+        <UICompletedProcessGrid>Terminé</UICompletedProcessGrid>
+        <UIRunningProcessGrid>En cours</UIRunningProcessGrid>
       </label>
     </tab>
     <msg>
@@ -165,4 +160,3 @@
     </msg>
   </UICompletedProcessGrid>
 </bundle>
-
