@@ -128,11 +128,6 @@
       <preference>      
         <name>usecase</name>
         <value>path</value>
-        <!--
-        <value>Document</value>
-        <value>Using a JCR query</value>
-        <value>Using a script</value>
-         -->
         <read-only>false</read-only>
       </preference>            
     </portlet-preferences>
