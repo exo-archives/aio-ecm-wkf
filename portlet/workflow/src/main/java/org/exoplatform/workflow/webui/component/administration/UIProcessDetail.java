@@ -155,8 +155,20 @@ public class UIProcessDetail extends UIContainer {
       UIProcessDetail uicomp = event.getSource();
       String instance = event.getRequestContext().getRequestParameter(OBJECTID);
       WorkflowServiceContainer workflowServiceContainer = 
-        uicomp.getApplicationComponent(WorkflowServiceContainer.class);
-      workflowServiceContainer.deleteProcessInstance(instance);
+        uicomp.getApplicationComponent(WorkflowServiceContainer.class);      
+      for (ProcessInstance processInstance : uicomp.completedProcessInstanceList){
+        if(processInstance.getProcessInstanceId().equals(instance)){
+          uicomp.setRenderedChild("UICompletedProcessGrid");
+          break;
+        }
+      }
+      for (ProcessInstance processInstance : uicomp.runningProcessInstanceList){
+        if(processInstance.getProcessInstanceId().equals(instance)){
+          uicomp.setRenderedChild("UIRunningProcessGrid");
+          break;
+        }
+      }
+      workflowServiceContainer.deleteProcessInstance(instance);      
       uicomp.updateProcessGrid(null);
       event.getRequestContext().addUIComponentToUpdateByAjax(uicomp);
     }
@@ -177,6 +189,7 @@ public class UIProcessDetail extends UIContainer {
         workflowServiceContainer.deleteProcessInstance(processInstance.getProcessInstanceId());
       }      
       uicomp.updateProcessGrid(null);
+      uicomp.setRenderedChild("UICompletedProcessGrid");
       event.getRequestContext().addUIComponentToUpdateByAjax(uicomp);
     }
   }
