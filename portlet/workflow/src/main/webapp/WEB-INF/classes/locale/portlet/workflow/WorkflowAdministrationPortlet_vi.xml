@@ -177,6 +177,9 @@
         <UITasksGrid>Danh sách nhiệm vụ</UITasksGrid>
       </label>
     </tab>    
+    <action>      
+      <Cancel>Thoát</Cancel>
+    </action>
   </UITaskListOfProcess>
 </bundle>
 

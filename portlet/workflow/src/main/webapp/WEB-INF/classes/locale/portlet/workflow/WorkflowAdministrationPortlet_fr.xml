@@ -164,6 +164,9 @@
       <label>
         <UITasksGrid>List tasks</UITasksGrid>
       </label>
-    </tab>    
+    </tab>
+    <action>      
+      <Cancel>Cancel</Cancel>
+    </action>    
   </UITaskListOfProcess>
 </bundle>

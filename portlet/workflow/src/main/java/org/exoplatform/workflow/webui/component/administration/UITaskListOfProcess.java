@@ -26,8 +26,12 @@ import org.exoplatform.services.workflow.Task;
 import org.exoplatform.services.workflow.WorkflowServiceContainer;
 import org.exoplatform.webui.config.annotation.ComponentConfig;
 import org.exoplatform.webui.config.annotation.ComponentConfigs;
+import org.exoplatform.webui.config.annotation.EventConfig;
 import org.exoplatform.webui.core.UIContainer;
 import org.exoplatform.webui.core.UIGrid;
+import org.exoplatform.webui.core.UIPopupWindow;
+import org.exoplatform.webui.event.Event;
+import org.exoplatform.webui.event.EventListener;
 
 /**
  * Created by The eXo Platform SARL
@@ -42,13 +46,16 @@ import org.exoplatform.webui.core.UIGrid;
     template = "app:/groovy/webui/component/UIECMGrid.gtmpl"
   ),
   @ComponentConfig(    
-    template = "app:/groovy/webui/component/UITabPaneWithAction.gtmpl"
+    template = "app:/groovy/webui/component/UITabPaneWithAction.gtmpl", 
+    events = {
+        @EventConfig(listeners = UITaskListOfProcess.CancelActionListener.class)
+    }
   )
 })
 public class UITaskListOfProcess extends UIContainer {
   
   private static String[] TASK_BEAN_FIELD = {"id", "taskName", "actorId", "end"} ;
-  private static String[] ACTIONS = {};
+  private static String[] ACTIONS = {"Cancel"};
   
   public UITaskListOfProcess() throws Exception {    
     UIGrid uiTasksGrid = addChild(UIGrid.class, "UITaskListOfProcess", "UITasksGrid");    
@@ -77,5 +84,16 @@ public class UITaskListOfProcess extends UIContainer {
       String id2 = ((Task) o2).getId();
       return id1.compareTo(id2);
     }
-  } 
+  }
+  
+  static public class CancelActionListener extends EventListener<UITaskListOfProcess> {
+    public void execute(Event<UITaskListOfProcess> event) throws Exception {
+      UITaskListOfProcess uicomp = event.getSource();
+      UIWorkflowAdministrationPortlet uiAdministrationPortlet = uicomp.getAncestorOfType(UIWorkflowAdministrationPortlet.class);
+      UIPopupWindow popup = uiAdministrationPortlet.getChildById("TaskListOfProcessPopup");
+      if(popup != null){
+        popup.setShow(false);
+      }
+    }
+  }
 }
