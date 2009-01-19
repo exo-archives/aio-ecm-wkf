@@ -171,5 +171,12 @@
       <empty>Không có quá trình đã hoàn thành để xem</empty>
     </msg>
   </UICompletedProcessGrid>
+  <UITaskListOfProcess>    
+    <tab>
+      <label>
+        <UITasksGrid>Danh sách nhiệm vụ</UITasksGrid>
+      </label>
+    </tab>    
+  </UITaskListOfProcess>
 </bundle>
 

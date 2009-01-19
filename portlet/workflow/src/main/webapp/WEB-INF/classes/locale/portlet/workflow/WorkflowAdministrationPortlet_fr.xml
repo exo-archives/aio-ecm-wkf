@@ -159,4 +159,11 @@
       <empty>Aucun processus pour voir le détail</empty>
     </msg>
   </UICompletedProcessGrid>
+  <UITaskListOfProcess>    
+    <tab>
+      <label>
+        <UITasksGrid>List tasks</UITasksGrid>
+      </label>
+    </tab>    
+  </UITaskListOfProcess>
 </bundle>

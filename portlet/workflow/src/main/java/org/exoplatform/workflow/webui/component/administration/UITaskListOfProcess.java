@@ -52,7 +52,7 @@ public class UITaskListOfProcess extends UIContainer {
   
   public UITaskListOfProcess() throws Exception {    
     UIGrid uiTasksGrid = addChild(UIGrid.class, "UITaskListOfProcess", "UITasksGrid");    
-    uiTasksGrid.setLabel("Tasks");
+    uiTasksGrid.setLabel("UITasksGrid");
     uiTasksGrid.getUIPageIterator().setId("UITasksGrid") ;
     uiTasksGrid.configure("id", TASK_BEAN_FIELD, null) ;
   }
