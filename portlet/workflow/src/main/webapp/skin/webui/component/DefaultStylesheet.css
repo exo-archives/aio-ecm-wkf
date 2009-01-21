@@ -3,6 +3,8 @@
  * Author : Tran The Trong
  *          trongtt@gmail.com
  * December 18, 2006
+ * Modify : trung.nguyen@exoplatform.com
+ * 21/01/2009
  * version: $Id$
  */
 .UIWindow .UIWorkflowPortlet {
@@ -53,22 +55,25 @@
 }
 
 .UIWorkflowPortlet .Toolbar .Separator {
-	float: left;
-  border-left: solid 1px #fdfdfd;
-  border-right: solid 1px #b7b7b7;
-  height: 29px;
+	float: left; /* orientation=lt */
+	float: right; /* orientation=rt */
+	border-left: solid 1px #fdfdfd;
+	border-right: solid 1px #b7b7b7;
+	height: 29px;
 }
 
 .UIWorkflowPortlet .Toolbar .ToolbarIcon {
-	float: left;
+	float: left;	
 	margin: 3px 6px;
 }
 
 .UIWorkflowPortlet .Toolbar .TextAdmin {
-	float: left;
-  font-weight: bold;
-  line-height:29px;
-  padding: 0px 15px 0px 10px;
+	float: left; /* orientation=lt */
+	float: right; /* orientation=rt */
+	font-weight: bold;
+	line-height:29px;
+	padding: 0px 15px 0px 10px; /* orientation=lt */
+	padding: 0px 15px 0px 10px; /* orientation=rt */
 }
 
 .UIWorkflowPortlet .Toolbar .ButtonContainer {
@@ -85,16 +90,19 @@
 }
 
 .UIWorkflowPortlet .Toolbar .ButtonContainerSelected {
-	float: left;
+	float: left; /* orientation=lt */
+	float: right; /* orientation=rt */
 	height: 29px;
-	background: url('DefaultSkin/background/ButtonContainerSelectedBG3x29.gif') repeat-x;
+	background: url('DefaultSkin/background/ButtonContainerSelectedBG3x29.gif') repeat-x; /* orientation=lt */
+	background: url('DefaultSkin/background/ButtonContainerSelectedBG3x29-rt.gif') repeat-x; /* orientation=rt */
 }
 
 .UIWorkflowPortlet .Toolbar .ButtonContainerSelected .TextButton {
 	padding: 0px 6px;
 	font-weight: bold;
-  line-height: 29px;
-  float: left;
+	line-height: 29px;
+	float: left;
+	
 }
 
 .UIWorkflowPortlet .Toolbar .SeparatorRight {
@@ -190,6 +198,8 @@
 }
 
 /*##############################- End Decorator -################################*/
+
+
 .UIWorkflowPortlet .UIDocumentContent .Banner {
   height: 100px;
   background: url('DefaultSkin/background/BannerBG.gif') repeat-x bottom;
@@ -252,9 +262,6 @@
   width: 160px; 
 }
 
-.UIWorkflowPortlet .UITask .UIForm .UIFormGrid img {
-  width: 500px;
-}
 
 /*##############################- Begin UIProcessDetail -################################*/
 
@@ -343,8 +350,10 @@
 
 .UIWorkflowPortlet .Toolbar .RefreshSessionButton  {
   width: 24px;	height: 24px;
-  background: url('DefaultSkin/icons/RefreshSessionButton.gif') no-repeat bottom;
-  float: right;
+  background: url('DefaultSkin/icons/RefreshSessionButton.gif') no-repeat bottom; /* orientation=lt */
+  background: url('DefaultSkin/icons/RefreshSessionButton-rt.gif') no-repeat bottom; /* orientation=rt */
+  float: right; /* orientation=lt */
+  float: left; /* orientation=rt */
   margin-top: 3px;
 }
 

@@ -52,11 +52,14 @@
 .UIWorkflowPortlet .Toolbar {
 	height: 29px; 
 	padding: 0px 8px;
+	border: solid 1px #b7b7b7;
+	border-bottom: none;
 	background: url('VistaSkin/background/ToolbarBG1x29.png') repeat-x;
 }
 
 .UIWorkflowPortlet .Toolbar .Separator {
-	float: left;
+	float: left; /* orientation=lt */
+	float: right; /* orientation=rt */
   border-left: solid 1px #fdfdfd;
   border-right: solid 1px #b7b7b7;
   height: 28px;
@@ -68,10 +71,12 @@
 }
 
 .UIWorkflowPortlet .Toolbar .TextAdmin {
-	float: left;
+	float: left; /* orientation=lt */
+	float: right; /* orientation=rt */
   font-size:11px;
   line-height:29px;
-  padding: 0px 15px 0px 10px;
+  padding: 0px 15px 0px 10px; /* orientation=lt */
+	padding: 0px 15px 0px 10px; /* orientation=rt */
 }
 
 .UIWorkflowPortlet .Toolbar .ButtonContainer {
@@ -88,9 +93,11 @@
 }
 
 .UIWorkflowPortlet .Toolbar .ButtonContainerSelected {
-	float: left;
+	float: left; /* orientation=lt */
+	float: right; /* orientation=rt */
 	height: 26px;
-	background: url('VistaSkin/background/ButtonContainerBG4x26.png') repeat-x;
+	background: url('VistaSkin/background/ButtonContainerBG4x26.png') repeat-x; /* orientation=lt */
+	background: url('VistaSkin/background/ButtonContainerBG4x26-rt.png') repeat-x; /* orientation=rt */
 	margin-top: 1px;
 }
 
@@ -328,8 +335,10 @@
 
 .UIWorkflowPortlet .Toolbar .RefreshSessionButton  {
   width: 24px;	height: 24px;
-  background: url('DefaultSkin/icons/RefreshSessionButton.gif') no-repeat bottom;
-  float: right;
+  background: url('DefaultSkin/icons/RefreshSessionButton.gif') no-repeat bottom; /* orientation=lt */
+  background: url('DefaultSkin/icons/RefreshSessionButton-rt.gif') no-repeat bottom; /* orientation=rt */
+  float: right; /* orientation=lt */
+  float: left; /* orientation=rt */
   margin-top: 3px;
 }
 
