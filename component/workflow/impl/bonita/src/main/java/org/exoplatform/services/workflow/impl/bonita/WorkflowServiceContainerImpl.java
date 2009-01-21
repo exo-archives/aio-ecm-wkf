@@ -520,10 +520,11 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer,
       todoList.addAll(rApi.getTaskList(TaskState.READY));
       todoList.addAll(rApi.getTaskList(TaskState.EXECUTING));
       todoList.addAll(rApi.getTaskList(TaskState.SUSPENDED));
+      todoList.addAll(rApi.getTaskList(TaskState.FINISHED));
       
       Iterator<ActivityInstance<TaskInstance>> ite = todoList.iterator(); 
       while(ite.hasNext()) {
-          ActivityInstance<TaskInstance> task = ite.next();
+          ActivityInstance<TaskInstance> task = ite.next();          
           if(task.getProcessInstanceUUID().equals(uuid)) {
               try {
                   tasks.add(new TaskData(task));
