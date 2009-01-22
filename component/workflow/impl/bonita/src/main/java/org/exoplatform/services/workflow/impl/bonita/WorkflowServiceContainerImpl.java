@@ -239,7 +239,6 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
         zis.getNextEntry().getName();
         zis.close();
       } catch (Exception e1) {
-        System.out.println("\n\n Check here:");
         e1.printStackTrace();
         xpdl = true;
       }
@@ -250,21 +249,16 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       // deploy the process
       Collection<ProcessDefinition> processes;
       if (xpdl) {
-        System.out.println("\n\n xpdl1 === " + xpdl);
         processes = dAPI.deployXpdl(barFile).values();
       } else {
-        System.out.println("\n\n xpdl2 === " + xpdl);
         try {
           processes = dAPI.deployBar(barFile).values();
         } catch(Exception e) {
-          System.out.println("\n\n ********************************");
-          System.out.println("\n\n Throws Exception here!!!!!");
           processes=null;
           e.printStackTrace();
           throw e;
         }
       }
-      System.out.println("\n\n Call process definition !!!!!");
       // Create the file definition
       Iterator<ProcessDefinition> ite = processes.iterator();
 
@@ -275,10 +269,8 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
         // Create the FileDefinition and store it
         FileDefinition fileDefinition;
         if (xpdl) {
-          System.out.println("\n\n xpdl3 === " + xpdl);
           fileDefinition = new XPDLFileDefinition(new ByteArrayInputStream(barFile));
         } else {
-          System.out.println("\n\n xpdl4 === " + xpdl);
           fileDefinition = new BARFileDefinition(new ByteArrayInputStream(barFile));
         }
         this.fileDefinitionService.store(fileDefinition, processId);
