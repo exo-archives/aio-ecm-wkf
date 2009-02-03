@@ -317,6 +317,12 @@ public class BARFileDefinition implements FileDefinition {
           attributes.put("mandatory", mandatory.getValue());
         }
         
+        // Process the Mandatory attribute
+        Attr visiable = (Attr) element.getAttributeNode("visiable");
+        if(visiable != null) {
+          attributes.put("visiable", visiable.getValue());
+        }
+        
         // Add the attributes to the returned List
         ret.add(attributes);
       }

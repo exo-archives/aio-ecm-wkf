@@ -224,6 +224,7 @@ public class AutomaticFormImpl implements Form {
 			attributes.put("name",      key.getDataFieldId());
 			attributes.put("editable",  "true");
 			attributes.put("mandatory", "false");
+			attributes.put("visiable", "true");
 			if(key.getDataType().getType().equals(DataTypeDefinition.Type.EnumerationType)){				/*
 		         * In case of multiple values, the component is select and different
 		         * values are specified in the variable attributes, so that the bundle
