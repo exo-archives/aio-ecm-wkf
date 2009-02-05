@@ -633,8 +633,10 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
         break;
       case DATETIME:
         if (!Date.class.isInstance(value)) {
-          SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-          value = formatter.parse((String) value);
+          if (value != null && ((String) value).length() != 0) {
+            SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+            value = formatter.parse((String) value);
+          }
         }
         break;
       case INTEGER:

@@ -40,7 +40,7 @@
 							  %>
 							  <td class="FieldComponent"><% uicomponent.renderField(uiInput); %>
 							  <%
-							    if (uiInput.getName().equals("delegate")) {
+							    if (uiInput.getName().equals("delegator")) {
 							   %>
 							   <img onclick="<%=uicomponent.event("SelectUser")%>" title = "<%= _ctx.appRes("UITask.title.Delegate")%>" src="/eXoResources/skin/sharedImages/Blank.gif" alt="" class="SelectUserIcon" />
 							   <%

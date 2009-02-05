@@ -113,7 +113,7 @@ public class UITask extends UIForm implements UISelectable {
   private static final String WORKSPACE_VARIABLE = "srcWorkspace";
   private static final String REPOSITORY_VARIABLE = "repository";
 
-  private static final String DELEGATE_FIELD = "delegate";
+  private static final String DELEGATE_FIELD = "delegator";
   private Form form;
   private boolean isStart_;
   private String identification_;
@@ -271,7 +271,7 @@ public class UITask extends UIForm implements UISelectable {
         } else if (DATE.equals(component) || DATE_TIME.equals(component)) {
           input = (value == null ? new UIFormDateTimeInput(name, null, new Date(), DATE_TIME.equals(component)) : 
                                    new UIFormDateTimeInput(name, null, (Date)value, DATE_TIME.equals(component)));
-          if (!visiable && (value == null)) {
+          if (!visiable) {
             input.setValue("");
           }
           input.addValidator(DateTimeValidator.class);
@@ -302,8 +302,12 @@ public class UITask extends UIForm implements UISelectable {
         } else if (CHECK_BOX.equals(component)) {
           ResourceBundle bundle = form.getResourceBundle();
           String key = name + ".checkbox";
-          input = new UIFormCheckBoxInput<Boolean>(name, bundle.getString(key), Boolean.valueOf(
-              (String) value).booleanValue());
+          if (value instanceof Boolean) {
+            input = new UIFormCheckBoxInput<Boolean>(name, bundle.getString(key), ((Boolean) value).booleanValue());
+          } else {
+            input = new UIFormCheckBoxInput<Boolean>(name, bundle.getString(key), Boolean.valueOf(
+                (String) value).booleanValue());
+          }
           ((UIFormCheckBoxInput)input).setEditable(editable);
         } else if (UPLOAD.equals(component)) {
           input = new UIFormUploadInput(name, name);
@@ -353,19 +357,19 @@ public class UITask extends UIForm implements UISelectable {
   public void setIdentification(String identification) { this.identification_ = identification; }
   public String getIdentification() { return identification_; }
 
-  public VariableMaps prepareVariables() throws Exception {
-    VariableMaps maps = prepareWorkflowVariables(getChildren());
+  public VariableMaps prepareVariables(String decision) throws Exception {
+    VariableMaps maps = prepareWorkflowVariables(getChildren(), decision);
     return maps;
   }
   
   @SuppressWarnings("unchecked")
-  public VariableMaps prepareWorkflowVariables(Collection inputs) throws Exception {
+  public VariableMaps prepareWorkflowVariables(Collection inputs, String decision) throws Exception {
     Map<String, Object> workflowVariables = new HashMap<String, Object>();
     Map jcrVariables = new HashMap();
+    String name = "";
     for (Iterator iter = inputs.iterator(); iter.hasNext();) {
       UIFormInput input = (UIFormInput) iter.next();
-      String name = input.getName();
-
+      name = input.getName();
       Object value = "";
       if (input instanceof UIFormStringInput) {
         value = ((UIFormStringInput) input).getValue();
@@ -390,6 +394,10 @@ public class UITask extends UIForm implements UISelectable {
       if (value == null) value = "";
       workflowVariables.put(name, value);
     }
+    HashMap<String, Object> map = (HashMap)this.form.getSubmitButtons().get(0);
+    String variable = (String)map.get("variable");
+    if (variable != null && variable.length() != 0) workflowVariables.put(variable, decision);
+    if ("delegate".equals(decision)) workflowVariables.put("delegate", "true");
     String repository = jcrService.getDefaultRepository().getConfiguration().getName();
     workflowVariables.put(Utils.REPOSITORY, repository);
     return new VariableMaps(workflowVariables, jcrVariables);
@@ -410,10 +418,11 @@ public class UITask extends UIForm implements UISelectable {
   public static class StartProcessActionListener extends EventListener<UITask> {
     public void execute(Event<UITask> event) throws Exception {
       UITask uiTask = event.getSource();
+      String objectId = event.getRequestContext().getRequestParameter(OBJECTID);
       PortletRequestContext pcontext = (PortletRequestContext)WebuiRequestContext.getCurrentInstance();
       String remoteUser = pcontext.getRemoteUser();
       if (remoteUser == null) remoteUser = "anonymous";
-      VariableMaps maps = uiTask.prepareVariables();
+      VariableMaps maps = uiTask.prepareVariables(objectId);
       Map variables = maps.getWorkflowVariables();
       uiTask.serviceContainer.startProcess(remoteUser, uiTask.identification_, variables);
       uiTask.getAncestorOfType(UIPopupContainer.class).deActivate();
@@ -423,7 +432,8 @@ public class UITask extends UIForm implements UISelectable {
   public static class EndOfStateActionListener extends EventListener<UITask> {
     public void execute(Event<UITask> event) throws Exception {
       UITask uiTask = event.getSource();
-      VariableMaps maps = uiTask.prepareVariables();
+      String objectId = event.getRequestContext().getRequestParameter(OBJECTID);
+      VariableMaps maps = uiTask.prepareVariables(objectId);
       try {
         Map variables = maps.getWorkflowVariables();
         uiTask.serviceContainer.endTask(uiTask.identification_, variables);
@@ -451,9 +461,9 @@ public class UITask extends UIForm implements UISelectable {
   public static class TransitionActionListener extends EventListener<UITask> {
     public void execute(Event<UITask> event) throws Exception {
       UITask uiTask = event.getSource();
-      VariableMaps maps = uiTask.prepareVariables();
       List submitButtons = uiTask.form.getSubmitButtons();
       String objectId = event.getRequestContext().getRequestParameter(OBJECTID);
+      VariableMaps maps = uiTask.prepareVariables(objectId);
       Task task = uiTask.serviceContainer.getTask(uiTask.identification_);
       String processInstanceId = task.getProcessInstanceId();
       Map variablesForService = uiTask.serviceContainer.getVariables(processInstanceId, uiTask.identification_);
