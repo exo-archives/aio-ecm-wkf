@@ -394,9 +394,11 @@ public class UITask extends UIForm implements UISelectable {
       if (value == null) value = "";
       workflowVariables.put(name, value);
     }
-    HashMap<String, Object> map = (HashMap)this.form.getSubmitButtons().get(0);
-    String variable = (String)map.get("variable");
-    if (variable != null && variable.length() != 0) workflowVariables.put(variable, decision);
+    if (this.form.getSubmitButtons().size() > 0) {
+      HashMap<String, Object> map = (HashMap)this.form.getSubmitButtons().get(0);
+      String variable = (String)map.get("variable");
+      if (variable != null && variable.length() != 0) workflowVariables.put(variable, decision);
+    }
     if ("delegate".equals(decision)) workflowVariables.put("delegate", "true");
     String repository = jcrService.getDefaultRepository().getConfiguration().getName();
     workflowVariables.put(Utils.REPOSITORY, repository);
