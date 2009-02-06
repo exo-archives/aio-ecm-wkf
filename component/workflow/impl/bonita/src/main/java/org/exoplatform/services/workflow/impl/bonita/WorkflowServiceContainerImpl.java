@@ -792,12 +792,11 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
     // Security Check
     this.commit();
     try {
-
       RuntimeAPI rApi = AccessorUtil.getAPIAccessor().getRuntimeAPI();
       QueryDefinitionAPI dAPI = AccessorUtil.getQueryAPIAccessor().getQueryDefinitionAPI();
       ProcessDefinitionUUID uuid = UUIDFactory.getProcessDefinitionUUID(processId);
       Map<String, Object> variables = new HashMap<String, Object>();
-      //Check the enumerations
+      // Check the enumerations
       if (initialVariables != null) {
         Set<DataFieldDefinition> dataFields = dAPI.getProcessDataFields(uuid);
         for (DataFieldDefinition dataField : dataFields) {
@@ -806,9 +805,9 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
             if (EnumerationTypeDefinition.class.isInstance(typeValue)) {
               Set<String> possibleValues = EnumerationTypeDefinition.class.cast(typeValue)
                   .getEnumerationValues();
-              if (possibleValues.contains(initialVariables.get(dataField.getDataFieldId()))) {
-                variables.put(dataField.getDataFieldId(), new Enumeration(possibleValues,
-                    (String) variables.get(dataField.getDataFieldId())));
+              String strEnumValue = (String)initialVariables.get(dataField.getDataFieldId());
+              if (possibleValues.contains(strEnumValue)) {
+                variables.put(dataField.getDataFieldId(), new Enumeration(possibleValues,strEnumValue));
               }
             } else if (BasicTypeDefinition.class.isInstance(typeValue)) {
               // check for simple type and convert from string to adequat type

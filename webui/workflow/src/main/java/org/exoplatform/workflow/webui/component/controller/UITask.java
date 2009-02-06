@@ -277,23 +277,36 @@ public class UITask extends UIForm implements UISelectable {
           input.addValidator(DateTimeValidator.class);
         } else if (SELECT.equals(component)) {
           String baseKey = name + ".select-";
+          String baseKeyValue = name + ".valueselect-";
           List<SelectItemOption<String>> options = new ArrayList<SelectItemOption<String>>();
           int j = 0;
           String select0 = (String) variablesForService.get(baseKey + j);
           if (select0 == null) {
             ResourceBundle bundle = form.getResourceBundle();
-            try {
               while (true) {
-                String property = bundle.getString(baseKey + j);
-                options.add(new SelectItemOption<String>(property, property));
-                j++;
+                String property = null;
+                String propertyValue = null;
+                try {
+                  property = bundle.getString(baseKey + j);
+                  propertyValue = bundle.getString(baseKeyValue + j);
+                } catch (MissingResourceException e) {}
+                  if (property == null) break;
+                  if (propertyValue != null && propertyValue.length() != 0)
+                    options.add(new SelectItemOption<String>(property, propertyValue));
+                  else
+                    options.add(new SelectItemOption<String>(property, property));
+                  j++;
               }
-            } catch (MissingResourceException e) {}
           } else {
             while (true) {
               String property = (String) variablesForService.get(baseKey + j);
-              if (property == null) break;
-              options.add(new SelectItemOption<String>(property, property));
+              String propertyValue = (String) variablesForService.get(baseKeyValue + j);
+              if (property == null)
+                break;
+              if (propertyValue != null && propertyValue.length() != 0)
+                options.add(new SelectItemOption<String>(property, propertyValue));
+              else
+                options.add(new SelectItemOption<String>(property, property));
               j++;
             }
           }

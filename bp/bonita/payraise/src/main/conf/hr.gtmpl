@@ -45,12 +45,16 @@
 			<%}%>
 		</table>
 	  <div class="UIAction"> 
-	    <div class="ActionContainer">
+	     <table class="ActionContainer">
+	    	<tr>
+	    		<td>
 			  <%
 			  	writeAction("Finish it", "EndOfState", null) ;
 			    writeAction("Cancel", "Cancel", null) ;
 		    %>
-	    </div>
+	      </td>
+				</tr>
+			</table>
 	  </div>
   </div>
   <%uiform.end()%>

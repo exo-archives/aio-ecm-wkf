@@ -36,15 +36,4 @@
     <variable name="end" component="date" editable="false"/>
     <!-- No need to specify Submit buttons in the Bonita implementation -->
   </form>
-
-  <form>
-    <resource-bundle>assign-replacement</resource-bundle>
-    <state-name>assign_replacement</state-name>
-    <variable name="initiator" editable="false"/>
-    <variable name="start" component="date" editable="false"/>
-    <variable name="end" component="date" editable="false"/>
-    <variable name="replacement"/>
-    <!-- No need to specify Submit buttons in the Bonita implementation -->
-  </form>
-
 </forms>
