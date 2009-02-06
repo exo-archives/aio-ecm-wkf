@@ -67,6 +67,15 @@
             <ExtendedAttribute Name="PropertyActivity" />
           </ExtendedAttributes>
         </DataField>
+        <DataField Id="replacement" Name="replacement">
+          <DataType>
+            <BasicType Type="STRING" />
+          </DataType>
+          <Description>who will do the job ?</Description>
+          <ExtendedAttributes>
+            <ExtendedAttribute Name="PropertyActivity" />
+          </ExtendedAttributes>
+        </DataField>
       </DataFields>
       <Participants>
         <Participant Id="Initiator" Name="Initiator">
@@ -171,6 +180,9 @@
             <ExtendedAttribute Name="YOffset" Value="283" />
             <ExtendedAttribute Name="CellHeight" Value="30" />
             <ExtendedAttribute Name="CellWidth" Value="126" />
+            <ExtendedAttribute Name="property" Value="replacement">
+              <Propagated>No</Propagated>
+            </ExtendedAttribute>
           </ExtendedAttributes>
         </Activity>
         <Activity Id="hr_acknowledgement" Name="hr acknowledgement">
@@ -274,14 +286,14 @@
         </Transition>
         <Transition Id="assign_replacement_finish" Name="assign replacement_finish" From="assign_replacement" To="finish" />
         <Transition Id="hr_acknowledgement_finish" Name="hr acknowledgement_finish" From="hr_acknowledgement" To="finish" />
-        <Transition Id="evaluation_hr_acknowledgement" Name="evaluation_hr acknowledgement" From="evaluation" To="hr_acknowledgement">
-          <Condition Type="CONDITION">decision.compareTo("Approve") == 0</Condition>
-        </Transition>
         <Transition Id="evaluation_assign_replacement" Name="evaluation_assign replacement" From="evaluation" To="assign_replacement">
           <Condition Type="CONDITION">decision.compareTo("Approve") == 0</Condition>
         </Transition>
         <Transition Id="evaluation_End" Name="evaluation_End" From="evaluation" To="BonitaEnd">
           <Condition Type="CONDITION">decision.compareTo("Refuse") == 0</Condition>
+        </Transition>
+        <Transition Id="evaluation_hr_acknowledgement" Name="evaluation_hr acknowledgement" From="evaluation" To="hr_acknowledgement">
+          <Condition Type="CONDITION">decision.compareTo("Approve") == 0</Condition>
         </Transition>
         <Transition Id="change_request_End" Name="change request_End" From="change_request" To="BonitaEnd">
           <Condition Type="CONDITION">changedecision.compareTo("CancelRequest") == 0</Condition>
