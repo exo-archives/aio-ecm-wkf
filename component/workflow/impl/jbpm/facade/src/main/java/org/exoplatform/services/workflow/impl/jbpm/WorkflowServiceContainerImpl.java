@@ -28,7 +28,7 @@ import java.util.jar.JarInputStream;
 import java.util.zip.ZipInputStream;
 
 import org.exoplatform.container.ExoContainer;
-import org.exoplatform.container.PortalContainer;
+import org.exoplatform.container.ExoContainerContext;
 import org.exoplatform.container.component.ComponentLifecycle;
 import org.exoplatform.container.component.ComponentPlugin;
 import org.exoplatform.container.component.ComponentRequestLifecycle;
@@ -187,6 +187,8 @@ public class WorkflowServiceContainerImpl implements
     try {
       session.commitTransactionAndClose();
     } catch (Throwable t) {
+      t.printStackTrace();
+      session.rollbackTransactionAndClose();
     }
     threadLocal_.set(null);
   }
@@ -257,12 +259,10 @@ public class WorkflowServiceContainerImpl implements
         } else {
           key = membership.getMembershipType() + ACTOR_ID_KEY_SEPARATOR + group.getId();
           List tasks = session.getTaskMgmtSession().findTaskInstances(key);
-          if (tasks.size() > 0)
-            hashSet.addAll(tasks);
+          if (tasks.size() > 0) hashSet.addAll(tasks);
           String starKey = "*" + ACTOR_ID_KEY_SEPARATOR + group.getId();
           List tasksWithStar = session.getTaskMgmtSession().findTaskInstances(starKey);
-          if (tasksWithStar.size() > 0)
-            hashSet.addAll(tasksWithStar);  
+          if(tasksWithStar.size() > 0) hashSet.addAll(tasksWithStar);
         }
     
       }
@@ -459,8 +459,8 @@ public class WorkflowServiceContainerImpl implements
      * Notify the Forms Service. Its reference cannot be constructor injected
      * as the Forms Service already depends on the Workflow Service Container.
      */
-    WorkflowFormsService formsService = (WorkflowFormsService) PortalContainer.
-      getInstance().getComponentInstanceOfType(WorkflowFormsService.class);
+    WorkflowFormsService formsService = (WorkflowFormsService) ExoContainerContext
+        .getCurrentContainer().getComponentInstanceOfType(WorkflowFormsService.class);
     formsService.removeForms(processId);
   }
   
