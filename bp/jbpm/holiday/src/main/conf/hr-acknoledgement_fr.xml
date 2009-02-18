@@ -18,5 +18,7 @@
     <title>Fin des congés :</title>
     <label>Fin (jj/mm/aaaa) :</label>
   </end>
+  
+  <cancel>Cancel</cancel>
 </bundle>
 

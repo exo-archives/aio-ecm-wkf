@@ -38,5 +38,7 @@
     <label>Rewarded:</label>
     <checkbox>Yes the initiator was rewarded!</checkbox>
   </rewarded>
+  
+  <cancel>Cancel</cancel>
 </bundle>
 

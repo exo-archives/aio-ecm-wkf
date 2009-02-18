@@ -69,7 +69,8 @@
 						        writeAction(label, "Transition", name) ;
 						      }
 						    }
-						    writeAction("Cancel", "Cancel", null) ;
+						    cancel = resWorkflow.getString("cancel");
+						    writeAction(cancel, "Cancel", null);
 						    %>
 							</td>
 						</tr>

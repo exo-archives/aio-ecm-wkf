@@ -38,5 +38,7 @@
     <label>Augmenté:</label>
     <checkbox>Oui il a été augmenté !</checkbox>
   </rewarded>
+  
+  <cancel>Cancel</cancel>
 </bundle>
 

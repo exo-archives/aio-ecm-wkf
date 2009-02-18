@@ -18,5 +18,7 @@
     <title>End of vacations :</title>
     <label>End (dd/mm/yyyy) :</label>
   </end>
+  
+  <cancel>Thoát</cancel>
 </bundle>
 

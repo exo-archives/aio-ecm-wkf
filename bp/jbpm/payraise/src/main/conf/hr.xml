@@ -14,5 +14,10 @@
     <title>the amount granted</title>
     <label>Amount to be added:</label>
   </amount-granted>
+  <my-custom-groovy-form>My custom groovy form</my-custom-groovy-form>
+  <cancel>Cancel</cancel>
+  <finish-it>Finish it</finish-it>
+  
+  <cancel>Cancel</cancel>
 </bundle>
 

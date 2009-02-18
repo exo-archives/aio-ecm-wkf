@@ -21,6 +21,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -28,7 +29,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.PropertyResourceBundle;
+import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.jar.JarEntry;
@@ -47,6 +48,9 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
 
+import org.exoplatform.commons.utils.IOUtil;
+import org.exoplatform.services.resources.ExoResourceBundle;
+import org.exoplatform.services.resources.XMLResourceBundleParser;
 import org.exoplatform.services.workflow.FileDefinition;
 import org.ow2.novabpm.util.Misc;
 import org.w3c.dom.Attr;
@@ -116,37 +120,44 @@ public class BARFileDefinition implements FileDefinition {
    */
   public ResourceBundle getResourceBundle(String stateName, Locale locale) {
     String bundleName    = this.getResourceBundleName(stateName);
-    byte[] localizedFile = this.entries.get(bundleName +
-                                            "_" +
-                                            locale.getLanguage() +
-                                            ".properties");
-    byte[] defaultFile   = this.entries.get(bundleName +
-                                            ".properties");
-    byte[] selectedFile  = null;
     
-    // Select which byte array contains the Resource Bundle to be returned
-    try {
-      if(localizedFile != null) {
-        // The Resource Bundle is localized
-        selectedFile = localizedFile;
+    ClassLoader cl = this.getClass().getClassLoader();
+    String content = "";    
+    URL url = cl.getResource(bundleName + "_" + locale.getLanguage() +".xml");        
+    if (url == null) url = cl.getResource(bundleName + ".xml");
+    if (url != null) {
+      try {
+        Properties props = XMLResourceBundleParser.asProperties(url.openStream());
+        StringBuilder sb = new StringBuilder();
+        for (Map.Entry<Object, Object> entry : props.entrySet()) {
+          sb.append(entry.getKey());
+          sb.append('=');
+          sb.append(entry.getValue());
+          sb.append('\n');
+        }
+        content = sb.toString();
+      } catch (Exception e) {
+        throw new RuntimeException("Error while parsing the XML File", e);
       }
-      else if(defaultFile != null) {
-        // The Resource Bundle is not localized 
-        selectedFile = defaultFile;
-      }
-      else {
-        // No Resource Bundle found. Will cause havoc.
-        selectedFile = new byte[0];
-      }
-      
-      // Create a Resource Bundle from the selected byte array
-      return new PropertyResourceBundle(new ByteArrayInputStream(selectedFile));
     }
-    catch(Exception e) {
-      throw new RuntimeException("Error while retrieving the Resource " +
-                                 "Bundle for state " +
-                                 stateName);
+    
+    // If there isn't any XML file (format XML)
+    if (content.length() == 0) {      
+      String fileName = bundleName + "_" + locale.getLanguage() + ".properties";
+      url = cl.getResource(fileName);
+      if (url == null) url = cl.getResource(bundleName + ".properties");
+      if (url != null) {
+        try {
+          InputStream is = url.openStream();
+          byte[] buf = IOUtil.getStreamContentAsBytes(is);
+          content = new String(buf, "UTF-8");
+          is.close();
+        } catch (Exception e) {
+          throw new RuntimeException("Error while parsing the XML File", e);
+        }
+      }
     }
+    return new ExoResourceBundle(content);
   }
 
   /* (non-Javadoc)

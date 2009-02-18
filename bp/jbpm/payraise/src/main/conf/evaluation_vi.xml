@@ -38,5 +38,7 @@
     <label>Thưởng:</label>
     <checkbox>Người khởi tạo được thưởng!</checkbox>
   </rewarded>
+  
+  <cancel>Thoát</cancel>
 </bundle>
 

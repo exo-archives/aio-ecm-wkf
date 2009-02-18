@@ -26,5 +26,7 @@
     <select-1>important</select-1>
     <select-2>critique</select-2>
   </priority>
+  
+  <cancel>Cancel</cancel>
 </bundle>
 

@@ -14,5 +14,7 @@
     <title>Ngày kết thúc kỳ nghỉ:</title>
     <label>Kết thúc (dd/mm/yyyy) :</label>
   </end>
+  
+  <cancel>Thoát</cancel>
 </bundle>
 

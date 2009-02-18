@@ -17,23 +17,26 @@
 package org.exoplatform.services.workflow.impl.jbpm;
 
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.PropertyResourceBundle;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 import org.apache.commons.logging.Log;
 import org.dom4j.Element;
+import org.exoplatform.commons.utils.IOUtil;
 import org.exoplatform.container.ExoContainerContext;
 import org.exoplatform.download.DownloadService;
 import org.exoplatform.download.InputStreamDownloadResource;
 import org.exoplatform.services.log.LogService;
+import org.exoplatform.services.resources.ExoResourceBundle;
+import org.exoplatform.services.resources.XMLResourceBundleParser;
 import org.exoplatform.services.workflow.Form;
 import org.jbpm.file.def.FileDefinition;
 
@@ -63,30 +66,54 @@ public class FormImpl implements Form{
     String formFileName = "";
     if(childElement != null)
       formFileName = childElement.getText();
+    ClassLoader cl = this.getClass().getClassLoader();
 
-    //manage properties
-    String localisedFileName = getLocalisedString(formFileName, locale);
-    log.debug("Try to find localised resource : " + localisedFileName);
-    byte[] bytes = null;
-    try {
-      bytes = fileDefinition.getBytes(localisedFileName);
-    } catch (Exception e) {
-      log.debug("Try to find default resource : " + formFileName + ".properties");
+    // Manage properties
+    String localisedFileName = getLocalisedString(formFileName, locale);    
+    String content = "";    
+    URL url = cl.getResource(localisedFileName);
+    if (url == null) url = cl.getResource(formFileName + ".xml");
+    if (url != null) {
       try {
-        bytes = fileDefinition.getBytes(formFileName + ".properties");        
-      } catch (Exception ex) {}  
+        Properties props = XMLResourceBundleParser.asProperties(url.openStream());
+        StringBuilder sb = new StringBuilder();
+        for (Map.Entry<Object, Object> entry : props.entrySet()) {
+          sb.append(entry.getKey());
+          sb.append('=');
+          sb.append(entry.getValue());
+          sb.append('\n');
+        }
+        content = sb.toString();
+      } catch (Exception e) {
+        log.debug("resource bundle not found");
+      }
     }
-    if(bytes != null) {
-     log.debug("resource bundle found true");
-     try {
-       resourceBundle = new PropertyResourceBundle(new ByteArrayInputStream(bytes));
-     } catch (IOException e) {
-       e.printStackTrace();
-     }     
-    } else {
+    
+    // If there isn't any XML file (format XML)
+    if (content.length() == 0) {      
+      String fileName = formFileName + "_" + locale.getLanguage() + ".properties";
+      url = cl.getResource(fileName);
+      if (url == null) url = cl.getResource(formFileName + ".properties");
+      if (url != null) {
+        try {
+          InputStream is = url.openStream();
+          byte[] buf = IOUtil.getStreamContentAsBytes(is);
+          content = new String(buf, "UTF-8");
+          is.close();
+        } catch (Exception e) {
+          log.debug("resource bundle not found");
+        }
+      }
+    }    
+    
+    log.debug("Try to find localised resource : " + localisedFileName);                 
+    if (content.length() > 0) {         
+      log.debug("resource bundle found true");
+      resourceBundle = new ExoResourceBundle(content);         
+    } else{
       log.debug("resource bundle not found");
     }
-
+    
     childElement = element.element("state-name");
     if(childElement != null)
       this.stateName = childElement.getText();
@@ -116,7 +143,7 @@ public class FormImpl implements Form{
   }
 
   private String getLocalisedString(String fileName, Locale locale) {
-    return fileName + "_" + locale.getLanguage() + ".properties";
+    return fileName + "_" + locale.getLanguage() + ".xml";
   }
 
   @SuppressWarnings("unchecked")

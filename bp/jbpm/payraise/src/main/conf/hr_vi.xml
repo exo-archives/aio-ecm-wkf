@@ -14,5 +14,10 @@
     <title>Số lượng được cho phép</title>
     <label>Số lượng được cộng thêm:</label>
   </amount-granted>
+  <my-custom-groovy-form>Dùng groovy form</my-custom-groovy-form>
+  <cancel>Thoát</cancel>
+  <finish-it>Đồng ý</finish-it>
+  
+  <cancel>Thoát</cancel>
 </bundle>
 

@@ -26,5 +26,7 @@
     <select-1>Quan trọng</select-1>
     <select-2>Rất quan trọng</select-2>
   </priority>
+  
+  <cancel>Thoát</cancel>
 </bundle>
 
