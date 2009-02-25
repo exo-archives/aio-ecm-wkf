@@ -8,8 +8,8 @@
   </form>
 
   <form>
-    	<resource-bundle>evaluation</resource-bundle>
-  	  <state-name>evaluation</state-name>
+    <resource-bundle>evaluation</resource-bundle>
+  	<state-name>evaluation</state-name>
     <variable name="initiator" />
     <variable name="start" component="date"/>
     <variable name="end" component="date"/>

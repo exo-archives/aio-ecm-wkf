@@ -90,5 +90,11 @@
       <version>4.0.2</version>
       <scope>provided</scope>
     </dependency>
+    
+    <dependency>
+      <groupId>org.exoplatform.core</groupId>
+      <artifactId>exo.core.component.resources.api</artifactId>
+      <version>${org.exoplatform.core.version}</version>
+    </dependency>
   </dependencies>  
 </project>

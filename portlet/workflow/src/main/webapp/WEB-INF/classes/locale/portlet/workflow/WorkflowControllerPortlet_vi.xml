@@ -8,7 +8,14 @@
   <UIWorkflowControllerPortlet>
     <tab>
       <label>Điều khiển</label>
+      <text>Quản lý workflow</text>
     </tab>
+    <msg>
+      <refresh-session-success>Phiên làm việc vừa được cập nhật thành công</refresh-session-success>
+    </msg>
+    <label>
+      <refesh>Câp nhật</refesh>
+    </label>
   </UIWorkflowControllerPortlet>
   <ControllerPopup>
     <title>
@@ -36,8 +43,12 @@
       <processDateStart>Ngày bắt đầu quá trình</processDateStart>
       <action>Hành động</action>
     </header>
+    <label>
+      <managerState>Quản lý</managerState>
+    </label>
     <msg>
       <task-not-found>Không thể quản lý nhiệm vụ này. Rất có thể là đã có một người dùng khác quản lý.</task-not-found>
+      <task-change>Nhiệm vụ bạn vừa chọn đã bị thay đổi hoặc di chuyển</task-change>
     </msg>
   </UITaskList>
   <UITaksList>
