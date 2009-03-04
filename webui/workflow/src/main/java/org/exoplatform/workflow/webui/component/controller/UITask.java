@@ -349,7 +349,12 @@ public class UITask extends UIForm implements UISelectable {
           input = new UIFormRadioBoxInput(name, (String) value, options);
         }
         ResourceBundle res = form.getResourceBundle();
-        inputInfo_.add(new InputInfo("", "", res.getString(name + LABEL_ENCODING), input, mandatory));
+        String inputName = name;
+        try {
+          inputName = res.getString(name + LABEL_ENCODING);
+        } catch(Exception e) {
+        }
+        inputInfo_.add(new InputInfo("", "", inputName, input, mandatory));
         addUIFormInput(input);
       }
     }

@@ -57,7 +57,11 @@
 							  <%
 							  def buttons = uicomponent.getSubmitButtons() ;
 					      if(buttons.isEmpty()) {
-					        label = resWorkflow.getString("submit") ;
+					        try {
+					         label = resWorkflow.getString("submit");
+					        } catch(Exception e) {
+					          label = "submit";
+					        } 
 						      if(uicomponent.isStart()) writeAction(label, "StartProcess", null) ;
 					        else writeAction(label, "EndOfState", null) ;
 					      } else {
@@ -65,10 +69,19 @@
 						        name = button.get("name") ;
 						        submit = ".submit" ;
 						        label = name + submit ;
-						        label = resWorkflow.getString(label) ;
+						        try {
+						          label = resWorkflow.getString(label) ;
+						        } catch(Exception e) {
+						          label= name;
+						        }  
 						        writeAction(label, "Transition", name) ;
 						      }
 						    }
+						    try {
+						          cancel = resWorkflow.getString("cancel");
+						        } catch(Exception e) {
+						          cancel = "cancel";
+						        } 
 						    cancel = resWorkflow.getString("cancel");
 						    writeAction(cancel, "Cancel", null);
 						    %>
