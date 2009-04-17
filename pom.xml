@@ -23,8 +23,9 @@
     <module>portlet/workflow</module>
     <module>webui/workflow</module>   
     <module>web/workflowportal</module>
-	<module>server/tomcat/patch</module>
-	<module>server/jonas/patch</module>
+  	<module>server/tomcat/patch</module>
+  	<module>server/jonas/patch</module>
+    <module>server/jboss/patch</module>
   </modules>
 
   <build>
