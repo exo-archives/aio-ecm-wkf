@@ -2,13 +2,13 @@
   <parent>
     <groupId>org.exoplatform.ecm.workflow</groupId>
     <artifactId>config</artifactId>
-    <version>1.0.x</version>
+    <version>1.0.1</version>
   </parent> 
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.exoplatform.ecm.workflow.bp</groupId>
   <artifactId>config</artifactId>
-  <version>1.0.x</version>
+  <version>1.0.1</version>
   <name>Workflow business processes configuration</name>
   <packaging>pom</packaging>
 
@@ -58,7 +58,7 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <org.exoplatform.ecm.workflow.version>1.0.x</org.exoplatform.ecm.workflow.version>
+        <org.exoplatform.ecm.workflow.version>1.0.1</org.exoplatform.ecm.workflow.version>
       </properties>
     </profile>
   </profiles>
