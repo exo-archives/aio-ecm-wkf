@@ -45,7 +45,6 @@ import org.ow2.bonita.facade.def.majorElement.DataFieldDefinition;
 import org.ow2.bonita.facade.exception.ActivityDefNotFoundException;
 import org.ow2.bonita.facade.exception.ProcessNotFoundException;
 import org.ow2.bonita.facade.uuid.ActivityDefinitionUUID;
-import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
 import org.ow2.bonita.facade.uuid.UUIDFactory;
 import org.ow2.bonita.util.AccessorUtil;
 import org.ow2.novabpm.identity.auth.BonitaPrincipal;
@@ -211,36 +210,36 @@ public class AutomaticFormImpl implements Form {
         try {
             Set<DataFieldDefinition> vList = AccessorUtil.getQueryAPIAccessor().getQueryDefinitionAPI().getProcessDataFields(UUIDFactory.getProcessDefinitionUUID(processId));
         
-    		initializeVariables(vList);
+        initializeVariables(vList);
         } catch (ProcessNotFoundException e) {
             e.printStackTrace();
         }
-	
+  
   }
   
   private void initializeVariables(Set<DataFieldDefinition> vList){
-		for(DataFieldDefinition key : vList){
-			Map<String, Object> attributes = new HashMap<String, Object>();
-			attributes.put("name",      key.getDataFieldId());
-			attributes.put("editable",  "true");
-			attributes.put("mandatory", "false");
-			attributes.put("visiable", "true");
-			if(key.getDataType().getType().equals(DataTypeDefinition.Type.EnumerationType)){				/*
-		         * In case of multiple values, the component is select and different
-		         * values are specified in the variable attributes, so that the bundle
-		         * can retrieve them. Constant variables in UITask.java cannot be
-		         * referenced since this class is currently not contained by a jar.
-		         */
-		        attributes.put("component", "select");
-				attributes.put("possible-values", (Collection<String>)((EnumerationTypeDefinition)key.getDataType().getValue()).getEnumerationValues());
-			}else{
-				// The default component is text
-		        attributes.put("component", "text");
-			}
-			// Include the variable in the variables list and in the bundle
-	      this.variables.put(key.getDataFieldId(), attributes);
-	      ((AutomaticFormBundle) this.bundle).addVariable(attributes);
-		}
+    for(DataFieldDefinition key : vList){
+      Map<String, Object> attributes = new HashMap<String, Object>();
+      attributes.put("name",      key.getDataFieldId());
+      attributes.put("editable",  "true");
+      attributes.put("mandatory", "false");
+      attributes.put("visiable", "true");
+      if(key.getDataType().getType().equals(DataTypeDefinition.Type.EnumerationType)){        /*
+             * In case of multiple values, the component is select and different
+             * values are specified in the variable attributes, so that the bundle
+             * can retrieve them. Constant variables in UITask.java cannot be
+             * referenced since this class is currently not contained by a jar.
+             */
+            attributes.put("component", "select");
+        attributes.put("possible-values", (Collection<String>)((EnumerationTypeDefinition)key.getDataType().getValue()).getEnumerationValues());
+      }else{
+        // The default component is text
+            attributes.put("component", "text");
+      }
+      // Include the variable in the variables list and in the bundle
+        this.variables.put(key.getDataFieldId(), attributes);
+        ((AutomaticFormBundle) this.bundle).addVariable(attributes);
+    }
   }
 
   /* (non-Javadoc)
@@ -268,29 +267,28 @@ public class AutomaticFormImpl implements Form {
     }
     
     private void commit(){
-  	  LoginContext lc = null;
-  	  OrganizationService organizationService = (OrganizationService) RootContainer.getComponent(OrganizationService.class);
-  	  try {
-    		// Change for the trunk version
-  		Identity identity = ConversationState.getCurrent().getIdentity();
-  		if(identity.getSubject()!=null) {
-  			Subject s = new Subject();
-   		   	s.getPrincipals().add(new BonitaPrincipal(identity.getUserId()));
-      		try {
-      			lc = new LoginContext("exo-domain", s);
-      		} catch (LoginException le) {
-      			le.printStackTrace();
-      		} 
-  		} else {
-  			UserHandler userHandler = organizationService.getUserHandler();
-  			User user = userHandler.findUserByName(identity.getUserId());
-  			char[] password = user.getPassword().toCharArray(); 
-  			BasicCallbackHandler handler = new BasicCallbackHandler(identity.getUserId(), password);
-  			lc = new LoginContext("exo-domain", handler);
-  		}
-  		lc.login();
-  	  } catch(Exception e) {
-  		  
-  	  }
+      LoginContext lc = null;
+      OrganizationService organizationService = (OrganizationService) RootContainer.getComponent(OrganizationService.class);
+      try {
+        // Change for the trunk version
+        Identity identity = ConversationState.getCurrent().getIdentity();
+        if (identity.getSubject() != null) {
+          Subject s = new Subject();
+          s.getPrincipals().add(new BonitaPrincipal(identity.getUserId()));
+          try {
+            lc = new LoginContext("Bonita", s);
+          } catch (LoginException le) {
+            le.printStackTrace();
+          }
+        } else {
+          UserHandler userHandler = organizationService.getUserHandler();
+          User user = userHandler.findUserByName(identity.getUserId());
+          char[] password = user.getPassword().toCharArray();
+          BasicCallbackHandler handler = new BasicCallbackHandler(identity.getUserId(), password);
+          lc = new LoginContext("exo-domain", handler);
+        }
+        lc.login();
+      } catch(Exception e) {
+      }
     }
 }

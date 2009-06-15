@@ -20,10 +20,11 @@
   </thead>
   <tbody>
   <%
-    if(uicomponent.getTasks().size() > 0) {
+    def taskList = uicomponent.getTasks();
+    if(taskList.size() > 0) {
       def rowClass = null ;
 	    boolean even = true ;
-      for(task in uicomponent.getTasks()) {
+      for(task in taskList) {
         if(even) rowClass = "EvenRow" ;  
 	      else rowClass =  "OddRow" ; 
 	      even = !even ;

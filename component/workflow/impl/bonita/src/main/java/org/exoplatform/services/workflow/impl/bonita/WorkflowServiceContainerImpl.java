@@ -511,7 +511,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
    * @see org.exoplatform.services.workflow.WorkflowServiceContainer#getTasks(java.lang.String)
    */
   public List<Task> getTasks(String processInstanceId) {
-	  List<Task> tasks = new ArrayList<Task>();
+    List<Task> tasks = new ArrayList<Task>();
     // Security Check
     this.commit();
 
@@ -687,7 +687,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       variables.putAll(cleanVariables(rApi.getActivityInstanceVariables(task.getUUID())));
 
       //          String processId = new APIAccessorImpl().getRecordQuerierAPI().getInstanceRecord(InstanceId).getProcessId();
-      //  		Form form = this.formsService.getForm(processId, activityId, Locale.getDefault());
+      //      Form form = this.formsService.getForm(processId, activityId, Locale.getDefault());
       //        List<Map<String, Object>> formVariables = form.getVariables();
       //        
       //        // Convert String to Objects based on Form information
@@ -912,7 +912,6 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       }
       lc.login();
     } catch (Exception e) {
-
     }
   }
 }
