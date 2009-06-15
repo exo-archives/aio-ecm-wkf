@@ -131,21 +131,21 @@ public class JCRFileDefinitionServiceImpl
   private Node getNodeByProcessId(String processId, Session session) 
     throws RepositoryException {
 
-	  Node bpNode = session.getRootNode().getNode(
+    Node bpNode = session.getRootNode().getNode(
         bpNodePath.startsWith("/") ? bpNodePath.substring(1) : bpNodePath);
 
-	  String processName;
-	try {
-		processName = WorkflowServiceContainerHelper.getProcessName(processId);
-	
+    String processName;
+  try {
+    processName = WorkflowServiceContainerHelper.getProcessName(processId);
+  
       if(bpNode.hasNode(processName)) {  
         return  bpNode.getNode(processName);
       }
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	  
+  } catch (Exception e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+  }
+    
     QueryManager qm = session.getWorkspace().getQueryManager();
     Query q= qm.createQuery(
       "select * from "
@@ -293,6 +293,7 @@ public class JCRFileDefinitionServiceImpl
     try {
      Session session = getSession();
      Node modelNode = getNodeByProcessId(processId, session);
+     if(modelNode == null) return null;
      FileDefinition fd = new BARFileDefinition(modelNode);
      fileDefinitions.put(processId,fd);
      return fd;
