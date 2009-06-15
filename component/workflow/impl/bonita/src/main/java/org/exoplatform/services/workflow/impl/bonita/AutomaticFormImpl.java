@@ -45,7 +45,6 @@ import org.ow2.bonita.facade.def.majorElement.DataFieldDefinition;
 import org.ow2.bonita.facade.exception.ActivityDefNotFoundException;
 import org.ow2.bonita.facade.exception.ProcessNotFoundException;
 import org.ow2.bonita.facade.uuid.ActivityDefinitionUUID;
-import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
 import org.ow2.bonita.facade.uuid.UUIDFactory;
 import org.ow2.bonita.util.AccessorUtil;
 import org.ow2.novabpm.identity.auth.BonitaPrincipal;
