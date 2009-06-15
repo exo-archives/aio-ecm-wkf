@@ -912,7 +912,6 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       }
       lc.login();
     } catch (Exception e) {
-
     }
   }
 }

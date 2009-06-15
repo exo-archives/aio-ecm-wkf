@@ -17,7 +17,6 @@ import javax.security.auth.Subject;
 import javax.security.auth.login.LoginContext;
 import javax.security.auth.login.LoginException;
 
-import org.exoplatform.services.security.ConversationState;
 import org.exoplatform.services.security.UsernameCredential;
 import org.ow2.novabpm.identity.auth.BonitaPrincipal;
 
@@ -26,46 +25,46 @@ import org.ow2.novabpm.identity.auth.BonitaPrincipal;
  * @author @author Le Gall Rodrigue <rodrigue.le-gall@bull.net>
  */
 public class PVMSecurityManager {
-	
-    public void commit(){
-    	Subject subject = null;
-        
-        // Change for the trunk version
-        //Subject subject = (Subject) ConversationState.getCurrent().getAttribute(ConversationState.SUBJECT); 
-/**
+
+  public void commit(){
+    Subject subject = null;
+
+    // Change for the trunk version
+    //Subject subject = (Subject) ConversationState.getCurrent().getAttribute(ConversationState.SUBJECT); 
+    /**
 //		  ExoContainer container = ExoContainerContext.getCurrentContainer();
 //        AuthenticationService authenticationService = (AuthenticationService) container
 //        .getComponentInstanceOfType(AuthenticationService.class);
 //        if(authenticationService.getCurrentIdentity()!=null){
 //            Subject subject = authenticationService.getCurrentIdentity().getSubject();
- * 
- * THESE LINES ARE FOR 2.0 versions
- * 
- */
-        if(subject!=null){
-        	String uid="";
- 		   	for (Object o: subject.getPublicCredentials()) {
- 		       if(UsernameCredential.class.isInstance(o)){
-                    uid = ((UsernameCredential)o).getUsername();
-                    break;
-                }
- 		    }
- 		   	Subject s = new Subject();
- 		   	s.getPrincipals().add(new BonitaPrincipal(uid));
- 		   	LoginContext lc = null;
-    		try {
-    			lc = new LoginContext("Bonita", s);
-    		} catch (LoginException le) {
-    			le.printStackTrace();
-    		} 
-
-    		try {
-    			lc.login();
-    			// if we return with no exception, authentication succeeded
-    		} catch (Exception e) {
-//    			System.out.println("Login failed: " + e);
-    		}
-//        }
+     * 
+     * THESE LINES ARE FOR 2.0 versions
+     * 
+     */
+    if(subject!=null){
+      String uid="";
+      for (Object o: subject.getPublicCredentials()) {
+        if(UsernameCredential.class.isInstance(o)){
+          uid = ((UsernameCredential)o).getUsername();
+          break;
         }
+      }
+      Subject s = new Subject();
+      s.getPrincipals().add(new BonitaPrincipal(uid));
+      LoginContext lc = null;
+      try {
+        lc = new LoginContext("Bonita", s);
+      } catch (LoginException le) {
+        le.printStackTrace();
+      } 
+
+      try {
+        lc.login();
+        // if we return with no exception, authentication succeeded
+      } catch (Exception e) {
+//      System.out.println("Login failed: " + e);
+      }
+//    }
     }
+  }
 }

@@ -5,12 +5,12 @@
   <application-policy name="exo-domain">
     <authentication>
       <login-module code="org.exoplatform.services.security.j2ee.JbossLoginModule" flag="required"></login-module>
-	  <login-module code="org.ow2.novabpm.identity.auth.StorageLoginModule" flag="required"></login-module>
+	    <login-module code="org.ow2.novabpm.identity.auth.BonitaStorageLoginModule" flag="required"></login-module>
     </authentication>
   </application-policy>
   <application-policy name="Bonita">
     <authentication>
-      <login-module code="org.ow2.novabpm.identity.auth.StorageLoginModule" flag="required"></login-module>
+      <login-module code="org.ow2.novabpm.identity.auth.BonitaStorageLoginModule" flag="required"></login-module>
     </authentication>
   </application-policy>
 </policy>

@@ -272,25 +272,24 @@ public class AutomaticFormImpl implements Form {
   	  OrganizationService organizationService = (OrganizationService) RootContainer.getComponent(OrganizationService.class);
   	  try {
     		// Change for the trunk version
-  		Identity identity = ConversationState.getCurrent().getIdentity();
-  		if(identity.getSubject()!=null) {
-  			Subject s = new Subject();
-   		   	s.getPrincipals().add(new BonitaPrincipal(identity.getUserId()));
-      		try {
-      			lc = new LoginContext("exo-domain", s);
-      		} catch (LoginException le) {
-      			le.printStackTrace();
-      		} 
-  		} else {
-  			UserHandler userHandler = organizationService.getUserHandler();
-  			User user = userHandler.findUserByName(identity.getUserId());
-  			char[] password = user.getPassword().toCharArray(); 
-  			BasicCallbackHandler handler = new BasicCallbackHandler(identity.getUserId(), password);
-  			lc = new LoginContext("exo-domain", handler);
-  		}
-  		lc.login();
+    		Identity identity = ConversationState.getCurrent().getIdentity();
+        if (identity.getSubject() != null) {
+          Subject s = new Subject();
+          s.getPrincipals().add(new BonitaPrincipal(identity.getUserId()));
+          try {
+            lc = new LoginContext("Bonita", s);
+          } catch (LoginException le) {
+            le.printStackTrace();
+          }
+        } else {
+          UserHandler userHandler = organizationService.getUserHandler();
+          User user = userHandler.findUserByName(identity.getUserId());
+          char[] password = user.getPassword().toCharArray();
+          BasicCallbackHandler handler = new BasicCallbackHandler(identity.getUserId(), password);
+          lc = new LoginContext("exo-domain", handler);
+        }
+    		lc.login();
   	  } catch(Exception e) {
-  		  
-  	  }
+      }
     }
 }
