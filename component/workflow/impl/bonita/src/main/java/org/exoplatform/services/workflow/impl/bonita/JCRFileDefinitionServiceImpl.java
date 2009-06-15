@@ -293,6 +293,7 @@ public class JCRFileDefinitionServiceImpl
     try {
      Session session = getSession();
      Node modelNode = getNodeByProcessId(processId, session);
+     if(modelNode == null) return null;
      FileDefinition fd = new BARFileDefinition(modelNode);
      fileDefinitions.put(processId,fd);
      return fd;

@@ -63,8 +63,7 @@ public class WorkflowFormsServiceImpl implements WorkflowFormsService {
       if(fileDefinition != null && fileDefinition.isFormDefined(stateName)) {
         // The Form is found in the storage and defined
         form = new SpecifiedFormImpl(processId,fileDefinition, stateName, locale);
-      }
-      else {
+      } else {
         // The Form is not found in the storage and not defined
         form = new AutomaticFormImpl(processId, stateName, locale);
       }
