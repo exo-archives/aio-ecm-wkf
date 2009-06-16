@@ -61,10 +61,10 @@
       <show-process-link>Montrer le lien vers le processus</show-process-link>
     </label>
     <msg>
-      <has-not-got-delegate>You must choose any user to deletgate</has-not-got-delegate>
+      <has-not-got-delegate>Veuillez choisir un utilisateur à qui déléguer</has-not-got-delegate>
     </msg>
     <title>
-      <Delegate>Select User</Delegate>
+      <Delegate>Saisir un utilisateur</Delegate>
     </title>
   </UITask>
   <UIBPDefinition>
@@ -98,10 +98,12 @@
   ## Need to be translated Since version ECM 2.3                      #
   #####################################################################
   -->
+  
   <PopupDelegatedSelectorId>
     <title>
-      <UIUserSelectContainer>Select User</UIUserSelectContainer>
+      <UIUserSelectContainer>Saisir un utilisateur</UIUserSelectContainer>
     </title>
   </PopupDelegatedSelectorId>
+  
 </bundle>
 

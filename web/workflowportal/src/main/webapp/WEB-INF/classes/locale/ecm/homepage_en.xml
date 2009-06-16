@@ -3,9 +3,9 @@
   <Homepage>
     <ecm>
       <label>
-        <slogan>"Make your documents alive !</slogan>
-        <productIntro>Through collaborative and other advanced features."</productIntro>
-        <instructionTitle>Try eXo ECM with following available user accounts</instructionTitle>
+        <slogan>"Your collaborators now in the loop"</slogan>
+        <productIntro></productIntro>
+        <instructionTitle>Try eXo Workflow with following available user accounts</instructionTitle>
         <admin>Administrator</admin>
         <userName>Username</userName>
         <password>Password</password>

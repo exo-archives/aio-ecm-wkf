@@ -76,7 +76,7 @@
   <UIControllerManager>
     <action>
       <title>
-        <ManageStart>Quản lí bắt đầu</ManageStart>
+        <ManageStart>Bắt đầu quản lý</ManageStart>
       </title>
     </action>
   </UIControllerManager>
@@ -88,5 +88,12 @@
       <value-invalid>'{0}' là một giá trị cần thiết</value-invalid>
     </msg>
   </UIDocumentForm>
+  
+  <PopupDelegatedSelectorId>
+    <title>
+      <UIUserSelectContainer>Chọn người dùng</UIUserSelectContainer>
+    </title>
+  </PopupDelegatedSelectorId>
+    
 </bundle>
 
