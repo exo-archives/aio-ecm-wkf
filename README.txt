@@ -1,45 +1,32 @@
 Enterprise Content Management(ECM) > Workflow Management System(WF)
-Version 1.0.1
+Version 1.0.2
 
 You may find it helpful to see the details at wiki place of ECM
 http://wiki.exoplatform.org/xwiki/bin/view/ECM/
 
 TABLE OF CONTENTS
 ---------------------------------------------------
-1. What is eXo ECM
-2. How to set up eXo ECM
+1. What is eXo Workflow
+2. How to set up eXo Workflow
 3. Release notes
 4. Migration guide
 
 
-1. WHAT IS EXO ECM
+1. WHAT IS EXO WORKFLOW
 ---------------------------------------------------
-	Enterprise Content Management is the strategies, methods and tools used to capture, manage, store, preserve and deliver 
-contents and documents related to organizational processes with the purpose of improving operational productivity and efficiency. 
-ECM tools and strategies allow the management of an organization's unstructured information, whether that information exists. 
-The eXo Platform ECM portlet provides you with a portal solution that can help you achieve these processes easily and it is carefully 
-designed so that you can leverage your business content across all formats for competitive gain. An environment for employees is also 
-provided to share and collaborate digital contents as well as delivering a comprehensive unified solution with rich functionalities.
-ECM consists of three parts: 
-	DMS (Document Management System): used to store, manage and track electronic documents and electronic images. DMS allows 
-documents to be modified and managed easily and conveniently by managing versions, properties, ect.
-	Workflow: is the way of looking at and controlling the processes presented in an organization such as service provision or 
+		Workflow: is the way of looking at and controlling the processes presented in an organization such as service provision or 
 information processing, etc. It is an effective tool to use in times of crisis to make certain that the processes are efficient and 
 effective with the purpose of better and more cost efficient organization.
-	WCM (Web Content Management): helps in maintaining, controlling, changing and reassembling the content on a web-page. It also 
-helps webmasters who handle all tasks needed to run a website, including development, deployment, design, content publication and 
-monitoring.
-
-
-2. HOW TO SET UP EXO ECM
+	
+2. HOW TO SET UP EXO WORKFLOW
 ---------------------------------------------------
-eXo Enterprise Content Management requires the Java 2 Standard Edition Runtime Environment (JRE) or Java Development Kit version 5.x
+eXo Workflow requires the Java 2 Standard Edition Runtime Environment (JRE) or Java Development Kit version 5.x
 
 2.1. Install Java SE 1.5 (Java Development Kit)
-Based on JavaEE, our ECM runs currently fine with version 1.5 so if you are using newer version, please download and install this 
-version to make ECM works fine. We will support newer version of Java very soon.
+Based on JavaEE, our Workflow runs currently fine with version 1.5 so if you are using newer version, please download and install this 
+version to make Workflow works fine. We will support newer version of Java very soon.
 
-2.2. Download eXo Enterprise Content Management version from: http://forge.objectweb.org/projects/exoplatform/
+2.2. Download eXo Workflow version from: http://forge.objectweb.org/projects/exoplatform/
 
 2.3. Unzip that package under a path that does not contain any space (in Windows).
 
@@ -51,7 +38,7 @@ version to make ECM works fine. We will support newer version of Java very soon.
 	Linux, Unix, Mac OS
 	chmod u+x *.sh ./eXo run
 
-2.6. Open your web browsers, now eXo ECM can run on FireFox 2 or newer, Internet Explorer 6 or newer 
+2.6. Open your web browsers, now eXo Workflow can run on FireFox 2 or newer, Internet Explorer 6 or newer 
 (we recommend using FireFox 3+ or Internet Explorer 7+ for the best result) 
 and navigate to URL: http://localhost:8080/portal
 
@@ -60,13 +47,14 @@ and navigate to URL: http://localhost:8080/portal
 
 3. RELEASE NOTES 
 ---------------------------------------------------
-** In Workflow-1.0.1-final, we focus to some main changes:
+** In Workflow-1.0.2, we fixed some problems:
 	
-** Tasks
-	-[WF-4] Create JBoss patch for workflow
-  -[WF-6] Create JBoass ear patch for workflow
-  -[WF-2] Check compatible with JBosss 
+** Bugs
+	-[WF-10] Can not open controller workflow portlet
+  -[WF-11] Remove WARNING message when run bonita engine
 
+** Tasks
+	-[WF-24] Integrate with JCR 1.10.4
 
 ** Other resources and links
 	Company site        http://www.exoplatform.com
@@ -79,7 +67,7 @@ and navigate to URL: http://localhost:8080/portal
 4. MIGRATION GUIDE
 ---------------------------------------------------
 
-DMS can be reached at:
+Workflow can be reached at:
 
    Web site: http://www.exoplatform.com
 						 http://www.exoplatform.vn
