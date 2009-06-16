@@ -65,7 +65,7 @@
       <Delegate>Select User</Delegate>
     </title>
     <msg>
-      <has-not-got-delegate>You must choose any user to deletgate</has-not-got-delegate>
+      <has-not-got-delegate>You must choose any user to delegate</has-not-got-delegate>
     </msg>
   </UITask>
   <PopupDelegatedSelectorId>

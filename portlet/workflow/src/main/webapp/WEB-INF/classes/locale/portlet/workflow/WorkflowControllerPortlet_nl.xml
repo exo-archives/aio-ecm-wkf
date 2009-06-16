@@ -91,5 +91,12 @@
   ## Need to be translated Since version ECM 2.3                      #
   #####################################################################
   -->
+  
+  <PopupDelegatedSelectorId>
+    <title>
+      <UIUserSelectContainer>Select User</UIUserSelectContainer>
+    </title>
+  </PopupDelegatedSelectorId>  
+  
 </bundle>
 

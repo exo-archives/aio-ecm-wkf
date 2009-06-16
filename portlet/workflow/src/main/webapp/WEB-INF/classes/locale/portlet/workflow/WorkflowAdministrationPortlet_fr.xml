@@ -162,11 +162,11 @@
   <UITaskListOfProcess>    
     <tab>
       <label>
-        <UITasksGrid>List tasks</UITasksGrid>
+        <UITasksGrid>Liste des tâches</UITasksGrid>
       </label>
     </tab>
     <action>      
-      <Cancel>Cancel</Cancel>
+      <Cancel>#{word.cancel}</Cancel>
     </action>    
   </UITaskListOfProcess>
 </bundle>

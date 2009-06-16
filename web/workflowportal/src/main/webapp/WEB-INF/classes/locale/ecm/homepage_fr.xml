@@ -8,14 +8,14 @@
   <Homepage>
     <ecm>
       <label>
-        <slogan>"Donnez vie à vos documents !</slogan>
-        <productIntro>A travers des fonctionnalités collaboratives avancées."</productIntro>
-        <instructionTitle>Essayez eXo ECM en utilisant les comptes utilisateur suivants</instructionTitle>
+        <slogan>"Vos collaborateurs sont dans la boucle"</slogan>
+        <productIntro></productIntro>
+        <instructionTitle>Essayez eXo Workflow en utilisant les comptes utilisateur suivants</instructionTitle>
         <admin>Administrateur</admin>
         <userName>Login</userName>
         <password>Mot de passe</password>
         <manager>Manager</manager>
-        <hr-manager>Responsable RH</hr-manager>
+        <hr-manager>RH</hr-manager>
         <user>Utilisateur</user>
         <demo>Demo</demo>
       </label>

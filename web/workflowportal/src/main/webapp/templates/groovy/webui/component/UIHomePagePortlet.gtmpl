@@ -5,6 +5,7 @@
   import java.util.Locale;
   import org.exoplatform.portal.webui.workspace.UIPortalApplication;
   import java.util.ResourceBundle;
+  import java.util.MissingResourceException;
   
   ResourceBundleService service = 
       (ResourceBundleService)PortalContainer.getComponent(ResourceBundleService.class) ;
@@ -23,7 +24,15 @@
 				<div class="AdImageRight">
 					<div class="EmptyBlock"><span></span></div>
 					<div class="ProductSlogan"><%=res.getString("Homepage.ecm.label.slogan")%></div>
-					<div class="ProductIntro"><%=res.getString("Homepage.ecm.label.productIntro")%></div>
+  			  <div class="ProductIntro">
+  			  <%
+  			    try {
+  			      print res.getString("Homepage.ecm.label.productIntro"); 
+  			    } catch(MissingResourceException e) {
+  			      print ("");
+  			    }
+  			  %> 
+  			  </div>    
 				</div>
 			</div>
 		</div>
