@@ -55,6 +55,8 @@ and navigate to URL: http://localhost:8080/portal
 
 ** Tasks
 	-[WF-24] Integrate with JCR 1.10.4
+	-[WF-25] Update parent pom to use 1.1.1
+	-[WF-26] Consistent Application data folder in organization configuration
 
 ** Other resources and links
 	Company site        http://www.exoplatform.com
