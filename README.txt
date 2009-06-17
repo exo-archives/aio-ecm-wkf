@@ -1,4 +1,4 @@
-Enterprise Content Management(ECM) > Workflow Management System(WF)
+Enterprise Content Management(ECM) > Workflow(WF)
 Version 1.0.2
 
 You may find it helpful to see the details at wiki place of ECM
