@@ -43,8 +43,8 @@
             <field name="processLocation"><string>war:/conf/bp</string></field>
             <field name="predefinedProcess">
               <collection type="java.util.HashSet">
-                <value><string>/exo.ecm.workflow.bp.jbpm.payraise-1.0.x.jar</string></value>
-                <value><string>/exo.ecm.workflow.bp.jbpm.holiday-1.0.x.jar</string></value>                
+                <value><string>/exo.ecm.workflow.bp.jbpm.payraise-1.0.2.jar</string></value>
+                <value><string>/exo.ecm.workflow.bp.jbpm.holiday-1.0.2.jar</string></value>                
               </collection>
             </field>
           </object>
