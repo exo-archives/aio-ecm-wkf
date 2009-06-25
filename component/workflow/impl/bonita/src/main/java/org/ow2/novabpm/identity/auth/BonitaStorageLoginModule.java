@@ -55,8 +55,14 @@ public final class BonitaStorageLoginModule implements LoginModule {
   }
 
   public boolean logout() throws LoginException {
-    if(subject != null) SecurityContext.clearSubject();
-    return true;
+    try {
+		if (SecurityContext.getSubject() != null) {
+			SecurityContext.clearSubject();
+		}
+	} catch (Exception e) {
+		// Ignore exception
+	}
+	return true;
   }
   
 }
