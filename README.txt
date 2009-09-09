@@ -1,5 +1,5 @@
 Enterprise Content Management(ECM) > Workflow Management System(WF)
-Version 1.0.2
+Version 1.0.4-SNAPSHOT
 
 You may find it helpful to see the details at wiki place of ECM
 http://wiki.exoplatform.org/xwiki/bin/view/ECM/
@@ -47,7 +47,7 @@ and navigate to URL: http://localhost:8080/portal
 
 3. RELEASE NOTES 
 ---------------------------------------------------
-** In Workflow-1.0.2, we fixed some problems:
+** In Workflow-1.0.4-SNAPSHOT, we fixed some problems:
 	
 ** Bugs
 	-[WF-10] Can not open controller workflow portlet
