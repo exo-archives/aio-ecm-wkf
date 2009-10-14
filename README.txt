@@ -1,5 +1,20 @@
+Copyright (C) 2003-2009 eXo Platform SAS.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Affero General Public License
+as published by the Free Software Foundation; either version 3
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, see<http://www.gnu.org/licenses/>.
+
 Enterprise Content Management(ECM) > Workflow Management System(WF)
-Version 1.0.4-SNAPSHOT
+Version 1.0.4
 
 You may find it helpful to see the details at wiki place of ECM
 http://wiki.exoplatform.org/xwiki/bin/view/ECM/
@@ -47,16 +62,6 @@ and navigate to URL: http://localhost:8080/portal
 
 3. RELEASE NOTES 
 ---------------------------------------------------
-** In Workflow-1.0.4-SNAPSHOT, we fixed some problems:
-	
-** Bugs
-	-[WF-10] Can not open controller workflow portlet
-  -[WF-11] Remove WARNING message when run bonita engine
-
-** Tasks
-	-[WF-24] Integrate with JCR 1.10.4
-	-[WF-25] Update parent pom to use 1.1.1
-	-[WF-26] Consistent Application data folder in organization configuration
 
 ** Other resources and links
 	Company site        http://www.exoplatform.com
@@ -74,20 +79,5 @@ Workflow can be reached at:
    Web site: http://www.exoplatform.com
 						 http://www.exoplatform.vn
    	 E-mail: exoplatform@ow2.org
-						 exo-ecm@ow2.org
-						
+						 exo-ecm@ow2.org			
 
-Copyright (C) 2003-2007 eXo Platform SAS.
-
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU Affero General Public License
-as published by the Free Software Foundation; either version 3
-of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program; if not, see<http://www.gnu.org/licenses/>.
