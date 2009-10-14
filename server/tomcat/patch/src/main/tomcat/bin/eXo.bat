@@ -8,10 +8,11 @@ cd %BIN_DIR%
 rem Sets some variables
 set BONITA_OPTS="-Dorg.ow2.bonita.environment=..\conf\bonita.environnement.xml"
 set LOG_OPTS="-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog"
+set LOGGING_OPTS="-Djava.util.logging.config.file=..\server\default\conf\logging.properties"
 set SECURITY_OPTS="-Djava.security.auth.login.config=..\conf\jaas.conf"
 set EXO_OPTS="-Dexo.product.developing=false"
 set EXO_CONFIG_OPTS="-Dorg.exoplatform.container.configuration.debug"
-set JAVA_OPTS=-Xshare:auto -Xms128m -Xmx512m %LOG_OPTS% %SECURITY_OPTS% %EXO_OPTS% %EXO_CONFIG_OPTS% %BONITA_OPTS%
+set JAVA_OPTS=-Xshare:auto -Xms128m -Xmx512m %LOG_OPTS% %SECURITY_OPTS% %EXO_OPTS% %EXO_CONFIG_OPTS% %BONITA_OPTS% %LOGGING_OPTS%
 set JPDA_TRANSPORT=dt_socket
 set JPDA_ADDRESS=8000
 
