@@ -4,13 +4,13 @@ import java.util.Iterator;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.jbpm.pvm.env.Environment;
-import org.jbpm.pvm.internal.hibernate.HibernateJobDbSession;
-import org.jbpm.pvm.internal.job.TimerImpl;
-import org.jbpm.pvm.internal.jobexecutor.JobExecutor;
+import org.ow2.bonita.pvm.internal.hibernate.HibernateJobDbSession;
+import org.ow2.bonita.pvm.internal.job.TimerImpl;
+import org.ow2.bonita.pvm.internal.jobexecutor.JobExecutor;
 import org.ow2.bonita.facade.uuid.ProcessInstanceUUID;
+import org.ow2.bonita.pvm.env.Environment;
 import org.ow2.bonita.runtime.XpdlExecution;
-import org.ow2.novabpm.util.Command;
+import org.ow2.bonita.util.Command;
 
 /**
  * The CommandTimer modifies the due date of all timers

@@ -22,7 +22,7 @@
     
     <dependency>
       <groupId>org.ow2.bonita</groupId>
-      <artifactId>bonita-core</artifactId>
+      <artifactId>bonita-api</artifactId>
       <version>${bonita.version}</version>
       <scope>provided</scope>
     </dependency>

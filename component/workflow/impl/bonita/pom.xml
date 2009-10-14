@@ -58,13 +58,6 @@
 	</dependency>
 
     <dependency>
-      <groupId>org.ow2.bonita</groupId>
-      <artifactId>bonita-core</artifactId>
-      <version>${bonita.version}</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
       <groupId>org.exoplatform.jcr</groupId>
       <artifactId>exo.jcr.component.core</artifactId>
       <version>${org.exoplatform.jcr.version}</version>
@@ -76,6 +69,68 @@
       <artifactId>exo.portal.component.web</artifactId>
       <version>${org.exoplatform.portal.version}</version>
       <scope>compile</scope>
+    </dependency>
+    <!-- 
+    <dependency>
+					<groupId>dom4j</groupId>
+					<artifactId>dom4j</artifactId>
+					<version>1.6.1-jboss</version>
+					<scope>compile</scope>
+					<exclusions>
+						<exclusion>
+							<artifactId>xml-apis</artifactId>
+							<groupId>xml-apis</groupId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+				-->
+    <dependency>
+      <groupId>org.ow2.bonita</groupId>
+      <artifactId>bonita-api</artifactId>
+      <version>${bonita.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.ow2.bonita</groupId>
+      <artifactId>bonita-api-accessor</artifactId>
+      <version>${bonita.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.ow2.bonita</groupId>
+      <artifactId>bonita-api-obj</artifactId>
+      <version>${bonita.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.ow2.bonita</groupId>
+      <artifactId>bonita-util-common</artifactId>
+      <version>${bonita.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.ow2.bonita</groupId>
+      <artifactId>bonita-utils</artifactId>
+      <version>${bonita.version}</version>
+      <scope>provided</scope>
+    </dependency>
+	<dependency>
+      <groupId>org.ow2.bonita</groupId>
+      <artifactId>bonita-identity</artifactId>
+      <version>${bonita.version}</version>
+      <scope>provided</scope>
+    </dependency>
+	<dependency>
+      <groupId>org.ow2.bonita</groupId>
+      <artifactId>bonita-pvm</artifactId>
+      <version>${bonita.version}</version>
+      <scope>provided</scope>
+    </dependency>
+	<dependency>
+      <groupId>org.ow2.bonita</groupId>
+      <artifactId>bonita-engine</artifactId>
+      <version>${bonita.version}</version>
+      <scope>provided</scope>
     </dependency>
    </dependencies>
 

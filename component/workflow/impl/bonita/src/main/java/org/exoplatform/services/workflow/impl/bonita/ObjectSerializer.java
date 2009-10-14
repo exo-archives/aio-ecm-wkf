@@ -14,7 +14,7 @@
  **/
 package org.exoplatform.services.workflow.impl.bonita;
 
-import org.ow2.novabpm.util.Base64;
+import org.ow2.bonita.util.Base64;
 
 /**
  * Encode and decode a serialiazable object

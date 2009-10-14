@@ -52,7 +52,7 @@ import org.exoplatform.commons.utils.IOUtil;
 import org.exoplatform.services.resources.ExoResourceBundle;
 import org.exoplatform.services.resources.XMLResourceBundleParser;
 import org.exoplatform.services.workflow.FileDefinition;
-import org.ow2.novabpm.util.Misc;
+import org.ow2.bonita.util.Misc;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;

@@ -75,9 +75,10 @@ import org.ow2.bonita.facade.def.majorElement.DataFieldDefinition;
 import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;
 import org.ow2.bonita.facade.def.majorElement.ProcessDefinition.ProcessState;
 import org.ow2.bonita.facade.exception.ProcessNotFoundException;
+import org.ow2.bonita.facade.exception.VariableNotFoundException;
 import org.ow2.bonita.facade.runtime.ActivityInstance;
 import org.ow2.bonita.facade.runtime.TaskInstance;
-import org.ow2.bonita.facade.runtime.TaskState;
+import org.ow2.bonita.facade.runtime.ActivityState;
 import org.ow2.bonita.facade.runtime.var.Enumeration;
 import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
 import org.ow2.bonita.facade.uuid.ProcessInstanceUUID;
@@ -85,8 +86,8 @@ import org.ow2.bonita.facade.uuid.TaskUUID;
 import org.ow2.bonita.facade.uuid.UUIDFactory;
 import org.ow2.bonita.util.AccessorUtil;
 import org.ow2.bonita.util.BonitaException;
-import org.ow2.novabpm.identity.auth.BonitaPrincipal;
-import org.ow2.novabpm.util.Misc;
+import org.ow2.bonita.identity.auth.BonitaPrincipal;
+import org.ow2.bonita.util.Misc;
 import org.picocontainer.Startable;
 
 //TODO remove all commented code.
@@ -523,10 +524,10 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
 
     Collection<ActivityInstance<TaskInstance>> todoList = new ArrayList<ActivityInstance<TaskInstance>>();
 
-    todoList.addAll(rApi.getTaskList(TaskState.READY));
-    todoList.addAll(rApi.getTaskList(TaskState.EXECUTING));
-    todoList.addAll(rApi.getTaskList(TaskState.SUSPENDED));
-    todoList.addAll(rApi.getTaskList(TaskState.FINISHED));
+    todoList.addAll(rApi.getTaskList(ActivityState.READY));
+    todoList.addAll(rApi.getTaskList(ActivityState.EXECUTING));
+    todoList.addAll(rApi.getTaskList(ActivityState.SUSPENDED));
+    todoList.addAll(rApi.getTaskList(ActivityState.FINISHED));
 
     Iterator<ActivityInstance<TaskInstance>> ite = todoList.iterator();
     while (ite.hasNext()) {
@@ -591,9 +592,9 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
 
     Collection<ActivityInstance<TaskInstance>> todoList = new ArrayList<ActivityInstance<TaskInstance>>();
 
-    todoList.addAll(rApi.getTaskList(TaskState.READY));
-    todoList.addAll(rApi.getTaskList(TaskState.EXECUTING));
-    todoList.addAll(rApi.getTaskList(TaskState.SUSPENDED));
+    todoList.addAll(rApi.getTaskList(ActivityState.READY));
+    todoList.addAll(rApi.getTaskList(ActivityState.EXECUTING));
+    todoList.addAll(rApi.getTaskList(ActivityState.SUSPENDED));
 
     Iterator<ActivityInstance<TaskInstance>> ite = todoList.iterator();
     while (ite.hasNext()) {
@@ -852,6 +853,9 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
     } catch (ProcessNotFoundException e) {
       e.printStackTrace();
     } catch (ParseException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    } catch (VariableNotFoundException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
     }

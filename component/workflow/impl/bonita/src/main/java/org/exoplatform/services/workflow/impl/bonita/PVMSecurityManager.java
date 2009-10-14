@@ -18,7 +18,7 @@ import javax.security.auth.login.LoginContext;
 import javax.security.auth.login.LoginException;
 
 import org.exoplatform.services.security.UsernameCredential;
-import org.ow2.novabpm.identity.auth.BonitaPrincipal;
+import org.ow2.bonita.identity.auth.BonitaPrincipal;
 
 /**
  * TODO validate if this class is necessary
