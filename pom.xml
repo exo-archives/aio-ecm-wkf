@@ -9,7 +9,8 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.exoplatform.ecm.workflow</groupId>
   <artifactId>config</artifactId>
-  <name>eXo Workflow Config</name>
+  <name>eXo ECM - Workflow</name>
+  <description>eXo Enterprise Content Management - Workflow</description>
   <version>1.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
