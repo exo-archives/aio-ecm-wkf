@@ -115,7 +115,7 @@
       <!-- Run EMMA report on demand-->
        <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.2-SNAPSHOT</version>
+        <version>1.2</version>
         <executions>
           <execution>
             <id>emma1</id>
