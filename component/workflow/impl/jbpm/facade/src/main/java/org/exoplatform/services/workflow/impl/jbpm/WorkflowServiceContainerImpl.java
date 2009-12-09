@@ -185,7 +185,8 @@ public class WorkflowServiceContainerImpl implements
     if (session == null)
       return;
     try {
-      session.commitTransactionAndClose();
+      if (session.getTransaction() != null)
+        session.commitTransactionAndClose();
     } catch (Throwable t) {
       t.printStackTrace();
       session.rollbackTransactionAndClose();
