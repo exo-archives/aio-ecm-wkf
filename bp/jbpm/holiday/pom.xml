@@ -1,23 +1,19 @@
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"> 
   <parent>
     <groupId>org.exoplatform.ecm.workflow.bp</groupId>
-    <artifactId>config</artifactId>
+    <artifactId>workflow-bp-parent</artifactId>
     <version>1.0.5-SNAPSHOT</version>
   </parent> 
 
   <modelVersion>4.0.0</modelVersion>
   <artifactId>exo.ecm.workflow.bp.jbpm.holiday</artifactId>
-  <version>${org.exoplatform.ecm.workflow.version}</version>
-  <packaging>jar</packaging>
-  <name>eXo holidays BP for jBPM</name>
-  <url>http://www.exoplatform.org</url>
-  <description>eXo holidays BP for jBPM</description>
+  <name>eXo Workflow holidays BP for jBPM</name>
  
   <dependencies>
     <dependency>
       <groupId>org.exoplatform.ecm.workflow</groupId>
       <artifactId>exo.ecm.workflow.component.workflow.impl.jbpm.facade</artifactId>
-      <version>${org.exoplatform.ecm.workflow.version}</version>
+      <version>1.0.5-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>

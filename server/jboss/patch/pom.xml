@@ -1,17 +1,13 @@
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"> 
   <parent>
     <groupId>org.exoplatform.ecm.workflow</groupId>
-    <artifactId>config</artifactId>
+    <artifactId>workflow-parent</artifactId>
     <version>1.0.5-SNAPSHOT</version>
   </parent> 
 
   <modelVersion>4.0.0</modelVersion>
   <artifactId>exo.ecm.workflow.server.jboss.patch</artifactId>
-  <version>${org.exoplatform.ecm.workflow.version}</version>
-  <packaging>jar</packaging>
   <name>eXo JBoss Server</name>
-  <url>http://www.exoplatform.org</url>
-  <description>eXo Jboss server patch</description>
 
   <build>
     <resources>
