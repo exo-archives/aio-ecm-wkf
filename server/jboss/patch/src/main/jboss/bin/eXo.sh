@@ -5,7 +5,7 @@ LOGGING_OPTS="-Djava.util.logging.config.file=../server/default/conf/logging.pro
 #JPDA_ADDRESS=8000
 #REMOTE_DEBUG="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"
 
-JAVA_OPTS="$JAVA_OPTS $BONITA_OPTS $LOGGING_OPTS"
+JAVA_OPTS="$JAVA_OPTS -XX:MaxPermSize=256m $BONITA_OPTS $LOGGING_OPTS"
 
 export JAVA_OPTS
 exec "$PRGDIR"./run.sh "$@"

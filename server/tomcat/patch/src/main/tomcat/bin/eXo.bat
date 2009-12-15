@@ -11,7 +11,7 @@ set LOG_OPTS="-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.S
 set SECURITY_OPTS="-Djava.security.auth.login.config=..\conf\jaas.conf"
 set EXO_OPTS="-Dexo.product.developing=false"
 set EXO_CONFIG_OPTS="-Dorg.exoplatform.container.configuration.debug"
-set JAVA_OPTS=-Xshare:auto -Xms128m -Xmx512m %LOG_OPTS% %SECURITY_OPTS% %EXO_OPTS% %EXO_CONFIG_OPTS% %BONITA_OPTS%
+set JAVA_OPTS=-Xshare:auto -Xms128m -Xmx512m -XX:MaxPermSize=256m %LOG_OPTS% %SECURITY_OPTS% %EXO_OPTS% %EXO_CONFIG_OPTS% %BONITA_OPTS%
 set JPDA_TRANSPORT=dt_socket
 set JPDA_ADDRESS=8000
 
