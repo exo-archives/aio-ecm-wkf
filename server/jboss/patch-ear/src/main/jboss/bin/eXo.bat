@@ -13,6 +13,6 @@ set LOGGING_OPTS="-Djava.util.logging.config.file=..\server\default\conf\logging
 set EXO_OPTS="-Dexo.product.developing=false"
 #set JPDA_TRANSPORT=dt_socket
 #set JPDA_ADDRESS=8000
-set JAVA_OPTS=-Xshare:auto -Xms128m -Xmx512m %LOG_OPTS% %EXO_OPTS% %EXO_CONFIG_OPTS% %BONITA_OPTS% %LOGGING_OPTS%
+set JAVA_OPTS=-Xshare:auto -Xms128m -Xmx512m -XX:MaxPermSize=256m %LOG_OPTS% %EXO_OPTS% %EXO_CONFIG_OPTS% %BONITA_OPTS% %LOGGING_OPTS%
 rem Launches the server
 call run.bat %*

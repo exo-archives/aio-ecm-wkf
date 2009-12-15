@@ -7,7 +7,7 @@ cd `dirname "$0"`
 BONITA_OPTS="-Dorg.ow2.bonita.environment=../conf/bonita.environnement.xml"
 LOG_OPTS="-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog"
 SECURITY_OPTS="-Djava.security.auth.login.config=../conf/jaas.conf"
-EXO_OPTS="-Xshare:auto -Xms128m -Xmx512m -Dexo.product.developing=false"
+EXO_OPTS="-Xshare:auto -Xms128m -Xmx512m -XX:MaxPermSize=256m -Dexo.product.developing=false"
 EXO_CONFIG_OPTS="-Dorg.exoplatform.container.configuration.debug"
 
 JPDA_TRANSPORT=dt_socket

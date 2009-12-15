@@ -9,7 +9,7 @@ LOG_OPTS="-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.Simpl
 EXO_OPTS="-Dexo.webui.reloadable.template=true"
 BONITA_HOME = $JONAS_ROOT/bonita
 EXO_CONFIG_OPTS="-Dorg.exoplatform.container.configuration.debug"
-export JAVA_OPTS="-Xshare:auto -Xms128m -Xmx512m $LOG_OPTS $EXO_OPTS $BONITA_HOME $EXO_CONFIG_OPTS"
+export JAVA_OPTS="-Xshare:auto -Xms128m -Xmx512m -XX:MaxPermSize=256m $LOG_OPTS $EXO_OPTS $BONITA_HOME $EXO_CONFIG_OPTS"
 
 # Launches the server
 cd $UNIX_DIR
