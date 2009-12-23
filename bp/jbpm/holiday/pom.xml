@@ -2,7 +2,7 @@
   <parent>
     <groupId>org.exoplatform.ecm.workflow.bp</groupId>
     <artifactId>workflow-bp-parent</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6-SNAPSHOT</version>
   </parent> 
 
   <modelVersion>4.0.0</modelVersion>
@@ -13,7 +13,7 @@
     <dependency>
       <groupId>org.exoplatform.ecm.workflow</groupId>
       <artifactId>exo.ecm.workflow.component.workflow.impl.jbpm.facade</artifactId>
-      <version>1.0.5</version>
+      <version>1.0.6-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
