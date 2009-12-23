@@ -9,14 +9,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.exoplatform.ecm.workflow</groupId>
   <artifactId>workflow-parent</artifactId>
-  <version>1.0.5-SNAPSHOT</version>
+  <version>1.0.5</version>
   <packaging>pom</packaging>
   <name>eXo ECM Workflow</name>
 
   <scm>
-    <connection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/branches/1.0.x</connection>
-    <developerConnection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/branches/1.0.x</developerConnection>
-    <url>http://fisheye.exoplatform.org/browse/projects/ecm/workflow/branches/1.0.x</url>
+    <connection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/tags/workflow-parent-1.0.5</connection>
+    <developerConnection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/tags/workflow-parent-1.0.5</developerConnection>
+    <url>http://fisheye.exoplatform.org/browse/projects/ecm/workflow/tags/workflow-parent-1.0.5</url>
   </scm>
 
   <properties>
@@ -93,9 +93,9 @@
               <tasks>
 		      	<copy failonerror="false" todir="${basedir}/target/${project.build.finalName}/WEB-INF/classes">
 		       	  <fileset dir="${basedir}/src/main/webapp/WEB-INF/classes">
-		           <include name="**/*_en.properties"/>
+		           <include name="**/*_en.properties" />
 		          </fileset>
-		          <globmapper from="*_en.properties" to="*.properties"/>
+		          <globmapper from="*_en.properties" to="*.properties" />
 		       </copy>
               </tasks>
             </configuration>

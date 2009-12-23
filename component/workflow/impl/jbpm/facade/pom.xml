@@ -2,7 +2,7 @@
   <parent>
     <groupId>org.exoplatform.ecm.workflow</groupId>
     <artifactId>workflow-parent</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.5</version>
   </parent> 
 
   <modelVersion>4.0.0</modelVersion>
@@ -15,7 +15,7 @@
     <dependency>
       <groupId>org.exoplatform.ecm.workflow</groupId>
       <artifactId>exo.ecm.workflow.component.workflow.api</artifactId>
-      <version>1.0.5-SNAPSHOT</version>
+      <version>1.0.5</version>
     </dependency>
 
     <dependency>

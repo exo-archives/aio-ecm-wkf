@@ -2,7 +2,7 @@
   <parent>
     <groupId>org.exoplatform.ecm.workflow.bp</groupId>
     <artifactId>workflow-bp-parent</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.5</version>
   </parent> 
 
   <modelVersion>4.0.0</modelVersion>
@@ -14,7 +14,7 @@
     <dependency>
       <groupId>org.exoplatform.ecm.workflow</groupId>
       <artifactId>exo.ecm.workflow.component.workflow.impl.jbpm.facade</artifactId>
-      <version>1.0.5-SNAPSHOT</version>
+      <version>1.0.5</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -33,7 +33,7 @@
               <tasks>
                 <move todir="target/classes/classes">
                   <fileset dir="target/classes">
-                    <include name="org/**"/>
+                    <include name="org/**" />
                   </fileset>
                 </move>
               </tasks>
