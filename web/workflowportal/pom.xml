@@ -37,22 +37,22 @@
 				  </dependentWarExcludes>
           <webResources>
             <resource>
-              <directory>${settings.localRepository}/org/exoplatform/ecm/workflow/bp/exo.ecm.workflow.bp.bonita.payraise/1.0.5-SNAPSHOT</directory>
+              <directory>${settings.localRepository}/org/exoplatform/ecm/workflow/bp/exo.ecm.workflow.bp.bonita.payraise/${project.version}</directory>
               <targetPath>WEB-INF/conf/bp</targetPath>
               <includes><include>*.jar</include></includes>
             </resource>
             <resource>
-              <directory>${settings.localRepository}/org/exoplatform/ecm/workflow/bp/exo.ecm.workflow.bp.bonita.holiday/1.0.5-SNAPSHOT</directory>
+              <directory>${settings.localRepository}/org/exoplatform/ecm/workflow/bp/exo.ecm.workflow.bp.bonita.holiday/${project.version}</directory>
               <targetPath>WEB-INF/conf/bp</targetPath>
               <includes><include>*.jar</include></includes>
             </resource>
             <resource>
-              <directory>${settings.localRepository}/org/exoplatform/ecm/workflow/bp/exo.ecm.workflow.bp.jbpm.payraise/1.0.5-SNAPSHOT</directory>
+              <directory>${settings.localRepository}/org/exoplatform/ecm/workflow/bp/exo.ecm.workflow.bp.jbpm.payraise/${project.version}</directory>
               <targetPath>WEB-INF/conf/bp</targetPath>
               <includes><include>*.jar</include></includes>
             </resource>
             <resource>
-              <directory>${settings.localRepository}/org/exoplatform/ecm/workflow/bp/exo.ecm.workflow.bp.jbpm.holiday/1.0.5-SNAPSHOT</directory>
+              <directory>${settings.localRepository}/org/exoplatform/ecm/workflow/bp/exo.ecm.workflow.bp.jbpm.holiday/${project.version}</directory>
               <targetPath>WEB-INF/conf/bp</targetPath>
               <includes><include>*.jar</include></includes>
             </resource>
