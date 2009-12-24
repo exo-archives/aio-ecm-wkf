@@ -14,9 +14,9 @@
   <name>eXo ECM Workflow</name>
 
   <scm>
-    <connection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/tags/workflow-parent-1.0.5</connection>
-    <developerConnection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/tags/workflow-parent-1.0.5</developerConnection>
-    <url>http://fisheye.exoplatform.org/browse/projects/ecm/workflow/tags/workflow-parent-1.0.5</url>
+    <connection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/tags/1.0.5</connection>
+    <developerConnection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/tags/1.0.5</developerConnection>
+    <url>http://fisheye.exoplatform.org/browse/projects/ecm/workflow/tags/1.0.5</url>
   </scm>
 
   <properties>
