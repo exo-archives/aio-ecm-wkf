@@ -26,7 +26,7 @@
     <org.exoplatform.jcr.version>1.10.7-SNAPSHOT</org.exoplatform.jcr.version>
     <org.exoplatform.pc.version>2.0.9-SNAPSHOT</org.exoplatform.pc.version>
     <org.exoplatform.portal.version>2.5.8-SNAPSHOT</org.exoplatform.portal.version>
-    <org.exoplatform.jbpm.version>3.0.1</org.exoplatform.jbpm.version><!--  see WF-45 -->
+    <org.exoplatform.jbpm.version>3.0.2</org.exoplatform.jbpm.version><!--  see WF-45 -->
     <bonita.version>4.0</bonita.version>       
 
     <!-- tests default config -->
