@@ -18,6 +18,30 @@
       <type>war</type>
       <scope>runtime</scope>
     </dependency>
+    <dependency>
+      <groupId>org.exoplatform.ecm.workflow.bp</groupId>
+      <artifactId>exo.ecm.workflow.bp.bonita.payraise</artifactId>
+      <version>${project.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.ecm.workflow.bp</groupId>
+      <artifactId>exo.ecm.workflow.bp.bonita.holiday</artifactId>
+      <version>${project.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.ecm.workflow.bp</groupId>
+      <artifactId>exo.ecm.workflow.bp.jbpm.payraise</artifactId>
+      <version>${project.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.ecm.workflow.bp</groupId>
+      <artifactId>exo.ecm.workflow.bp.jbpm.holiday</artifactId>
+      <version>${project.version}</version>
+      <scope>provided</scope>
+    </dependency>
          
   </dependencies> 
   
