@@ -29,9 +29,6 @@
     <org.exoplatform.jbpm.version>3.0.2</org.exoplatform.jbpm.version><!--  see WF-45 -->
     <bonita.version>4.0</bonita.version>       
 
-    <!-- tests default config -->
-    <maven.test.skip>true</maven.test.skip>
-    <maven.test.failure.ignore>true</maven.test.failure.ignore>
   </properties>
 
   <modules>
