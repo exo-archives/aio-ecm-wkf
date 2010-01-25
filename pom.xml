@@ -1,24 +1,43 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"> 
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
 
+    Copyright (C) 2003-2010 eXo Platform SAS.
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Affero General Public License
+    as published by the Free Software Foundation; either version 3
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, see <http://www.gnu.org/licenses/>.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.exoplatform</groupId>
     <artifactId>exo.parent</artifactId>
     <version>8-SNAPSHOT</version>
   </parent>
-
-  <modelVersion>4.0.0</modelVersion>
   <groupId>org.exoplatform.ecm.workflow</groupId>
   <artifactId>workflow-parent</artifactId>
   <version>1.0.6-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo ECM - Workflow</name>
-
   <scm>
     <connection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/branches/1.0.x</connection>
     <developerConnection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/branches/1.0.x</developerConnection>
     <url>http://fisheye.exoplatform.org/browse/projects/ecm/workflow/branches/1.0.x</url>
   </scm>
-
+  <ciManagement>
+    <system>hudson</system>
+    <url>http://builder.exoplatform.org/hudson/job/ecm-workflow-1.0.x-ci/</url>
+  </ciManagement>
   <properties>
     <org.exoplatform.kernel.version>2.0.10-SNAPSHOT</org.exoplatform.kernel.version>
     <org.exoplatform.core.version>2.1.8-SNAPSHOT</org.exoplatform.core.version>
@@ -26,28 +45,10 @@
     <org.exoplatform.jcr.version>1.10.7-SNAPSHOT</org.exoplatform.jcr.version>
     <org.exoplatform.pc.version>2.0.9-SNAPSHOT</org.exoplatform.pc.version>
     <org.exoplatform.portal.version>2.5.8-SNAPSHOT</org.exoplatform.portal.version>
-    <org.exoplatform.jbpm.version>3.0.2</org.exoplatform.jbpm.version><!--  see WF-45 -->
-    <bonita.version>4.0</bonita.version>       
-
+    <org.exoplatform.jbpm.version>3.0.2</org.exoplatform.jbpm.version>
+    <!--  see WF-45 -->
+    <bonita.version>4.0</bonita.version>
   </properties>
-
-  <modules>
-    <module>component/workflow/api</module>
-    <module>component/workflow/impl/bonita</module>
-    <!-- module>component/workflow/impl/jbpm/engine</module moved in separate trunk -->
-    <module>component/workflow/impl/jbpm/facade</module>
-    <module>bp</module>
-    <module>web/eXoWorkflowResources</module>
-    <module>portlet/workflow</module>
-    <module>webui/workflow</module>   
-    <module>web/workflowportal</module>
-  	<module>server/tomcat/patch</module>
-  	<module>server/jonas/patch</module>
-    <module>server/jboss/patch</module>
-    <module>server/jboss/patch-ear</module>
-    <module>packaging</module>
-  </modules>
-
   <build>
     <resources>
       <resource>
@@ -55,8 +56,8 @@
         <includes>
           <include>**/*.properties</include>
           <include>**/*.xml</include>
-		  <include>**/*.gtmpl</include>
-		  <include>**/*.gif</include>
+          <include>**/*.gtmpl</include>
+          <include>**/*.gif</include>
         </includes>
       </resource>
     </resources>
@@ -78,7 +79,7 @@
           <archiveClasses>false</archiveClasses>
           <warSourceExcludes>WEB-INF/lib/*.jar</warSourceExcludes>
         </configuration>
-      </plugin>      
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
@@ -88,12 +89,12 @@
             <phase>compile</phase>
             <configuration>
               <tasks>
-		      	<copy failonerror="false" todir="${basedir}/target/${project.build.finalName}/WEB-INF/classes">
-		       	  <fileset dir="${basedir}/src/main/webapp/WEB-INF/classes">
-		           <include name="**/*_en.properties" />
-		          </fileset>
-		          <globmapper from="*_en.properties" to="*.properties" />
-		       </copy>
+                <copy failonerror="false" todir="${basedir}/target/${project.build.finalName}/WEB-INF/classes">
+                  <fileset dir="${basedir}/src/main/webapp/WEB-INF/classes">
+                    <include name="**/*_en.properties"/>
+                  </fileset>
+                  <globmapper from="*_en.properties" to="*.properties"/>
+                </copy>
               </tasks>
             </configuration>
             <goals>
@@ -104,4 +105,20 @@
       </plugin>
     </plugins>
   </build>
+  <modules>
+    <module>component/workflow/api</module>
+    <module>component/workflow/impl/bonita</module>
+    <!-- module>component/workflow/impl/jbpm/engine</module moved in separate trunk -->
+    <module>component/workflow/impl/jbpm/facade</module>
+    <module>bp</module>
+    <module>web/eXoWorkflowResources</module>
+    <module>portlet/workflow</module>
+    <module>webui/workflow</module>
+    <module>web/workflowportal</module>
+    <module>server/tomcat/patch</module>
+    <module>server/jonas/patch</module>
+    <module>server/jboss/patch</module>
+    <module>server/jboss/patch-ear</module>
+    <module>packaging</module>
+  </modules>
 </project>
