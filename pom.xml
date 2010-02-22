@@ -67,7 +67,6 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.4.3</version>
         <configuration>
-          <skip>${exo.test.skip}</skip>
           <useFile>false</useFile>
           <forkMode>once</forkMode><!--once , pertest -->
           <testFailureIgnore>${exo.test.failure.ignore}</testFailureIgnore>
@@ -230,7 +229,6 @@
         <org.exoplatform.portal.version>2.5.6.2</org.exoplatform.portal.version>
         <org.exoplatform.ecm.workflow.version>1.1-SNAPSHOT</org.exoplatform.ecm.workflow.version>
         <exo.test.classes>Test</exo.test.classes>
-        <exo.test.skip>true</exo.test.skip>
         <bonita.version>4.1</bonita.version>       
       </properties>
     </profile>
