@@ -1,18 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project>
+  <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.exoplatform.ecm.workflow.bp</groupId>
     <artifactId>config</artifactId>
     <version>1.1-SNAPSHOT</version>
-  </parent> 
-
-  <modelVersion>4.0.0</modelVersion>
+  </parent>
   <artifactId>exo.ecm.workflow.bp.jbpm.holiday</artifactId>
   <version>${org.exoplatform.ecm.workflow.version}</version>
   <packaging>jar</packaging>
   <name>eXo holidays BP for jBPM</name>
-  <url>http://www.exoplatform.org</url>
   <description>eXo holidays BP for jBPM</description>
- 
+  <url>http://www.exoplatform.org</url>
   <dependencies>
     <dependency>
       <groupId>org.exoplatform.ecm.workflow</groupId>
@@ -21,7 +20,6 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
-  
   <build>
     <plugins>
       <plugin>
@@ -30,7 +28,9 @@
         <executions>
           <execution>
             <id>createbpstructure</id>
-            <goals><goal>run</goal></goals>
+            <goals>
+              <goal>run</goal>
+            </goals>
             <phase>compile</phase>
             <configuration>
               <tasks>
@@ -45,5 +45,5 @@
         </executions>
       </plugin>
     </plugins>
-  </build>    
+  </build>
 </project>

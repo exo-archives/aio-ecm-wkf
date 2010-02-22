@@ -1,18 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project>
+  <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.exoplatform.ecm.workflow</groupId>
     <artifactId>config</artifactId>
     <version>1.1-SNAPSHOT</version>
-  </parent> 
-
-  <modelVersion>4.0.0</modelVersion>
+  </parent>
   <artifactId>exo.ecm.workflow.component.workflow.impl.jbpm.engine</artifactId>
   <version>3.0</version>
   <packaging>jar</packaging>
   <name>eXo JBPM</name>
-  <url>http://www.exoplatform.org</url>
   <description>eXo JBPM</description>
-
+  <url>http://www.exoplatform.org</url>
   <dependencies>
     <dependency>
       <groupId>dom4j</groupId>
@@ -20,81 +19,70 @@
       <version>1.4</version>
       <scope>compile</scope>
     </dependency>
-
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate</artifactId>
       <version>3.1rc2</version>
       <scope>compile</scope>
     </dependency>
-
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
       <version>1.0.4</version>
       <scope>compile</scope>
     </dependency>
-    
     <dependency>
       <groupId>ant</groupId>
       <artifactId>ant</artifactId>
       <version>1.6.2</version>
       <scope>compile</scope>
     </dependency>
-    
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
       <version>2.3</version>
       <scope>compile</scope>
     </dependency>
-    
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
       <version>1.2</version>
-    	<scope>compile</scope>
+      <scope>compile</scope>
     </dependency>
-    
     <dependency>
       <groupId>bsh</groupId>
       <artifactId>bsh</artifactId>
       <version>2.0b1</version>
       <scope>compile</scope>
     </dependency>
-    
     <dependency>
       <groupId>jboss</groupId>
       <artifactId>jboss-jmx</artifactId>
       <version>4.0.2</version>
       <scope>provided</scope>
     </dependency>
-    
     <dependency>
       <groupId>jboss</groupId>
       <artifactId>jboss-system</artifactId>
       <version>4.0.2</version>
       <scope>provided</scope>
     </dependency>
-    
     <dependency>
       <groupId>jboss</groupId>
       <artifactId>jboss</artifactId>
       <version>3.2.3</version>
       <scope>provided</scope>
     </dependency>
-    
     <dependency>
       <groupId>jboss</groupId>
       <artifactId>jboss-common</artifactId>
       <version>4.0.2</version>
       <scope>provided</scope>
     </dependency>
-    
     <dependency>
       <groupId>org.exoplatform.core</groupId>
       <artifactId>exo.core.component.resources.api</artifactId>
       <version>${org.exoplatform.core.version}</version>
     </dependency>
-  </dependencies>  
+  </dependencies>
 </project>
