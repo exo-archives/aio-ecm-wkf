@@ -285,7 +285,7 @@ public class AutomaticFormImpl implements Form {
           User user = userHandler.findUserByName(identity.getUserId());
           char[] password = user.getPassword().toCharArray();
           BasicCallbackHandler handler = new BasicCallbackHandler(identity.getUserId(), password);
-          lc = new LoginContext("exo-domain", handler);
+          lc = new LoginContext("gatein-domain", handler);
         }
     		lc.login();
   	  } catch(Exception e) {

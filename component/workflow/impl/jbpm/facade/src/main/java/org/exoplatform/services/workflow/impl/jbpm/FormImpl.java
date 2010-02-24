@@ -28,13 +28,13 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
-import org.apache.commons.logging.Log;
+import org.exoplatform.services.log.Log;
 import org.dom4j.Element;
 import org.exoplatform.commons.utils.IOUtil;
 import org.exoplatform.container.ExoContainerContext;
 import org.exoplatform.download.DownloadService;
 import org.exoplatform.download.InputStreamDownloadResource;
-import org.exoplatform.services.log.LogService;
+import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.resources.ExoResourceBundle;
 import org.exoplatform.services.resources.XMLResourceBundleParser;
 import org.exoplatform.services.workflow.Form;
@@ -51,17 +51,15 @@ public class FormImpl implements Form{
   private List variables;
   private List submitButtons;
   private ResourceBundle resourceBundle;
-  private Log log;
   private boolean customizedView;
   private boolean delegatedView;
   private String customizedViewString;
   private byte[] iconBytes;
   private byte[] stateImageBytes;
 
+  private static Log log = ExoLogger.getLogger(FormImpl.class.getName());
+  
   public FormImpl(FileDefinition fileDefinition, Element element, Locale locale) {
-    this.log = ((LogService)ExoContainerContext.getCurrentContainer().getComponentInstanceOfType(LogService.class)).
-        getLog("org.exoplatform.services.workflow");
-    
     Element childElement = element.element("resource-bundle");
     String formFileName = "";
     if(childElement != null)
