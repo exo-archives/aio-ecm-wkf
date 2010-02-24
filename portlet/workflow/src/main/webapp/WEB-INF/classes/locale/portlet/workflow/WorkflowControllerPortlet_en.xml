@@ -14,12 +14,12 @@
       <refresh-session-success>The session has been refreshed successfully</refresh-session-success>
     </msg>
     <label>
-      <refesh>Refesh</refesh>
+      <refresh>Refresh</refresh>
     </label>
   </UIWorkflowControllerPortlet>
   <ControllerPopup>
     <title>
-      <UITaskManager>UITask Manager</UITaskManager>
+      <UITaskManager>Task Management</UITaskManager>
     </title>
   </ControllerPopup>
   <UITabPane>

@@ -14,7 +14,7 @@
       <refresh-session-success>Phiên làm việc vừa được cập nhật thành công</refresh-session-success>
     </msg>
     <label>
-      <refesh>Câp nhật</refesh>
+      <refresh>Câp nhật</refresh>
     </label>
   </UIWorkflowControllerPortlet>
   <ControllerPopup>

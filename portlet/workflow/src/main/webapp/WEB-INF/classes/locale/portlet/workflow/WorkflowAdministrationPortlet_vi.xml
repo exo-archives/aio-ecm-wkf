@@ -10,8 +10,11 @@
       <label>Quản trị</label>
       <text>Quản trị nghiệp vụ</text>
     </tab>
+    <msg>
+      <refresh-session-success>Phiên làm việc vừa được cập nhật thành công</refresh-session-success>
+    </msg>
     <label>
-      <refesh>Làm mới</refesh>
+      <refresh>Câp nhật</refresh>
     </label>    
   </UIWorkflowAdministrationPortlet>
   <UITabPane>
@@ -131,6 +134,10 @@
     <action>
       <FlushAll>Xóa hết</FlushAll>
       <Cancel>Thoát</Cancel>
+			<title>
+    		<View>Xem</View>
+				<Delete>Xóa</Delete>
+    	</title>
     </action>
   </UIProcessDetail>
   <TaskListOfProcessPopup>

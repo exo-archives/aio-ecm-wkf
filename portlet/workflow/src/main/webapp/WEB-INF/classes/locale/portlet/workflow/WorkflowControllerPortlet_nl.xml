@@ -98,5 +98,18 @@
     </title>
   </PopupDelegatedSelectorId>  
   
+ <!--
+  #############################################################################
+  #			     Since 2.0.0-Alpha02-SNAPSHOT tobe translate											#
+  #############################################################################
+  -->
+  <UIWorkflowControllerPortlet>
+    <msg>
+      <refresh-session-success>The session has been refreshed successfully</refresh-session-success>
+    </msg>
+    <label>
+      <refresh>Refesh</refresh>
+    </label>
+  </UIWorkflowControllerPortlet>
 </bundle>
 

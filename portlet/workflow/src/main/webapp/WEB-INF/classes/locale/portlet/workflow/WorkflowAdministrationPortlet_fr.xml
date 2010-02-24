@@ -10,6 +10,12 @@
       <label>Administration</label>
       <text>Gestion du Workflow</text>
     </tab>
+		<msg>
+      <refresh-session-success>La session a été rafraichie avec succès</refresh-session-success>
+    </msg>
+		<label>
+      <refresh>Rafraichir</refresh>
+    </label>
   </UIWorkflowAdministrationPortlet>
   <UITabPane>
     <title>
@@ -169,4 +175,12 @@
       <Cancel>#{word.cancel}</Cancel>
     </action>    
   </UITaskListOfProcess>
+	<UIProcessDetail>
+    <action>
+    	<title>
+    		<View>View</View>
+				<Delete>Delete</Delete>
+    	</title>
+    </action>  
+  </UIProcessDetail>
 </bundle>

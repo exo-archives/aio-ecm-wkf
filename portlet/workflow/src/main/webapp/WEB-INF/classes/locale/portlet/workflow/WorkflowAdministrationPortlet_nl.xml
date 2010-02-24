@@ -174,5 +174,28 @@
       <Cancel>Cancel</Cancel>
     </action>
   </UITaskListOfProcess>
+	
+	<!--
+  #############################################################################
+  #			Since 2.0.0-Alpha02-SNAPSHOT tobe translate											#
+  #############################################################################
+  -->
+	
+ <UIWorkflowAdministrationPortlet>
+		<msg>
+      <refresh-session-success>The session has been refreshed successfully</refresh-session-success>
+    </msg>
+    <label>
+      <refresh>Refresh</refresh>
+    </label>
+  </UIWorkflowAdministrationPortlet>
+	<UIProcessDetail>
+    <action>
+    	<title>
+    		<View>View</View>
+				<Delete>Delete</Delete>
+    	</title>
+    </action>  
+  </UIProcessDetail>
 </bundle>
 
