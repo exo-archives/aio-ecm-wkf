@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<page-set>
+  <page>
+  	<page-id>group::platform/administrators::contentAdministration</page-id>
+  	<owner-type>group</owner-type>
+    <owner-id>platform/administrators</owner-id>
+    <name>contentAdministration</name>
+    <factory-id>Desktop</factory-id>
+    <access-permissions>*:/platform/administrators</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>    
+    <show-max-window>true</show-max-window>
+    
+    <portlet-application>
+    	<portlet>
+    		<application-ref>ecm</application-ref>
+				<portlet-ref>ECMAdminPortlet</portlet-ref>
+    	</portlet>
+      <title>ECM Administration</title>
+			<access-permissions>*:/platform/administrators</access-permissions>    
+      <show-info-bar>true</show-info-bar>
+    </portlet-application>
+    
+    <portlet-application>
+    	<portlet>
+    		<application-ref>workflow</application-ref>
+				<portlet-ref>WorkflowAdministrationPortlet</portlet-ref>
+    	</portlet>
+      <title>Workflow Administration</title>
+			<access-permissions>*:/platform/administrators</access-permissions>
+      <show-info-bar>true</show-info-bar>
+    </portlet-application>
+            
+  </page>
+    
+  <page>
+  	<page-id>group::platform/administrators::ECMAdmin</page-id>
+  	<owner-type>group</owner-type>
+    <owner-id>platform/administrators</owner-id>
+    <name>ECMAdmin</name>
+    <access-permissions>*:/platform/administrators</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <portlet-application>
+    	<portlet>
+    		<application-ref>ecm</application-ref>
+				<portlet-ref>ECMAdminPortlet</portlet-ref>
+    	</portlet>
+      <title>ECMAdmin</title>
+			<access-permissions>*:/platform/administrators</access-permissions>
+      <show-info-bar>false</show-info-bar>
+    </portlet-application>
+  </page>
+    
+  <page>
+  	<page-id>group::platform/administrators::workflowAdministration</page-id>
+  	<owner-type>group</owner-type>
+    <owner-id>platform/administrators</owner-id>
+    <name>workflowAdministration</name>
+    <access-permissions>*:/platform/administrators</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    
+    <portlet-application>
+    	<portlet>
+    		<application-ref>workflow</application-ref>
+				<portlet-ref>WorkflowAdministrationPortlet</portlet-ref>
+    	</portlet>
+      <title>Workflow Administration</title>
+			<access-permissions>*:/platform/administrators</access-permissions>
+      <show-info-bar>false</show-info-bar>
+    </portlet-application>    
+  </page>
+  
+</page-set>
