@@ -81,7 +81,7 @@ public class UIUploadProcess extends UIForm {
         return ;
       }
       
-      byte[] content = input.getUploadData() ;
+      InputStream inputStream = input.getUploadDataAsStream();
       String name = uiUploadProcess.getUIStringInput(FIELD_NAME).getValue() ;
       if(name == null) name = fileName;
       String[] arrFilterChar = {"&", "$", "@", ":","]", "[", "*", "%", "!"} ;
@@ -94,7 +94,6 @@ public class UIUploadProcess extends UIForm {
         }
       }
       try {
-        InputStream inputStream = new ByteArrayInputStream(content);
         workflowServiceContainer.deployProcess(inputStream) ;
         uiApp.addMessage(new ApplicationMessage("UIUploadProcess.msg.process-successful", null)) ;
         event.getRequestContext().addUIComponentToUpdateByAjax(uiApp.getUIPopupMessages()) ;

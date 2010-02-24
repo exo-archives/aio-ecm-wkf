@@ -14,11 +14,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import org.exoplatform.portal.webui.util.SessionProviderFactory;
 import org.exoplatform.portal.webui.util.Util;
 import org.exoplatform.portal.webui.workspace.UIPortalApplication;
 import org.exoplatform.services.jcr.RepositoryService;
 import org.exoplatform.services.jcr.core.ManageableRepository;
+import org.exoplatform.services.jcr.ext.app.SessionProviderService;
 import org.exoplatform.services.jcr.ext.common.SessionProvider;
 import org.exoplatform.services.workflow.Form;
 import org.exoplatform.services.workflow.Task;
@@ -131,7 +131,8 @@ public class UITaskList extends UIContainer {
           repository = jcrService.getDefaultRepository().getConfiguration().getName() ;
         }
         ManageableRepository mRepository = jcrService.getRepository(repository) ;
-        SessionProvider sessionProvider = SessionProviderFactory.createSessionProvider() ;
+        SessionProviderService sessionProviderService = Util.getUIPortal().getApplicationComponent(SessionProviderService.class);
+    		SessionProvider sessionProvider = sessionProviderService.getSessionProvider(null);
         List variables = form.getVariables();
         int i = 0;
         for (Iterator iter = variables.iterator(); iter.hasNext(); i++) {
@@ -174,11 +175,11 @@ public class UITaskList extends UIContainer {
         uiApp.addMessage(new ApplicationMessage("UITaskList.msg.task-not-found", null, ApplicationMessage.WARNING));
         event.getRequestContext().addUIComponentToUpdateByAjax(uiApp.getUIPopupMessages());
       } else {
-        uiTaskList.setRenderSibbling(UITaskList.class) ;
         UIWorkflowControllerPortlet uiControllerPortlet = uiTaskList.getAncestorOfType(UIWorkflowControllerPortlet.class);
         UITaskManager uiTaskManager = uiControllerPortlet.createUIComponent(UITaskManager.class, null, null);
         uiTaskManager.setTokenId(tokenId);
         uiTaskManager.setIsStart(false);
+        uiTaskList.setRenderSibling(UITaskList.class);
         if (!uiTaskManager.checkBeforeActive()) {
           uiApp.addMessage(new ApplicationMessage("UITaskList.msg.task-change", null, 
               ApplicationMessage.WARNING));
@@ -187,7 +188,6 @@ public class UITaskList extends UIContainer {
           return;
         }
         UIPopupContainer uiPopupAction = uiControllerPortlet.getChild(UIPopupContainer.class) ;
-        //uiPopupAction.activate(uiTaskManager, 600) ;
         uiPopupAction.activate(uiTaskManager, 600, 0, true);
         event.getRequestContext().addUIComponentToUpdateByAjax(uiPopupAction) ;
       }

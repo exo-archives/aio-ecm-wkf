@@ -109,12 +109,14 @@
 	float: right;
 }
 
-.UIWorkflowPortlet .WorkflowPortletContent #UIBPDefinition .UIGrid {
+.UIWorkflowPortlet .WorkflowPortletContent .UITabContent .UIGrid {
   _width: 99%;
+	table-layout: auto;
 }
 
 .UIWorkflowPortlet .UIAdministrationManager .UITabContent .UIGrid {
 	width: 99.7%;
+	table-layout: auto;
 }
 
 /*********************************************** Begin Icon16x16 ***********************************/

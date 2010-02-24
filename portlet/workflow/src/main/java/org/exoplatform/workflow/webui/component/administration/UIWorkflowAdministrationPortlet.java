@@ -16,10 +16,16 @@
  */
 package org.exoplatform.workflow.webui.component.administration;
 
+import org.exoplatform.web.application.ApplicationMessage;
+import org.exoplatform.webui.application.WebuiRequestContext;
 import org.exoplatform.webui.config.annotation.ComponentConfig;
+import org.exoplatform.webui.config.annotation.EventConfig;
+import org.exoplatform.webui.core.UIApplication;
 import org.exoplatform.webui.core.UIPopupWindow;
 import org.exoplatform.webui.core.UIPortletApplication;
 import org.exoplatform.webui.core.lifecycle.UIApplicationLifecycle;
+import org.exoplatform.webui.event.Event;
+import org.exoplatform.webui.event.EventListener;
 
 /**
  * Created by The eXo Platform SARL
@@ -29,7 +35,10 @@ import org.exoplatform.webui.core.lifecycle.UIApplicationLifecycle;
  */
 @ComponentConfig(
     lifecycle = UIApplicationLifecycle.class,
-    template =  "app:/groovy/webui/component/UIWorkflowPortlet.gtmpl"
+    template =  "app:/groovy/webui/component/UIWorkflowPortlet.gtmpl",
+  	events = {
+      @EventConfig(listeners = UIWorkflowAdministrationPortlet.RefreshSessionActionListener.class)
+    }
 )
 public class UIWorkflowAdministrationPortlet extends UIPortletApplication {  
   public UIWorkflowAdministrationPortlet() throws Exception {
@@ -46,5 +55,18 @@ public class UIWorkflowAdministrationPortlet extends UIPortletApplication {
     uiPopup.setUIComponent(uiUploadProcess) ;
     uiPopup.setRendered(true) ;
     uiPopup.setShow(true) ;
+  }
+  
+  public static class RefreshSessionActionListener extends EventListener<UIWorkflowAdministrationPortlet> {
+    public void execute(Event<UIWorkflowAdministrationPortlet> event) throws Exception {
+      WebuiRequestContext context = WebuiRequestContext.getCurrentInstance();
+      UIApplication uiApp = context.getUIApplication();
+      UIAdministrationManager uiAdministrationManager = event.getSource().getChild(UIAdministrationManager.class);
+      uiAdministrationManager.updateMonitorGrid();
+      uiAdministrationManager.updateTimersGrid();
+      String mess = "UIWorkflowAdministrationPortlet.msg.refresh-session-success";
+      uiApp.addMessage(new ApplicationMessage(mess, null, ApplicationMessage.INFO));
+      event.getRequestContext().addUIComponentToUpdateByAjax(uiAdministrationManager);
+    }
   }
 }
