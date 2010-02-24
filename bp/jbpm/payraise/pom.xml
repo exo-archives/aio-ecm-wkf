@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.exoplatform.ecm.workflow</groupId>
     <artifactId>bp</artifactId>
     <version>2.0.0-Alpha02-SNAPSHOT</version>
   </parent>
-    <groupId>org.exoplatform.ecm.workflow.bp</groupId>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.exoplatform.ecm.workflow.bp</groupId>
   <artifactId>exo.ecm.workflow.bp.jbpm.payraise</artifactId>
   <packaging>jar</packaging>
   <name>eXo WORKFLOW Payraise BP for jBPM</name>
-  <description>eXo payraise BP for jBPM</description>
   <url>http://www.exoplatform.org</url>
   <description>eXo WORKFLOW Payraise BP for jBPM</description>
  
