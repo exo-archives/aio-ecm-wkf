@@ -41,8 +41,9 @@ import javax.security.auth.Subject;
 import javax.security.auth.login.LoginContext;
 import javax.security.auth.login.LoginException;
 
-import org.exoplatform.container.PortalContainer;
 import org.exoplatform.container.component.ComponentPlugin;
+import org.exoplatform.container.component.ComponentRequestLifecycle;
+import org.exoplatform.container.component.RequestLifeCycle;
 import org.exoplatform.container.configuration.ConfigurationManager;
 import org.exoplatform.container.xml.InitParams;
 import org.exoplatform.container.xml.ValueParam;
@@ -77,16 +78,16 @@ import org.ow2.bonita.facade.def.majorElement.ProcessDefinition.ProcessState;
 import org.ow2.bonita.facade.exception.ProcessNotFoundException;
 import org.ow2.bonita.facade.exception.VariableNotFoundException;
 import org.ow2.bonita.facade.runtime.ActivityInstance;
-import org.ow2.bonita.facade.runtime.TaskInstance;
 import org.ow2.bonita.facade.runtime.ActivityState;
+import org.ow2.bonita.facade.runtime.TaskInstance;
 import org.ow2.bonita.facade.runtime.var.Enumeration;
 import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
 import org.ow2.bonita.facade.uuid.ProcessInstanceUUID;
 import org.ow2.bonita.facade.uuid.TaskUUID;
 import org.ow2.bonita.facade.uuid.UUIDFactory;
+import org.ow2.bonita.identity.auth.BonitaPrincipal;
 import org.ow2.bonita.util.AccessorUtil;
 import org.ow2.bonita.util.BonitaException;
-import org.ow2.bonita.identity.auth.BonitaPrincipal;
 import org.ow2.bonita.util.Misc;
 import org.picocontainer.Startable;
 
@@ -125,12 +126,11 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
   /** Reference to the Organization Service */
   private OrganizationService                    organizationService   = null;
 
-  /** Reference to the Portal Container */
-  private PortalContainer                        portalContainer       = null;
-
   private String                                 superUser_            = "root";
+  
+  private String                                 superPass_            = null;
 
-  private String                                 jaasLoginContext_     = "exo-domain";
+  private String                                 jaasLoginContext_     = "gatein-domain";
 
   private static Logger                          log                   = Logger
                                                                            .getLogger(WorkflowServiceContainerImpl.class
@@ -148,15 +148,13 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
    */
   public WorkflowServiceContainerImpl(WorkflowFileDefinitionService fileDefinitionService,
       WorkflowFormsService formsService, OrganizationService organizationService,
-      ConfigurationManager configurationManager, PortalContainer portalContainer, InitParams params) {
+      ConfigurationManager configurationManager, InitParams params) {
 
     // Store references to dependent services
     this.fileDefinitionService = fileDefinitionService;
     this.formsService = formsService;
     this.organizationService = organizationService;
     this.configurationManager = configurationManager;
-    this.portalContainer = portalContainer;
-
     // Initialize some fields
     this.configurations = new ArrayList<ProcessesConfig>();
     if (params != null) {
@@ -167,6 +165,10 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       ValueParam jaasLoginContextParam = params.getValueParam("jaas.login.context");
       if (jaasLoginContextParam != null && jaasLoginContextParam.getValue().length() > 0) {
         this.jaasLoginContext_ = jaasLoginContextParam.getValue();
+      }
+      ValueParam superPassParam = params.getValueParam("super.pass");
+      if (superPassParam != null && superPassParam.getValue().length() > 0) {
+        this.superPass_ = superPassParam.getValue();
       }
     }
   }
@@ -730,15 +732,16 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
    * @see org.picocontainer.Startable#start()
    */
   public void start() {
+  	//Request life cycle begin/end
     LoginContext lc = null;
     try {
+    	RequestLifeCycle.begin((ComponentRequestLifecycle)this.organizationService);
       UserHandler userHandler = this.organizationService.getUserHandler();
       User user = userHandler.findUserByName(superUser_);
-      char[] password = user.getPassword().toCharArray();
+      char[] password = user.getPassword() == null ? superPass_.toCharArray() : user.getPassword().toCharArray();
       BasicCallbackHandler handler = new BasicCallbackHandler(superUser_, password);
       lc = new LoginContext(jaasLoginContext_, handler);
       lc.login();
-
       // Retrieve the already deployed Processes. 
 
       Collection<Process> projects = this.getProcesses();
@@ -772,6 +775,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
          * Logout. This does not hurt if it fails as Exceptions are ignored.
          */
         lc.logout();
+        RequestLifeCycle.end();
       } catch (Exception ignore) {
       }
     }
@@ -908,11 +912,16 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
           le.printStackTrace();
         }
       } else {
-        UserHandler userHandler = this.organizationService.getUserHandler();
-        User user = userHandler.findUserByName(identity.getUserId());
-        char[] password = user.getPassword().toCharArray();
-        BasicCallbackHandler handler = new BasicCallbackHandler(identity.getUserId(), password);
-        lc = new LoginContext(jaasLoginContext_, handler);
+      	try {
+      		RequestLifeCycle.begin((ComponentRequestLifecycle)this.organizationService);
+      		UserHandler userHandler = this.organizationService.getUserHandler();
+      		User user = userHandler.findUserByName(identity.getUserId());
+      		char[] password = user.getPassword() == null ? superPass_.toCharArray() : user.getPassword().toCharArray();
+      		BasicCallbackHandler handler = new BasicCallbackHandler(identity.getUserId(), password);
+      		lc = new LoginContext(jaasLoginContext_, handler);
+      	} finally {
+        	RequestLifeCycle.end();
+        }
       }
       lc.login();
     } catch (Exception e) {

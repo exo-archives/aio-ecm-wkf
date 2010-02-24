@@ -17,7 +17,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.commons.logging.Log;
+import org.exoplatform.services.log.Log;
 import org.exoplatform.commons.utils.PageList;
 import org.exoplatform.container.PortalContainer;
 import org.exoplatform.services.log.ExoLogger;
