@@ -8,8 +8,8 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>exo.ecm.workflow.component.workflow.impl.bonita</artifactId>
   <packaging>jar</packaging>
-  <name>eXo Workflow Service Impl for Bonita</name>
-  <description>eXo Workflow Service Impl for Bonita</description>
+  <name>eXo WORKFLOW Service Impl for Bonita</name>
+  <description>eXo WORKFLOW Service Impl for Bonita</description>
   <url>http://www.exoplatform.com</url>
   <developers>
     <developer>

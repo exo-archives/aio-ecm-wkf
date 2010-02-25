@@ -8,7 +8,7 @@
   <artifactId>exo.ecm.workflow.component.workflow.impl.jbpm.facade</artifactId>
   <packaging>jar</packaging>
   <name>eXo WORKFLOW Service Impl for jBPM</name>
-  <description>eXo Workflow Impl for jBPM</description>
+  <description>eXo WORKFLOW Impl for jBPM</description>
   <url>http://www.exoplatform.org</url>
   <dependencies>
     <dependency>
