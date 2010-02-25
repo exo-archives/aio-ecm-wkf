@@ -12,6 +12,6 @@
   <modules>
     <module>workflow/api</module>
     <module>workflow/impl/bonita</module>
-    <module>workflow/impl/jbpm</module>
+    <module>workflow/impl/jbpm/facade</module>
   </modules>
 </project>
