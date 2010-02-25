@@ -22,7 +22,7 @@
 	<org.exoplatform.portal.version>3.0.0-Beta05-CP01</org.exoplatform.portal.version>
 	<exo.tool.framework.junit.version>1.2.0</exo.tool.framework.junit.version>
 	<org.exoplatform.exopackage.version>1.1.0-Beta06-SNAPSHOT</org.exoplatform.exopackage.version>
-	<org.exoplatform.ecm.jbpm.version>3.0</org.exoplatform.ecm.jbpm.version>
+	<org.exoplatform.ecm.jbpm.version>3.0.2</org.exoplatform.ecm.jbpm.version>
 	<exo.test.classes>Test</exo.test.classes>
     <exo.test.skip>true</exo.test.skip>
     <bonita.version>4.1</bonita.version>
