@@ -8,7 +8,7 @@
  
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.exoplatform.ecm.workflow</groupId>
-  <artifactId>exo.ecm.workflow.bonita-server-env</artifactId>
+  <artifactId>exo.ecm.workflow.server.bonita-server-env</artifactId>
   <packaging>jar</packaging>
   <name>eXo WORKFLOW Bonita - Server Environment Bindings</name>
 
