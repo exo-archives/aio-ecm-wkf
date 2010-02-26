@@ -26,6 +26,7 @@
   
 	<import>war:/conf/ecmworkflowdemo/organization/idm-configuration.xml</import>
   <import>war:/conf/ecmworkflowdemo/organization/organization-configuration.xml</import>
+	<import>war:/conf/ecmworkflowdemo/common/resource-bundle-configuration.xml</import>
 	<import>war:/conf/ecmworkflowdemo/jcr/jcr-configuration.xml</import>
 	<import>war:/conf/ecmworkflowdemo/portal/application-registry-configuration.xml</import>
 	<import>war:/conf/ecmworkflowdemo/portal/portal-configuration.xml</import>
