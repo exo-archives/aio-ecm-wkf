@@ -73,6 +73,25 @@
 						</field>
 					</object>
 				</object-param>
+				<object-param>
+					<name>group.managements.configuration</name>
+					<description>description</description>
+					<object type="org.exoplatform.portal.config.NewPortalConfig">
+						<field name="predefinedOwner">
+							<collection type="java.util.HashSet">
+								<value>
+									<string>organization/management/executive-board</string>
+								</value>
+							</collection>
+						</field>
+						<field name="ownerType">
+							<string>group</string>
+						</field>
+						<field name="templateLocation">
+							<string>war:/conf/ecmworkflowdemo/portal</string>
+						</field>
+					</object>
+				</object-param>
 			</init-params>
 		</component-plugin>
 	</external-component-plugins>
