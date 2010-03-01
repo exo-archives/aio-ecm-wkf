@@ -143,6 +143,18 @@ public class UIProcessDetail extends UIContainer {
       uiPopup.setWindowSize(530, 300);
       UITaskListOfProcess uiTaskListOfProcess = uiAdministrationPortlet.createUIComponent(UITaskListOfProcess.class, null, null);
       String instance = event.getRequestContext().getRequestParameter(OBJECTID);
+      for (ProcessInstance processInstance : uicomp.completedProcessInstanceList){
+        if(processInstance.getProcessInstanceId().equals(instance)){
+          uicomp.setRenderedChild("UICompletedProcessGrid");
+          break;
+        }
+      }
+      for (ProcessInstance processInstance : uicomp.runningProcessInstanceList){
+        if(processInstance.getProcessInstanceId().equals(instance)){
+          uicomp.setRenderedChild("UIRunningProcessGrid");
+          break;
+        }
+      }
       uiTaskListOfProcess.updateTasksGrid(instance);
       uiPopup.setUIComponent(uiTaskListOfProcess);
       uiPopup.setRendered(true) ;
