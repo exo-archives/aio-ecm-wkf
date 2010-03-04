@@ -35,6 +35,8 @@ import org.exoplatform.container.component.ComponentRequestLifecycle;
 import org.exoplatform.container.configuration.ConfigurationManager;
 import org.exoplatform.container.xml.InitParams;
 import org.exoplatform.services.database.HibernateService;
+import org.exoplatform.services.log.ExoLogger;
+import org.exoplatform.services.log.Log;
 import org.exoplatform.services.organization.Group;
 import org.exoplatform.services.organization.Membership;
 import org.exoplatform.services.organization.MembershipType;
@@ -74,6 +76,7 @@ public class WorkflowServiceContainerImpl implements
   private ThreadLocal threadLocal_;
   private String hibernateServiceName_;
   private WorkflowFileDefinitionService fileDefinitionService_ ;
+  private static final Log LOG  = ExoLogger.getLogger(WorkflowServiceContainerImpl.class.getName());
   
   public WorkflowServiceContainerImpl(OrganizationService orgService,WorkflowFileDefinitionService fileDefinitionService,
       ConfigurationManager conf, InitParams params) throws Exception {
@@ -167,7 +170,7 @@ public class WorkflowServiceContainerImpl implements
               this.sessionFactory_);
           } catch (Exception e) {
             // process does not exist
-            e.printStackTrace();
+          	LOG.error(e);
           }
         }
       }
@@ -188,7 +191,7 @@ public class WorkflowServiceContainerImpl implements
       if (session.getTransaction() != null)
         session.commitTransactionAndClose();
     } catch (Throwable t) {
-      t.printStackTrace();
+    	LOG.error(t);
       session.rollbackTransactionAndClose();
     }
     threadLocal_.set(null);

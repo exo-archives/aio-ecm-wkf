@@ -84,7 +84,7 @@
       <fileName-error>File path not found</fileName-error>
       <fileName-invalid>Have some invalid characters in file name. Type file name or upload other file, please.</fileName-invalid>
       <process-successful>Upload successfully!</process-successful>
-      <data-invalid>Have some problems with your data. Can't find processdefinition.xml inside process archive.</data-invalid>
+      <data-invalid>Have some problems with your data. Can't find process definition file inside process archive or data is invalid ( process are existed or wrong format...) </data-invalid>
     </msg>
   </UIUploadProcess>
   <UIProcessDetailGrid>

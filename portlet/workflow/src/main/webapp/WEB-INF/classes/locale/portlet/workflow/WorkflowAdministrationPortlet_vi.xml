@@ -84,7 +84,7 @@
       <fileName-error>Không tìm thấy đường dẫn file</fileName-error>
       <fileName-invalid>Tên file chứa một số kí tự không phù hợp. Hãy nhập tên khác hoặc upload một file khác</fileName-invalid>
       <process-successful>Upload thành công!</process-successful>
-      <data-invalid>Dữ liệu của bạn có vấn đề. Không thể tìm thấy file processdefinition.xml</data-invalid>
+      <data-invalid>Dữ liệu của bạn có vấn đề. Không thể tìm thấy file định nghĩa quá trình hoặc dữ liệu bị sai (quá trình đã tồn tại hay sai định dạng...)</data-invalid>
     </msg>
   </UIUploadProcess>
   <UIProcessDetailGrid>

@@ -78,7 +78,6 @@
       <fileName-error>Dateipfad nicht gefunden</fileName-error>
       <fileName-invalid><![CDATA[Ung&uuml;ltige Karaktere in Namen der Datei. Tippen Sie den Namen der Datei oder laden Sie eine andere Datei hoch.]]></fileName-invalid>
       <process-successful>Erfolgreich hochgeladen!</process-successful>
-      <data-invalid>Probleme mit Daten. processdefinition.xml kann innerhalb des Prozessarchives nicht gefunden werden.</data-invalid>
     </msg>
   </UIUploadProcess>
   <UIProcessDetailGrid>
@@ -198,5 +197,10 @@
     	</title>
     </action>  
   </UIProcessDetail>
+	<UIUploadProcess>
+    <msg>
+      <data-invalid>Have some problems with your data. Can't find process definition file inside process archive or data is invalid ( process are existed or wrong format...) </data-invalid>
+    </msg>
+  </UIUploadProcess>
 </bundle>
 

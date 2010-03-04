@@ -16,7 +16,6 @@
  */
 package org.exoplatform.workflow.webui.component.administration;
 
-import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
 import org.exoplatform.services.workflow.WorkflowServiceContainer;
@@ -53,9 +52,10 @@ public class UIUploadProcess extends UIForm {
   final static public String FIELD_UPLOAD = "upload" ;
   
   public UIUploadProcess() throws Exception {
-    setMultiPart(true) ;
-    addUIFormInput(new UIFormStringInput(FIELD_NAME, FIELD_NAME, null)) ;
-    UIFormUploadInput uiInput = new UIFormUploadInput(FIELD_UPLOAD, FIELD_UPLOAD) ;
+    setMultiPart(true);
+    addUIFormInput(new UIFormStringInput(FIELD_NAME, FIELD_NAME, null));
+    UIFormUploadInput uiInput = new UIFormUploadInput(FIELD_UPLOAD, FIELD_UPLOAD);
+    uiInput.setAutoUpload(true);
     addUIFormInput(uiInput) ;
   }
   

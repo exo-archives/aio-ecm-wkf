@@ -189,6 +189,7 @@
       <refresh>Refresh</refresh>
     </label>
   </UIWorkflowAdministrationPortlet>
+	
 	<UIProcessDetail>
     <action>
     	<title>
@@ -197,5 +198,10 @@
     	</title>
     </action>  
   </UIProcessDetail>
+  <UIUploadProcess>
+    <msg>
+      <data-invalid>Have some problems with your data. Can't find process definition file inside process archive or data is invalid ( process are existed or wrong format...) </data-invalid>
+    </msg>
+  </UIUploadProcess>
 </bundle>
 

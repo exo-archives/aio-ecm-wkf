@@ -33,8 +33,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.zip.ZipInputStream;
 
 import javax.security.auth.Subject;
@@ -47,6 +45,8 @@ import org.exoplatform.container.component.RequestLifeCycle;
 import org.exoplatform.container.configuration.ConfigurationManager;
 import org.exoplatform.container.xml.InitParams;
 import org.exoplatform.container.xml.ValueParam;
+import org.exoplatform.services.log.ExoLogger;
+import org.exoplatform.services.log.Log;
 import org.exoplatform.services.organization.OrganizationService;
 import org.exoplatform.services.organization.User;
 import org.exoplatform.services.organization.UserHandler;
@@ -132,9 +132,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
 
   private String                                 jaasLoginContext_     = "gatein-domain";
 
-  private static Logger                          log                   = Logger
-                                                                           .getLogger(WorkflowServiceContainerImpl.class
-                                                                               .getName());
+  private static final Log LOG  = ExoLogger.getLogger(WorkflowServiceContainerImpl.class.getName());
 
   /**
    * Instantiates a new Bonita service instance.
@@ -219,7 +217,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       RuntimeAPI rApi = AccessorUtil.getAPIAccessor().getRuntimeAPI();
       rApi.deleteProcessInstance(UUIDFactory.getProcessInstanceUUID(processInstanceId));
     } catch (Exception e) {
-      e.printStackTrace();
+    	LOG.error(e);
     }
   }
 
@@ -242,7 +240,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
         zis.getNextEntry().getName();
         zis.close();
       } catch (Exception e1) {
-        e1.printStackTrace();
+      	LOG.error(e1);
         xpdl = true;
       }
       in.close();
@@ -258,13 +256,12 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
           processes = dAPI.deployBar(barFile).values();
         } catch(Exception e) {
           processes=null;
-          e.printStackTrace();
+          LOG.error(e);
           throw e;
         }
       }
       // Create the file definition
       Iterator<ProcessDefinition> ite = processes.iterator();
-
       if (ite.hasNext()) {
         // Get the id of the deployed process
         ProcessDefinition p = ite.next();
@@ -353,7 +350,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       // Finish the task
       rApi.finishTask(UUIDFactory.getTaskUUID(taskId), true);
     } catch (Exception e) {
-      e.printStackTrace();
+    	LOG.error(e);
     }
   }
 
@@ -405,7 +402,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       ProcessDefinition pd = dAPI.getProcess(uuid);
       p = new ProcessData(pd);
     } catch (Exception e) {
-      e.printStackTrace();
+    	LOG.error(e);
     }
     return p;
 
@@ -451,7 +448,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       org.ow2.bonita.facade.runtime.ProcessInstance instance = rApi.getProcessInstance(uuid);
       p = new ProcessInstanceData(instance);
     } catch (Exception e) {
-      e.printStackTrace();
+    	LOG.error(e);
     }
     return p;
   }
@@ -468,9 +465,6 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
     try {
       // Get the uuid 
       ProcessDefinitionUUID uuid = UUIDFactory.getProcessDefinitionUUID(processId);
-      // get the process
-      QueryDefinitionAPI dApi = AccessorUtil.getQueryAPIAccessor().getQueryDefinitionAPI();
-      ProcessDefinition process = dApi.getProcess(uuid);
       //Get the instance of the given process
       QueryRuntimeAPI rApi = AccessorUtil.getQueryAPIAccessor().getQueryRuntimeAPI();
       Set<org.ow2.bonita.facade.runtime.ProcessInstance> pis;
@@ -482,7 +476,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       }
       Collections.sort(list, new ProcessInstanceComparator());
     } catch (BonitaException e) {
-      e.printStackTrace();
+    	LOG.error(e);
     }
     return list;
   }
@@ -491,8 +485,8 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
    * @see org.exoplatform.services.workflow.WorkflowServiceContainer#getTask(java.lang.String)
    */
   public Task getTask(String taskId) {
-    if (log.isLoggable(Level.INFO)) {
-      log.info("get the task [taskId=" + taskId + "]");
+    if (LOG.isInfoEnabled()) {
+      LOG.info("get the task [taskId=" + taskId + "]");
     }
     Task task = null;
     // Security Check
@@ -505,7 +499,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       ActivityInstance<TaskInstance> taskInstance = rApi.getTask(uuid);
       task = new TaskData(taskInstance);
     } catch (BonitaException e) {
-      e.printStackTrace();
+    	LOG.error(e);
     }
     return task;
   }
@@ -539,7 +533,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
           tasks.add(new TaskData(task));
         } catch (Exception e) {
           // TODO Auto-generated catch block
-          e.printStackTrace();
+        	LOG.error(e);
         }
       }
     }
@@ -605,7 +599,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
         tasks.add(new TaskData(task));
       } catch (Exception e) {
         // TODO Auto-generated catch block
-        e.printStackTrace();
+      	LOG.error(e);
       }
     }
     Collections.sort(tasks, new TaskComparator());
@@ -703,7 +697,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       //        }
 
     } catch (BonitaException e) {
-      e.printStackTrace();
+    	LOG.error(e);
     }
 
     return variables;
@@ -762,13 +756,13 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
               this.deployProcess(iS);
             } catch (Exception e) {
               // Process does not exist
-              e.printStackTrace();
+            	LOG.error(e);
             }
           }
         }
       }
     } catch (Exception e) {
-      e.printStackTrace();
+    	LOG.error(e);
     } finally {
       try {
         /*
@@ -855,13 +849,13 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       // instantiate the process
       ProcessInstanceUUID instanceUuid = rApi.instantiateProcess(uuid, variables);
     } catch (ProcessNotFoundException e) {
-      e.printStackTrace();
+    	LOG.error(e);
     } catch (ParseException e) {
       // TODO Auto-generated catch block
-      e.printStackTrace();
+    	LOG.error(e);
     } catch (VariableNotFoundException e) {
       // TODO Auto-generated catch block
-      e.printStackTrace();
+    	LOG.error(e);
     }
   }
 
@@ -888,7 +882,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
       }
 
     } catch (BonitaException e) {
-      e.printStackTrace();
+    	LOG.error(e);
     }
   }
 
@@ -909,7 +903,7 @@ public class WorkflowServiceContainerImpl implements WorkflowServiceContainer, S
         try {
           lc = new LoginContext("Bonita", s);
         } catch (LoginException le) {
-          le.printStackTrace();
+        	LOG.error(le);
         }
       } else {
       	try {

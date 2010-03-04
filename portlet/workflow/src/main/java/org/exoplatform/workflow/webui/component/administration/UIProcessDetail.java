@@ -159,6 +159,7 @@ public class UIProcessDetail extends UIContainer {
       uiPopup.setUIComponent(uiTaskListOfProcess);
       uiPopup.setRendered(true) ;
       uiPopup.setShow(true);
+      uiPopup.setWindowSize(650, 0);
     }
   }
   
