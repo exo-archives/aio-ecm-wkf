@@ -131,7 +131,7 @@ public class UITask extends UIForm implements UISelectable {
   
   public String getTemplate() {
     if(isCustomizedView()) {
-      return getIdentification() + ":" + getCustomizedView();
+    		return getIdentification() + ":/" + getCustomizedView();
     }
     return getComponentConfig().getTemplate();
   }
@@ -553,4 +553,5 @@ public class UITask extends UIForm implements UISelectable {
       }
     }
   }
+  
 }

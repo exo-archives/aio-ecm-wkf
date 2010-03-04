@@ -36,7 +36,8 @@ import org.exoplatform.services.workflow.WorkflowServiceContainer;
  * Jan 9, 2009  
  */
 public class BJARResourceResolver extends ResourceResolver {
-  private WorkflowServiceContainer service_;
+  
+	private WorkflowServiceContainer service_;
 
   public BJARResourceResolver(WorkflowServiceContainer service) {
     service_ = service;
@@ -48,7 +49,7 @@ public class BJARResourceResolver extends ResourceResolver {
   }
 
   public InputStream getInputStream(String fileLocation) throws Exception  {    
-    String[] infos = StringUtils.split(fileLocation, ":");
+    String[] infos = StringUtils.split(fileLocation, ":/");
     if (infos.length == 2) {
       Task taskInstance = service_.getTask(infos[0]);
       FileDefinition fD = service_.getFileDefinitionService().retrieve(taskInstance.getProcessId());
