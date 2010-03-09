@@ -26,7 +26,7 @@ import javax.servlet.http.HttpSession;
 import org.exoplatform.portal.application.PortalRequestContext;
 import org.exoplatform.portal.webui.util.Util;
 import org.exoplatform.services.jcr.core.ManageableRepository;
-import org.exoplatform.services.jcr.impl.core.lock.LockManager;
+import org.exoplatform.services.jcr.impl.core.lock.LockManagerImpl;
 
 /**
  * Created by The eXo Platform SARL
@@ -49,7 +49,7 @@ public class LockUtil {
     if(lockedNodesInfo == null) {
       lockedNodesInfo = new HashMap<String,String>();
     }
-    httpSession.setAttribute(LockManager.class.getName(),lockedNodesInfo);
+    httpSession.setAttribute(LockManagerImpl.class.getName(),lockedNodesInfo);
   }
   
   public static String createLockKey(Node node) throws Exception {
