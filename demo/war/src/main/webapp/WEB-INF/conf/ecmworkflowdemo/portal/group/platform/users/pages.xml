@@ -2,6 +2,7 @@
 <page-set>
  <page>
     <name>WorkflowController</name>
+		<title>Workflow Controller</title>
     <access-permissions>*:/platform/users</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>   
            

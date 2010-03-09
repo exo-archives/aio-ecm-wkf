@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <page-set>
   <page>
-  	<page-id>group::organization/management/executive-board::workflowAdministration</page-id>
-  	<owner-type>group</owner-type>
-    <owner-id>platform/administrators</owner-id>
     <name>workflowAdministration</name>
+		<title>Workflow Administration</title>
     <access-permissions>*:/organization/management/executive-board</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     
