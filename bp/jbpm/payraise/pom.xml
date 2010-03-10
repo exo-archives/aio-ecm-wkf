@@ -2,7 +2,7 @@
   <parent>
     <groupId>org.exoplatform.ecm.workflow</groupId>
     <artifactId>bp</artifactId>
-    <version>2.0.0-Alpha02-SNAPSHOT</version>
+    <version>2.0.0-Beta01</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -35,7 +35,7 @@
                 <tasks>
                   <move todir="target/classes/classes">
                     <fileset dir="target/classes">
-                      <include name="hero/**"/>
+                      <include name="hero/**" />
                     </fileset>
                   </move>
                 </tasks>
