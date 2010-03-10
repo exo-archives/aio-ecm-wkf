@@ -9,9 +9,9 @@
   <groupId>org.exoplatform.ecm.workflow</groupId>
   <artifactId>exo.ecm.workflow.server.tomcat-demo.patch</artifactId>
   <packaging>jar</packaging>
-  <name>eXo WORKFLOW Tomcat Server</name>
+  <name>eXo WORKFLOW Demo Tomcat Server </name>
   <url>http://www.exoplatform.org</url>
-  <description>eXo WORKFLOW Tomcat Server</description>
+  <description>eXo WORKFLOW Demo Tomcat Server</description>
 
   <dependencies>
     <dependency>
