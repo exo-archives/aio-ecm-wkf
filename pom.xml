@@ -354,9 +354,7 @@
     <module>component</module>
     <module>web/eXoWorkflowResources</module>
     <module>portlet/workflow</module>
-    <module>webui/workflow</module>
     <module>server</module>
-    <module>extension</module>
     <module>demo</module>
     <module>packaging</module>
   </modules>
