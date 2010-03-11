@@ -24,7 +24,7 @@
   </issueManagement>
   <ciManagement>
     <system>hudson</system>
-    <url>http://builder.exoplatform.org/hudson/job/ecm-workflow-sonar/</url>
+    <url>http://builder.exoplatform.org/hudson/view/All/job/ecm-workflow-trunk-ci/</url>
   </ciManagement>
   <properties>
     <org.exoplatform.kernel.version>2.2.0-CR2</org.exoplatform.kernel.version>
