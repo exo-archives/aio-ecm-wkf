@@ -15,7 +15,7 @@
   <scm>
     <connection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/trunk</connection>
     <developerConnection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/trunk</developerConnection>
-    <url>http://fisheye.exoplatform.org/browse/3Modules/ecm/workflow/trunk</url>
+    <url>http://fisheye.exoplatform.org/browse/projects/ecm/workflow/trunk</url>
   </scm>
   <!-- maven-release-plugin -->
   <issueManagement>
