@@ -1,5 +1,5 @@
 Enterprise Content Management(ECM) > Workflow Management System(WF)
-Version 1.0.4-SNAPSHOT
+Version 1.0.6
 
 You may find it helpful to see the details at wiki place of ECM
 http://wiki.exoplatform.org/xwiki/bin/view/ECM/
@@ -47,7 +47,49 @@ and navigate to URL: http://localhost:8080/portal
 
 3. RELEASE NOTES 
 ---------------------------------------------------
-** In Workflow-1.0.4-SNAPSHOT, we fixed some problems:
+
+** In Workflow-1.0.6, we fixed:
+
+** Bug
+    * [WF-78] - Fix failing tests
+
+** Improvement
+    * [WF-55] - Build, quality and automation improvements
+
+** Task
+    * [WF-77] - Correct label in Workflow
+    * [WF-79] - center the icon to avoid ambiguity in the Task validation tab
+    * [WF-80] - Release WF 1.0.6
+
+** Sub-task
+    * [WF-52] - Fix duplicated dependencies
+    * [WF-53] - Fix missing dep in exo.ecm.workflow.web.portal
+    * [WF-54] - Cleanup and reactivate tests
+    * [WF-56] - Upgrade to exo parent 8
+    * [WF-59] - Cleanup POMs
+
+
+
+** In Workflow-1.0.5, we fixed:
+
+** Task
+    * [WF-36] - Release WF 1.0.5
+    * [WF-39] - Cleanup the build process to be able to deploy on eXo Nexus with the release plugin for 1.0.x
+    * [WF-44] - Publish WF 1.0.5 SNAPSHOT aritfacts in the snapshots repo
+    * [WF-48] - Remove unused dependencies in pom.xml
+    * [WF-49] - Release JBPM 3.0.1
+    * [WF-51] - Upgrade to use jBPM 3.0.2
+
+** Sub-task
+    * [WF-40] - Build - Cleanup the profile with properties, remove the reporting and emma config, add parent pom v6
+    * [WF-43] - Build - Integrate module.js in the project to be used by exopackage and maven-exobuild-plugin
+    * [WF-45] - Extract jbpm 3.0 in a separate trunk and tags/3.0
+    * [WF-46] - Use Kernel, Core, JCR, PC, Portal SNAPSHOTs
+    * [WF-47] - Fix JBPM 3.0-SNAPSHOT issue (clean by hudson because a 3.0 is out), proably a 3.0.1 is needed.
+
+
+
+** In Workflow-1.0.4, we fixed some problems:
 	
 ** Bugs
 	-[WF-10] Can not open controller workflow portlet
