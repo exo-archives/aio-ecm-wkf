@@ -72,37 +72,46 @@
 				    WEB-INF/conf/script/groovy/SkinConfigScript.groovy, 
 				    templates/groovy/webui/component/UIHomePagePortlet.gtmpl,
 				    templates/skin/webui/component/UIHomePagePortlet/</dependentWarExcludes>
-          <webResources>
-            <resource>
-              <directory>${settings.localRepository}/org/exoplatform/ecm/workflow/bp/exo.ecm.workflow.bp.bonita.payraise/${project.version}</directory>
-              <targetPath>WEB-INF/conf/bp</targetPath>
-              <includes>
-                <include>*.jar</include>
-              </includes>
-            </resource>
-            <resource>
-              <directory>${settings.localRepository}/org/exoplatform/ecm/workflow/bp/exo.ecm.workflow.bp.bonita.holiday/${project.version}</directory>
-              <targetPath>WEB-INF/conf/bp</targetPath>
-              <includes>
-                <include>*.jar</include>
-              </includes>
-            </resource>
-            <resource>
-              <directory>${settings.localRepository}/org/exoplatform/ecm/workflow/bp/exo.ecm.workflow.bp.jbpm.payraise/${project.version}</directory>
-              <targetPath>WEB-INF/conf/bp</targetPath>
-              <includes>
-                <include>*.jar</include>
-              </includes>
-            </resource>
-            <resource>
-              <directory>${settings.localRepository}/org/exoplatform/ecm/workflow/bp/exo.ecm.workflow.bp.jbpm.holiday/${project.version}</directory>
-              <targetPath>WEB-INF/conf/bp</targetPath>
-              <includes>
-                <include>*.jar</include>
-              </includes>
-            </resource>
-          </webResources>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.exoplatform.ecm.workflow.bp</groupId>
+                  <artifactId>exo.ecm.workflow.bp.bonita.payraise</artifactId>
+                  <version>${project.version}</version>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>org.exoplatform.ecm.workflow.bp</groupId>
+                  <artifactId>exo.ecm.workflow.bp.bonita.holiday</artifactId>
+                  <version>${project.version}</version>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>org.exoplatform.ecm.workflow.bp</groupId>
+                  <artifactId>exo.ecm.workflow.bp.jbpm.payraise</artifactId>
+                  <version>${project.version}</version>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>org.exoplatform.ecm.workflow.bp</groupId>
+                  <artifactId>exo.ecm.workflow.bp.jbpm.holiday</artifactId>
+                  <version>${project.version}</version>
+                </artifactItem>
+              </artifactItems>
+              <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/conf/bp</outputDirectory>
+              <overWriteSnapshots>true</overWriteSnapshots>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
