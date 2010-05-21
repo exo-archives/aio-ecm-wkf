@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.exoplatform.ecm.workflow</groupId>
     <artifactId>workflow-parent</artifactId>
-    <version>1.0.7-SNAPSHOT</version>
+    <version>1.0.7</version>
   </parent>
   <artifactId>exo.ecm.workflow.web.portal</artifactId>
   <packaging>war</packaging>

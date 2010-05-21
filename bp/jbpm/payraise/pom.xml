@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.exoplatform.ecm.workflow.bp</groupId>
     <artifactId>workflow-bp-parent</artifactId>
-    <version>1.0.7-SNAPSHOT</version>
+    <version>1.0.7</version>
   </parent>
   <artifactId>exo.ecm.workflow.bp.jbpm.payraise</artifactId>
   <packaging>jar</packaging>
@@ -31,7 +31,7 @@
     <dependency>
       <groupId>org.exoplatform.ecm.workflow</groupId>
       <artifactId>exo.ecm.workflow.component.workflow.impl.jbpm.facade</artifactId>
-      <version>1.0.7-SNAPSHOT</version>
+      <version>1.0.7</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
