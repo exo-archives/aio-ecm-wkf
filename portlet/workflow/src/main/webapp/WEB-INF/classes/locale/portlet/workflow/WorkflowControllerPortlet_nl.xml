@@ -11,11 +11,6 @@
       <text>Admin Workflow Beheer</text>
     </tab>
   </UIWorkflowControllerPortlet>
-  <ControllerPopup>
-    <title>
-      <UITaskManager>UITask Manager</UITaskManager>
-    </title>
-  </ControllerPopup>
   <UITabPane>
     <title>
       <UITaskList>Taak Kontroler</UITaskList>
@@ -86,6 +81,13 @@
       <value-invalid>'{0}' is vereiste waarde</value-invalid>
     </msg>
   </UIDocumentForm>
+  
+  <ControllerPopup>
+    <title>
+      <UITaskManager>Task Manager</UITaskManager>
+    </title>
+  </ControllerPopup>
+  
   <!--
   #####################################################################
   ## Need to be translated Since version ECM 2.3                      #
@@ -97,6 +99,7 @@
       <UIUserSelectContainer>Select User</UIUserSelectContainer>
     </title>
   </PopupDelegatedSelectorId>  
+
   
 </bundle>
 

@@ -19,7 +19,7 @@
   </UIWorkflowControllerPortlet>
   <ControllerPopup>
     <title>
-      <UITaskManager>UITask Manager</UITaskManager>
+      <UITaskManager>Task Manager</UITaskManager>
     </title>
   </ControllerPopup>
   <UITabPane>
