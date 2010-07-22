@@ -1,0 +1,81 @@
+Index: portlet/workflow/src/main/webapp/WEB-INF/classes/locale/portlet/workflow/WorkflowControllerPortlet_de.xml
+===================================================================
+--- portlet/workflow/src/main/webapp/WEB-INF/classes/locale/portlet/workflow/WorkflowControllerPortlet_de.xml	(revision 48842)
++++ portlet/workflow/src/main/webapp/WEB-INF/classes/locale/portlet/workflow/WorkflowControllerPortlet_de.xml	(working copy)
+@@ -11,11 +11,6 @@
+       <text>Admin Arbeitsfluss Management</text>
+     </tab>
+   </UIWorkflowControllerPortlet>
+-  <ControllerPopup>
+-    <title>
+-      <UITaskManager>UITask Manager</UITaskManager>
+-    </title>
+-  </ControllerPopup>
+   <UITabPane>
+     <title>
+       <UITaskList>Aufagbenkontroller</UITaskList>
+@@ -81,6 +76,13 @@
+       <value-invalid><![CDATA['{0}' ist ein ben&ouml;tigter Wert]]></value-invalid>
+     </msg>
+   </UIDocumentForm>
++  
++  <ControllerPopup>
++    <title>
++      <UITaskManager>Task Manager</UITaskManager>
++    </title>
++  </ControllerPopup>
++  
+   <!--
+   #####################################################################
+   ## Need to be translated Since version ECM 2.3                      #
+Index: portlet/workflow/src/main/webapp/WEB-INF/classes/locale/portlet/workflow/WorkflowControllerPortlet_nl.xml
+===================================================================
+--- portlet/workflow/src/main/webapp/WEB-INF/classes/locale/portlet/workflow/WorkflowControllerPortlet_nl.xml	(revision 48842)
++++ portlet/workflow/src/main/webapp/WEB-INF/classes/locale/portlet/workflow/WorkflowControllerPortlet_nl.xml	(working copy)
+@@ -11,11 +11,6 @@
+       <text>Admin Workflow Beheer</text>
+     </tab>
+   </UIWorkflowControllerPortlet>
+-  <ControllerPopup>
+-    <title>
+-      <UITaskManager>UITask Manager</UITaskManager>
+-    </title>
+-  </ControllerPopup>
+   <UITabPane>
+     <title>
+       <UITaskList>Taak Kontroler</UITaskList>
+@@ -86,6 +81,13 @@
+       <value-invalid>'{0}' is vereiste waarde</value-invalid>
+     </msg>
+   </UIDocumentForm>
++  
++  <ControllerPopup>
++    <title>
++      <UITaskManager>Task Manager</UITaskManager>
++    </title>
++  </ControllerPopup>
++  
+   <!--
+   #####################################################################
+   ## Need to be translated Since version ECM 2.3                      #
+@@ -97,6 +99,7 @@
+       <UIUserSelectContainer>Select User</UIUserSelectContainer>
+     </title>
+   </PopupDelegatedSelectorId>  
++
+   
+ </bundle>
+ 
+Index: portlet/workflow/src/main/webapp/WEB-INF/classes/locale/portlet/workflow/WorkflowControllerPortlet_en.xml
+===================================================================
+--- portlet/workflow/src/main/webapp/WEB-INF/classes/locale/portlet/workflow/WorkflowControllerPortlet_en.xml	(revision 48842)
++++ portlet/workflow/src/main/webapp/WEB-INF/classes/locale/portlet/workflow/WorkflowControllerPortlet_en.xml	(working copy)
+@@ -19,7 +19,7 @@
+   </UIWorkflowControllerPortlet>
+   <ControllerPopup>
+     <title>
+-      <UITaskManager>UITask Manager</UITaskManager>
++      <UITaskManager>Task Manager</UITaskManager>
+     </title>
+   </ControllerPopup>
+   <UITabPane>
