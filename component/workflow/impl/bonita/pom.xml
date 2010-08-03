@@ -22,10 +22,10 @@
   <parent>
     <groupId>org.exoplatform.ecm.workflow</groupId>
     <artifactId>workflow-parent</artifactId>
-    <version>1.0.8-SNAPSHOT</version>
+    <version>1.0.8</version>
   </parent>
   <artifactId>exo.ecm.workflow.component.workflow.impl.bonita</artifactId>
-  <version>1.0.8-SNAPSHOT</version>
+  <version>1.0.8</version>
   <packaging>jar</packaging>
   <name>eXo Workflow Service Impl for Bonita</name>
   <description>eXo Workflow Service Impl for Bonita</description>
@@ -41,7 +41,7 @@
     <dependency>
       <groupId>org.exoplatform.ecm.workflow</groupId>
       <artifactId>exo.ecm.workflow.component.workflow.api</artifactId>
-      <version>1.0.8-SNAPSHOT</version>
+      <version>1.0.8</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
