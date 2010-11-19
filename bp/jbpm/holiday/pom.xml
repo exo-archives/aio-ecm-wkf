@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.exoplatform.ecm.workflow.bp</groupId>
     <artifactId>workflow-bp-parent</artifactId>
-    <version>1.0.9-SNAPSHOT</version>
+    <version>1.0.9</version>
   </parent>
   <artifactId>exo.ecm.workflow.bp.jbpm.holiday</artifactId>
   <name>eXo Workflow holidays BP for jBPM</name>
@@ -30,7 +30,7 @@
     <dependency>
       <groupId>org.exoplatform.ecm.workflow</groupId>
       <artifactId>exo.ecm.workflow.component.workflow.impl.jbpm.facade</artifactId>
-      <version>1.0.9-SNAPSHOT</version>
+      <version>1.0.9</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
