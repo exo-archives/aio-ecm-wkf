@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.exoplatform.ecm.workflow</groupId>
     <artifactId>exo.ecm.workflow.packaging</artifactId>
-    <version>1.0.10-SNAPSHOT</version>
+    <version>1.0.10</version>
   </parent>
   <artifactId>workflow.packaging.module</artifactId>
   <packaging>pom</packaging>

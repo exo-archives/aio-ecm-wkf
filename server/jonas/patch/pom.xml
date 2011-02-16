@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.exoplatform.ecm.workflow</groupId>
     <artifactId>workflow-parent</artifactId>
-    <version>1.0.10-SNAPSHOT</version>
+    <version>1.0.10</version>
   </parent>
   <artifactId>exo.ecm.workflow.server.jonas.patch</artifactId>
   <name>eXo Workflow JOnAS Server</name>
