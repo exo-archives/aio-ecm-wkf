@@ -238,6 +238,9 @@ public class WorkflowServiceContainerImpl implements
     Collection groups = orgService_.getGroupHandler().findGroupsOfUser(user);
     Collection<?> membershipCollection = orgService_.getMembershipTypeHandler().findMembershipTypes();
     JbpmSession session = openSession();
+    List tasks = session.getTaskMgmtSession().findTaskInstances("*");
+    if (tasks.size() > 0) 
+      hashSet.addAll(tasks);
     for (Iterator iter = groups.iterator(); iter.hasNext();) {
       Group group = (Group) iter.next();
       Collection memberships = 
@@ -247,19 +250,19 @@ public class WorkflowServiceContainerImpl implements
         if(membership.getMembershipType().equals("*")) {
           for(Object obj : membershipCollection){
             key = ((MembershipType)obj).getName() + ACTOR_ID_KEY_SEPARATOR + group.getId();
-            List tasks = session.getTaskMgmtSession().findTaskInstances(key);
+            tasks = session.getTaskMgmtSession().findTaskInstances(key);
             if (tasks.size() > 0) {
               hashSet.addAll(tasks);
             }
           }
           key = membership.getMembershipType() + ACTOR_ID_KEY_SEPARATOR + group.getId();
-          List tasks = session.getTaskMgmtSession().findTaskInstances(key);
+          tasks = session.getTaskMgmtSession().findTaskInstances(key);
           if (tasks.size() > 0) {
             hashSet.addAll(tasks);
           }
         } else {
           key = membership.getMembershipType() + ACTOR_ID_KEY_SEPARATOR + group.getId();
-          List tasks = session.getTaskMgmtSession().findTaskInstances(key);
+          tasks = session.getTaskMgmtSession().findTaskInstances(key);
           if (tasks.size() > 0) hashSet.addAll(tasks);
           String starKey = "*" + ACTOR_ID_KEY_SEPARATOR + group.getId();
           List tasksWithStar = session.getTaskMgmtSession().findTaskInstances(starKey);
