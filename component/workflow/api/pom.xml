@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.exoplatform.ecm.workflow</groupId>
     <artifactId>workflow-parent</artifactId>
-    <version>1.0.12-SNAPSHOT</version>
+    <version>1.0.12</version>
   </parent>
   <artifactId>exo.ecm.workflow.component.workflow.api</artifactId>
   <name>eXo Workflow Service API</name>

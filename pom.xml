@@ -26,13 +26,13 @@
   </parent>
   <groupId>org.exoplatform.ecm.workflow</groupId>
   <artifactId>workflow-parent</artifactId>
-  <version>1.0.12-SNAPSHOT</version>
+  <version>1.0.12</version>
   <packaging>pom</packaging>
   <name>eXo ECM - Workflow</name>
   <scm>
-    <connection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/branches/1.0.x</connection>
-    <developerConnection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/branches/1.0.x</developerConnection>
-    <url>http://fisheye.exoplatform.org/browse/projects/ecm/workflow/branches/1.0.x</url>
+    <connection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/tags/1.0.12</connection>
+    <developerConnection>scm:svn:http://svn.exoplatform.org/projects/ecm/workflow/tags/1.0.12</developerConnection>
+    <url>http://fisheye.exoplatform.org/browse/projects/ecm/workflow/tags/1.0.12</url>
   </scm>
   <ciManagement>
     <system>hudson</system>
