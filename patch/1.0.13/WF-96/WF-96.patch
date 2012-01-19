@@ -1,0 +1,18 @@
+Index: portlet/workflow/src/main/webapp/groovy/webui/component/UIWorkflowPortlet.gtmpl
+===================================================================
+--- portlet/workflow/src/main/webapp/groovy/webui/component/UIWorkflowPortlet.gtmpl	(revision 78747)
++++ portlet/workflow/src/main/webapp/groovy/webui/component/UIWorkflowPortlet.gtmpl	(working copy)
+@@ -2,11 +2,11 @@
+   <div class="ApplicationMinWidth">
+ 	  <div class="Toolbar">
+ 	  	<div class="Separator"><span></span></div>
+-	  	<div class="TextAdmin"><%=_ctx.appRes(uicomponent.getId() + ".tab.text")%></div>
++	  	<div class="TextAdmin"><%=_ctx.appRes(uicomponent.getName() + ".tab.text")%></div>
+ 	  	<div class="Separator"><span></span></div>
+ 	  	<div class="ButtonContainerSelected">
+ 	  		<div class="ToolbarIcon Monitor24x24Icon"><span></span></div>
+-	  		<div class="TextButton"><%=_ctx.appRes(uicomponent.getId() + ".tab.label")%></div>
++	  		<div class="TextButton"><%=_ctx.appRes(uicomponent.getName() + ".tab.label")%></div>
+ 	  	</div>
+ 	  	<div class="Separator"><span></span></div>
+  			<a class="RefreshSessionButton" href="<%=uicomponent.event("RefreshSession")%>" title="<%=_ctx.appRes("UIWorkflowControllerPortlet.label.refesh")%>"></a>
